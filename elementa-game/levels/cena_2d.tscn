@@ -1,12 +1,43 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxdyfvfsavec4"]
+[gd_scene load_steps=9 format=3 uid="uid://dxdyfvfsavec4"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_pba3v"]
-[ext_resource type="Texture2D" uid="uid://dewq3wkxx58wi" path="res://assets/idlePrincipal.png" id="2_pkyj4"]
-[ext_resource type="Texture2D" uid="uid://drxeobtn88mcg" path="res://assets/idlePrincipal32x64.png" id="3_fbxid"]
+[ext_resource type="Texture2D" uid="uid://dbtyoxvb0opm8" path="res://assetsIncompletos/idlePrincipal32x64.png" id="2_x0o1j"]
+[ext_resource type="Texture2D" uid="uid://bsimgby3jx882" path="res://assetsIncompletos/idlePrincipal32x64teste1.png" id="3_e1ai2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hvivo"]
 radius = 14.0
-height = 38.0
+height = 58.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76pj2"]
+atlas = ExtResource("2_x0o1j")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w80oj"]
+atlas = ExtResource("3_e1ai2")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aruhn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76pj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76pj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76pj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76pj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w80oj")
+}],
+"loop": true,
+"name": &"anim",
+"speed": 1.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_agd7s"]
 size = Vector2(574.25, 20)
@@ -19,17 +50,17 @@ position = Vector2(206, 5)
 script = ExtResource("1_pba3v")
 
 [node name="Collision" type="CollisionShape2D" parent="player"]
-position = Vector2(-34, 98)
+position = Vector2(-79, 63)
 shape = SubResource("CapsuleShape2D_hvivo")
 
-[node name="IdlePrincipal" type="Sprite2D" parent="player"]
-position = Vector2(-33.8125, 101)
-scale = Vector2(0.505859, 0.458984)
-texture = ExtResource("2_pkyj4")
-
-[node name="IdlePrincipal32x64" type="Sprite2D" parent="player"]
-position = Vector2(47, 99)
-texture = ExtResource("3_fbxid")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
+position = Vector2(-81, 58.6406)
+scale = Vector2(1.30078, 1.20752)
+sprite_frames = SubResource("SpriteFrames_aruhn")
+animation = &"anim"
+autoplay = "anim"
+frame = 3
+frame_progress = 0.94315
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(233, 181)
