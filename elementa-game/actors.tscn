@@ -116,8 +116,8 @@
 [ext_resource type="Script" path="res://levels/animated_sprite_2d.gd" id="114_33fmn"]
 [ext_resource type="Script" path="res://levels/jump_sprite.gd" id="115_kybbq"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hvivo"]
-height = 32.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_afht1"]
+size = Vector2(20.1421, 29.4169)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aruhn"]
 animations = [{
@@ -545,9 +545,9 @@ animations = [{
 script = ExtResource("1_55317")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(1, 35)
+position = Vector2(1.08405, 34)
 scale = Vector2(1.18319, 1.1558)
-shape = SubResource("CapsuleShape2D_hvivo")
+shape = SubResource("RectangleShape2D_afht1")
 
 [node name="RunSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 38)
