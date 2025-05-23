@@ -1,0 +1,18 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d62lqw25a2ss"
+valid=false
+
+[deps]
+
+source_file="res://assetsIncompletos/pepsi/gothicvania-cemetery-files/__MACOSX/gothicvania-cemetery-files/Assets/Phaser Demo/assets/sounds/._hurt.ogg"
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
