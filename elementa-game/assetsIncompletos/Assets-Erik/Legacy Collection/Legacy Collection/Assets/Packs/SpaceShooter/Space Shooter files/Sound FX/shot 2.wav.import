@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cqxym35kl58wv"
+path="res://.godot/imported/shot 2.wav-d23087d7637f1b78d96abfc01be362dc.sample"
+
+[deps]
+
+source_file="res://assetsIncompletos/Assets-Erik/Legacy Collection/Legacy Collection/Assets/Packs/SpaceShooter/Space Shooter files/Sound FX/shot 2.wav"
+dest_files=["res://.godot/imported/shot 2.wav-d23087d7637f1b78d96abfc01be362dc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
