@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://djof1wl0ckdhf"]
+
+[ext_resource type="Texture2D" uid="uid://nx7cepcr0kmn" path="res://assetsIncompletos/Assets-Erik/Legacy Collection/Assets/Environments/HauntedForest/Layers/water-tileset.png" id="1_rm78k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwfwm"]
+atlas = ExtResource("1_rm78k")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83kdu"]
+atlas = ExtResource("1_rm78k")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cg88x"]
+atlas = ExtResource("1_rm78k")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_57cqx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwfwm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83kdu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cg88x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Água" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(9, 0)
+scale = Vector2(1.5625, 1)
+sprite_frames = SubResource("SpriteFrames_57cqx")
+autoplay = "default"
+frame_progress = 0.183177
