@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://cm0uqd80dbifn"]
+
+[ext_resource type="Texture2D" uid="uid://ci2ysg7ddaiwf" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candle_3/candle_3_1.png" id="1_hv48m"]
+[ext_resource type="Texture2D" uid="uid://cs1mvswgpf41h" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candle_3/candle_3_2.png" id="2_5v0yu"]
+[ext_resource type="Texture2D" uid="uid://bi5foro4e681d" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candle_3/candle_3_3.png" id="3_ci8gt"]
+[ext_resource type="Texture2D" uid="uid://cdqmcf6pbv4yn" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candle_3/candle_3_4.png" id="4_sv3fg"]
+[ext_resource type="Texture2D" uid="uid://dtro8i52c76ag" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candle_3/candle_3_5.png" id="5_ab5w1"]
+[ext_resource type="Texture2D" uid="uid://cgj3tmqq2ebud" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candle_3/candle_3_6.png" id="6_i3sgc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_as4lu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hv48m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5v0yu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ci8gt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sv3fg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ab5w1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_i3sgc")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 8.0
+}]
+
+[node name="Vela" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_as4lu")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.774309
