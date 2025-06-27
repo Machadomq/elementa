@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://1jcrkth8kht2"]
+
+[ext_resource type="Texture2D" uid="uid://brv56vkrclcvm" path="res://assets/sprites/npcs/Wizard Pack/mendelev1.png" id="1_734xj"]
+[ext_resource type="Texture2D" uid="uid://tcj2o8yfcgw" path="res://assets/sprites/npcs/Wizard Pack/mendelev2.png" id="2_ageqd"]
+[ext_resource type="Texture2D" uid="uid://duynqn8s15yn0" path="res://assets/sprites/npcs/Wizard Pack/mendelev3.png" id="3_qkh3k"]
+[ext_resource type="Texture2D" uid="uid://bdti6jy8bdtb2" path="res://assets/sprites/npcs/Wizard Pack/mendelev4.png" id="4_7cq0r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t0r2f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_734xj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ageqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qkh3k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7cq0r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Mendelev2" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-46.5, -107.75)
+scale = Vector2(0.122642, 0.0907173)
+sprite_frames = SubResource("SpriteFrames_t0r2f")
+autoplay = "default"
+frame = 1
+frame_progress = 0.0319386

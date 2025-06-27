@@ -53,11 +53,10 @@ animations = [{
 [node name="Mendelev" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.8, 0.826)
+position = Vector2(-30, 7)
+scale = Vector2(0.702703, 0.627639)
 sprite_frames = SubResource("SpriteFrames_vfg44")
-animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.574722
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
