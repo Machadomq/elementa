@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bjmbnx8yo80c6"
+path="res://.godot/imported/Scott Buckley - Signal To Noise.mp3-8186a0f2c877660ed4c50ac91f52257b.mp3str"
+
+[deps]
+
+source_file="res://data/musics/Scott Buckley - Signal To Noise.mp3"
+dest_files=["res://.godot/imported/Scott Buckley - Signal To Noise.mp3-8186a0f2c877660ed4c50ac91f52257b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

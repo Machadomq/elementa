@@ -1,0 +1,6 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://lwxvwuhlpv3s"]
+
+[ext_resource type="Texture2D" uid="uid://c4tlu8tgc0ba3" path="res://assetsIncompletos/Assets-Erik/Portraits_v1/hud/talk_box_brown.png" id="1_10rou"]
+
+[resource]
+texture = ExtResource("1_10rou")
