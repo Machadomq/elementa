@@ -1,3 +1,4 @@
+#ataque.gd
 extends AnimatedSprite2D
 
 

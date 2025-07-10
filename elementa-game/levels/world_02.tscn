@@ -7379,7 +7379,6 @@ position = Vector2(382, 180)
 position = Vector2(1178.75, 405.039)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(171, -9)
