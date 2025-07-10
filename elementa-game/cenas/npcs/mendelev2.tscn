@@ -1,36 +1,33 @@
-[gd_scene load_steps=6 format=3 uid="uid://1jcrkth8kht2"]
+[gd_scene load_steps=5 format=3 uid="uid://1jcrkth8kht2"]
 
-[ext_resource type="Texture2D" uid="uid://brv56vkrclcvm" path="res://assets/sprites/npcs/Wizard Pack/mendelev1.png" id="1_734xj"]
-[ext_resource type="Texture2D" uid="uid://tcj2o8yfcgw" path="res://assets/sprites/npcs/Wizard Pack/mendelev2.png" id="2_ageqd"]
-[ext_resource type="Texture2D" uid="uid://duynqn8s15yn0" path="res://assets/sprites/npcs/Wizard Pack/mendelev3.png" id="3_qkh3k"]
+[ext_resource type="Script" path="res://cenas/npcs/mendelev_2.gd" id="1_tb4nr"]
+[ext_resource type="Texture2D" uid="uid://ctu6hu72w5bye" path="res://data/styles/portait/Portraits_v1/hud/Speech_Emotes (16 x 16).png" id="3_rctan"]
 [ext_resource type="Texture2D" uid="uid://bdti6jy8bdtb2" path="res://assets/sprites/npcs/Wizard Pack/mendelev4.png" id="4_7cq0r"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_t0r2f"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_734xj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_ageqd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_qkh3k")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_7cq0r")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfq2w"]
+size = Vector2(48, 28)
 
-[node name="Mendelev2" type="Node2D"]
+[node name="Mendelev2" type="Area2D"]
+script = ExtResource("1_tb4nr")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-46.5, -107.75)
-scale = Vector2(0.122642, 0.0907173)
-sprite_frames = SubResource("SpriteFrames_t0r2f")
-autoplay = "default"
-frame = 1
-frame_progress = 0.0319386
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, -4)
+shape = SubResource("RectangleShape2D_rfq2w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 7
+position = Vector2(3.6875, -2.1875)
+scale = Vector2(0.135417, 0.107668)
+texture = ExtResource("4_7cq0r")
+
+[node name="labelinteracao" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(3, -20)
+scale = Vector2(0.625, 0.5)
+texture = ExtResource("3_rctan")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
