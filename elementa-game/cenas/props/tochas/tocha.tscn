@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://s162qrmmeqp5"]
+
+[ext_resource type="Texture2D" uid="uid://bjyafnbiedasu" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/torch_small/torch_small_1.png" id="1_cml4o"]
+[ext_resource type="Texture2D" uid="uid://w4nsu8fer7b" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/torch_small/torch_small_2.png" id="2_arjaj"]
+[ext_resource type="Texture2D" uid="uid://c7giokc0wvin4" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/torch_small/torch_small_3.png" id="3_pxiwx"]
+[ext_resource type="Texture2D" uid="uid://c62mrdp5pr4m1" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/torch_small/torch_small_4.png" id="4_saywe"]
+[ext_resource type="Texture2D" uid="uid://chfu8j1rtfpxa" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/torch_small/torch_small_5.png" id="5_mn7a5"]
+[ext_resource type="Texture2D" uid="uid://goxy5cq6nw7x" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/torch_small/torch_small_6.png" id="6_v2cs4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_udhcv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cml4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_arjaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pxiwx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_saywe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mn7a5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_v2cs4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Tocha" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_udhcv")
+autoplay = "default"

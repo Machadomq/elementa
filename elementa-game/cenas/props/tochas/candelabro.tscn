@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://did2ih7uqou0"]
+
+[ext_resource type="Texture2D" uid="uid://bqjd62qou16bp" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_1.png" id="1_5rsco"]
+[ext_resource type="Texture2D" uid="uid://ds1v5xs5ph2vo" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_2.png" id="2_ews86"]
+[ext_resource type="Texture2D" uid="uid://dolvniqbrph8b" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_3.png" id="3_crkrk"]
+[ext_resource type="Texture2D" uid="uid://7goeqtatj7x2" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_4.png" id="4_sv1xg"]
+[ext_resource type="Texture2D" uid="uid://dubo5mn1lgk20" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_5.png" id="5_gemsm"]
+[ext_resource type="Texture2D" uid="uid://cdojtcos881j5" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_6.png" id="6_p57pi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gpygw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5rsco")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ews86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_crkrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sv1xg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gemsm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_p57pi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Candelabro" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gpygw")
+autoplay = "default"
+frame_progress = 0.388765

@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cdpkilp83bdfe"
+path="res://.godot/imported/b2c80283-ca70-43f1-91d0-77f20f3090d3-removebg-preview.png-a1c1f3320e75579283d152c59403cae3.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://assets/sprites/npcs/Wizard Pack/b2c80283-ca70-43f1-91d0-77f20f3090d3-removebg-preview.png"
+dest_files=["res://.godot/imported/b2c80283-ca70-43f1-91d0-77f20f3090d3-removebg-preview.png-a1c1f3320e75579283d152c59403cae3.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

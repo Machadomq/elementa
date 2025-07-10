@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://c2afrfioxjkba"]
+
+[ext_resource type="Texture2D" uid="uid://bssc4ui335pn4" path="res://sprites-cenário-teste/Mini FX, Items & UI/Common Pick-ups/Small_Coin (16 x 16).png" id="1_4tigv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48cns"]
+atlas = ExtResource("1_4tigv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p68nk"]
+atlas = ExtResource("1_4tigv")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k04ab"]
+atlas = ExtResource("1_4tigv")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1twxc"]
+atlas = ExtResource("1_4tigv")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_triiy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48cns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p68nk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k04ab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1twxc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Coin" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_triiy")
+autoplay = "default"
+frame_progress = 0.368494

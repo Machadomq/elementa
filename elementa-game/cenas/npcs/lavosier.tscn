@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bru5ckltivxwd"]
+
+[ext_resource type="Texture2D" uid="uid://brrlawefb7y04" path="res://assets/sprites/npcs/Wizard Pack/corte2.png" id="1_oatqp"]
+[ext_resource type="Texture2D" uid="uid://d1yqn0qnq355s" path="res://assets/sprites/npcs/Wizard Pack/corte3.png" id="2_gjjml"]
+[ext_resource type="Texture2D" uid="uid://c48or13ivpq22" path="res://assets/sprites/npcs/Wizard Pack/corte4.png" id="3_5cm6n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cvnlq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_oatqp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gjjml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5cm6n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="Lavosier" type="Node2D"]
+z_as_relative = false
+y_sort_enabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cvnlq")
+frame_progress = 0.583258
