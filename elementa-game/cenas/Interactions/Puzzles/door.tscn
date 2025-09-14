@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cke68p3p8y03n"]
+
+[ext_resource type="Script" path="res://cenas/Interactions/Puzzles/door.gd" id="1_2s0ms"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_paq02"]
+size = Vector2(31, 47)
+
+[node name="door" type="Area2D"]
+script = ExtResource("1_2s0ms")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5.5, 0.5)
+shape = SubResource("RectangleShape2D_paq02")

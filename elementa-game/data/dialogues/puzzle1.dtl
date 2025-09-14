@@ -1,0 +1,21 @@
+As palavras certas fazem o mundo se mover.
+Procure pelas Pedras do Conhecimento, elas te levarão a todas as respostas que procuras.
+Para abrir a porta a frente, você deve responder ao meu enigma\:
+"Diante de ti está o obstáculo gelado, imóvel como a própria morte.\
+Mas nada é eterno\: até a pedra de gelo cede quando o calor a envolve.\
+Eu sou a mudança invisível que transforma o rígido em fluidez,\
+o cristal em corrente, o sólido em líquido.\
+Diz meu nome, viajante, e a passagem se abrirá."
+- Fusão
+	set {errou} = false
+	[signal arg="errou"]
+- Vaporização
+	set {acertou} = true
+	[signal arg="acertou"]
+- Solidificação
+	set {errou} = false
+	[signal arg="errou"]
+if {acertou} == true:
+	Parabéns! Conhecimento adquirido com sucesso!
+else:
+	Resposta errada! Continue buscando pelo conhecimento!
