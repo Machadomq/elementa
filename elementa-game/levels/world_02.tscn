@@ -7356,7 +7356,7 @@ sources/65 = SubResource("TileSetAtlasSource_aoivo")
 sources/91 = SubResource("TileSetAtlasSource_lwolb")
 
 [node name="World-02" type="Node2D"]
-position = Vector2(124, -17)
+position = Vector2(59, -73)
 script = ExtResource("1_8yk2m")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -7380,16 +7380,15 @@ layer_4/z_index = 11
 
 [node name="player" parent="." instance=ExtResource("2_upl2b")]
 z_index = 8
-position = Vector2(1365, 1029)
+position = Vector2(401, 327)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(1178.75, 405.039)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(171, -9)
+position = Vector2(81, 47)
 motion_scale = Vector2(0.1, 0)
 motion_mirroring = Vector2(768, 0)
 
@@ -7400,34 +7399,33 @@ texture = ExtResource("21_4rh3r")
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(156, -48)
+position = Vector2(25, -58)
 motion_scale = Vector2(0.2, 0)
 motion_mirroring = Vector2(740.16, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(36, -37)
+position = Vector2(30, 92)
 scale = Vector2(0.771, 0.8)
 texture = ExtResource("9_3sbb6")
 centered = false
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(156, -11)
+position = Vector2(91, -67)
 motion_scale = Vector2(0.3, 0)
 motion_mirroring = Vector2(768, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2(38, -65)
+position = Vector2(56, 75)
 scale = Vector2(0.8, 0.7875)
 texture = ExtResource("13_0rqa0")
 centered = false
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
-visible = false
-position = Vector2(138, -32)
+position = Vector2(82, -79)
 motion_mirroring = Vector2(768, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
-position = Vector2(35, -41)
+position = Vector2(97, 160)
 scale = Vector2(0.827083, 0.808333)
 texture = ExtResource("14_vuvpl")
 centered = false
@@ -7474,7 +7472,7 @@ position = Vector2(1652, 488)
 scale = Vector2(2, 2)
 
 [node name="Fogo" parent="." instance=ExtResource("117_upf7f")]
-position = Vector2(472, 187)
+position = Vector2(431, 403)
 
 [node name="Eletric" parent="." instance=ExtResource("118_4xsct")]
 z_index = 7
@@ -7538,3 +7536,4 @@ transition_controller = NodePath("../transition")
 position = Vector2(1748, 1283)
 
 [node name="transition" parent="." instance=ExtResource("124_io5fc")]
+visible = false
