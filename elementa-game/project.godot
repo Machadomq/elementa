@@ -31,6 +31,7 @@ directories/dch_directory={
 directories/dtl_directory={
 "intro": "res://data/dialogues/intro.dtl",
 "introducao": "res://data/dialogues/introducao.dtl",
+"placadupla": "res://data/dialogues/MapsInteractions/prólogo-vila/placadupla.dtl",
 "puzzle1": "res://data/dialogues/puzzle1.dtl",
 "stone1": "res://data/dialogues/stone1.dtl",
 "stone2": "res://data/dialogues/stone2.dtl",

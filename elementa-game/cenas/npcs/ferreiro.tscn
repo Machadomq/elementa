@@ -1,0 +1,94 @@
+[gd_scene load_steps=14 format=3 uid="uid://cc3dkg0kyiwak"]
+
+[ext_resource type="Texture2D" uid="uid://cirsrgtp7xu8f" path="res://assetsIncompletos/Assets-Erik/NPCS/FREE Character Blacksmith - MoonRoar Asset Series - Codename Yanes/01_Spritesheet/00_General_v1.0.png" id="1_s1op3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odj46"]
+atlas = ExtResource("1_s1op3")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8bie"]
+atlas = ExtResource("1_s1op3")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkb8v"]
+atlas = ExtResource("1_s1op3")
+region = Rect2(256, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vf2xe"]
+atlas = ExtResource("1_s1op3")
+region = Rect2(320, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcwqi"]
+atlas = ExtResource("1_s1op3")
+region = Rect2(384, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ud3pp"]
+atlas = ExtResource("1_s1op3")
+region = Rect2(448, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egwjo"]
+atlas = ExtResource("1_s1op3")
+region = Rect2(512, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21jvc"]
+atlas = ExtResource("1_s1op3")
+region = Rect2(576, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5w2m"]
+atlas = ExtResource("1_s1op3")
+region = Rect2(640, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g61jm"]
+atlas = ExtResource("1_s1op3")
+region = Rect2(704, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ex83l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odj46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8bie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkb8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vf2xe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcwqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ud3pp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egwjo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21jvc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5w2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g61jm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ijgxh"]
+
+[node name="Ferreiro" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ex83l")
+autoplay = "default"
+frame_progress = 0.8982
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ijgxh")

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://blubvamxjyjxv"]
+
+[node name="Notification" type="CanvasLayer"]
+
+[node name="CanvasLayer" type="TextureRect" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

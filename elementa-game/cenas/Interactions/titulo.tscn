@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://drldipgcjdral"]
+
+[ext_resource type="Script" path="res://scripts/systems/dialogues-map/titulo.gd" id="1_d6aix"]
+[ext_resource type="FontFile" uid="uid://b5o2c3rvv2jrx" path="res://data/styles/Jim_Nightshade/JimNightshade-Regular.ttf" id="2_0c5b6"]
+[ext_resource type="Script" path="res://scripts/systems/dialogues-map/label-tittle.gd" id="2_cb6d7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_delv4"]
+size = Vector2(66, 73)
+
+[sub_resource type="Theme" id="Theme_hmp0d"]
+
+[node name="Titulo" type="Area2D"]
+script = ExtResource("1_d6aix")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(23, 26.5)
+shape = SubResource("RectangleShape2D_delv4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.402
+anchor_top = 0.207
+anchor_right = 0.63
+anchor_bottom = 0.382
+offset_left = -0.840027
+offset_top = 0.439987
+offset_right = 0.399902
+offset_bottom = 0.439972
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+theme = SubResource("Theme_hmp0d")
+theme_override_fonts/font = ExtResource("2_0c5b6")
+theme_override_font_sizes/font_size = 250
+text = "ELEMENTA"
+script = ExtResource("2_cb6d7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

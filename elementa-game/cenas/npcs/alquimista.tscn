@@ -1,0 +1,121 @@
+[gd_scene load_steps=18 format=3 uid="uid://ocoph0lyugrj"]
+
+[ext_resource type="Texture2D" uid="uid://c77jftp45f7fh" path="res://assetsIncompletos/Assets-Erik/NPCS/FREE Character Alchemist - MoonRoar Asset Series - Codename Yanes/01_Spritesheet/00_General_v1.0.png" id="1_7qk18"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5bbk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4y4yh"]
+atlas = ExtResource("1_7qk18")
+region = Rect2(128, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqq7c"]
+atlas = ExtResource("1_7qk18")
+region = Rect2(192, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vp2ji"]
+atlas = ExtResource("1_7qk18")
+region = Rect2(256, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ef3cw"]
+atlas = ExtResource("1_7qk18")
+region = Rect2(320, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urcur"]
+atlas = ExtResource("1_7qk18")
+region = Rect2(384, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0ykj"]
+atlas = ExtResource("1_7qk18")
+region = Rect2(448, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1ms6"]
+atlas = ExtResource("1_7qk18")
+region = Rect2(512, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8vs4"]
+atlas = ExtResource("1_7qk18")
+region = Rect2(576, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqrvm"]
+atlas = ExtResource("1_7qk18")
+region = Rect2(640, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qesyc"]
+atlas = ExtResource("1_7qk18")
+region = Rect2(704, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysvmi"]
+atlas = ExtResource("1_7qk18")
+region = Rect2(768, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6kxyn"]
+atlas = ExtResource("1_7qk18")
+region = Rect2(832, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65lon"]
+atlas = ExtResource("1_7qk18")
+region = Rect2(896, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qg2q0"]
+atlas = ExtResource("1_7qk18")
+region = Rect2(960, 256, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fq8rs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4y4yh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqq7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vp2ji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ef3cw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urcur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0ykj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1ms6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8vs4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqrvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qesyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysvmi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6kxyn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65lon")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qg2q0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Area2D" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_c5bbk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fq8rs")
+autoplay = "default"
+flip_h = true

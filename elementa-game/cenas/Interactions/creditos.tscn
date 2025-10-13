@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://p4l6fkciut56"]
+
+[ext_resource type="FontFile" uid="uid://3qlvdkxa4tb6" path="res://data/styles/Jersey_25/Jersey25-Regular.ttf" id="1_03q8k"]
+[ext_resource type="Script" path="res://scripts/systems/dialogues-map/creditos.gd" id="1_66x8v"]
+
+[sub_resource type="GDScript" id="GDScript_tngh5"]
+script/source = "extends Area2D
+
+@onready var label = $CanvasLayer/MarginContainer/Label
+
+var has_played = false
+
+func _ready() -> void:
+	label.visible = false
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.name == \"player\" and not has_played:
+		has_played = true
+		label.visible = true
+		label.play_sequence()
+		
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bu0mc"]
+size = Vector2(56, 73)
+
+[node name="Area2D" type="Area2D"]
+script = SubResource("GDScript_tngh5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 6
+position = Vector2(18, 26.5)
+shape = SubResource("RectangleShape2D_bu0mc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.809
+anchor_top = 0.803
+anchor_right = 0.921
+anchor_bottom = 0.885
+offset_left = 0.719971
+offset_top = -0.240051
+offset_right = -0.320068
+offset_bottom = 0.199951
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_03q8k")
+theme_override_font_sizes/font_size = 50
+text = "Label"
+script = ExtResource("1_66x8v")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

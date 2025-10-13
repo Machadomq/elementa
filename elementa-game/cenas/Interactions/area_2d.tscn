@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://bij63j8ft5gcm"]
+
+[ext_resource type="Script" path="res://scripts/systems/dialogues-map/area_2d.gd" id="1_3ssa1"]
+[ext_resource type="FontFile" uid="uid://3qlvdkxa4tb6" path="res://data/styles/Jersey_25/Jersey25-Regular.ttf" id="2_oxglk"]
+[ext_resource type="Script" path="res://scripts/systems/dialogues-map/label.gd" id="3_b521g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oysni"]
+size = Vector2(56, 73)
+
+[node name="NomeCidade" type="Area2D"]
+script = ExtResource("1_3ssa1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 6
+position = Vector2(18, 26.5)
+shape = SubResource("RectangleShape2D_oysni")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.809
+anchor_top = 0.803
+anchor_right = 0.921
+anchor_bottom = 0.885
+offset_left = 0.719971
+offset_top = -0.240051
+offset_right = -0.320068
+offset_bottom = 0.199951
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_oxglk")
+theme_override_font_sizes/font_size = 50
+text = "Label"
+script = ExtResource("3_b521g")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
