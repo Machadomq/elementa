@@ -115,6 +115,16 @@ func _physics_process(delta: float) -> void:
 				$AnimationPlayer.play("run")
 			else:
 				$AnimationPlayer.play("idle")
+	
+	if velocity.x >= 0:
+		position.x = floor(position.x + 0.5)
+	else:
+		position.x = ceil(position.x - 0.5)
+
+	position.y = round(position.y)
+
+
+
 
 # === Eventos ===
 func _on_animation_finished(anim_name):

@@ -202,7 +202,6 @@ one_shot = true
 position = Vector2(1, -14)
 scale = Vector2(6.70373, 1.90072)
 zoom = Vector2(5, 5)
-limit_smoothed = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(0, 31)
