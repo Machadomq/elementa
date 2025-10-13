@@ -1,107 +1,137 @@
 extends CharacterBody2D
 
+# === Constantes ===
 const SPEED = 150.0
 const JUMP_VELOCITY = -300.0
+const AIR_ATTACK_PUSH = 50.0
+const DASH_SPEED = 400.0
+const DASH_TIME = 0.2
+const DASH_COOLDOWN = 1.0
 
+# === Estado do Player ===
 var atacando = false
+var ataque_aereo = false
+var dashing = false
+var olhando_para_esquerda = false
+var pulo_extra_disponivel = true
+
+# === Timers internos ===
+var dash_timer = 0.0
+var dash_cooldown_timer = 0.0
+var pode_dash = true
 var pode_atacar = true
 var tempo_cooldown_ataque = 0.5
-var olhando_para_esquerda = false
-var testeCarga= false
-var testeCarga2=false
 
 func _ready():
-	$ataque.animation_finished.connect(_on_ataque_animation_finished)
 	$CooldownAtaque.timeout.connect(_on_cooldown_ataque_timeout)
-	$testeCarga.animation_finished.connect(_on_testeCarga_animation_finished)
-	$testeCarga2.animation_finished.connect(_on_testeCarga2_animation_finished)
-	
+	$AnimationPlayer.animation_finished.connect(_on_animation_finished)
+
 func _physics_process(delta: float) -> void:
-	
-	if $testeCarga2.is_playing():
-		velocity.x = 0
-		return
-		
-	if $testeCarga.is_playing():
-		velocity.x = 0
-		return
-		
-	if Input.is_action_just_pressed("testeCarga2"):
-		$testeCarga2.visible=true
-		$testeCarga2.play("testeCarga2")
-		$RunSprite.visible = false
-		$JumpSprite.visible= false
-		return
-		
-	if Input.is_action_just_pressed("testeCarga"):
-		$testeCarga.visible=true
-		$testeCarga.play("testeCarga")
-		$RunSprite.visible = false
-		$JumpSprite.visible= false
-		return
-	# Bloqueia o movimento e animação se estiver atacando
-	if atacando:
-		velocity.x = 0
-		return
+	# Atualiza dash e cooldown
+	if dashing:
+		dash_timer -= delta
+		if dash_timer <= 0:
+			dashing = false
 
-	# Gravidade
-	if not is_on_floor():
+	if not pode_dash:
+		dash_cooldown_timer -= delta
+		if dash_cooldown_timer <= 0:
+			pode_dash = true
+
+	# Gravidade (não aplica durante dash)
+	if not is_on_floor() and not dashing:
 		velocity += get_gravity() * delta
+	elif is_on_floor():
+		pulo_extra_disponivel = true  # reseta double jump
 
-	# Pulo
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Movimento
+	# Movimento horizontal
 	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+	if not dashing:
+		if direction:
+			velocity.x = direction * SPEED
+			$Sprite.flip_h = direction < 0
+			olhando_para_esquerda = direction < 0
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
 
-	# Ataque com cooldown
-	if Input.is_action_just_pressed("ataque") and not atacando and pode_atacar:
+	# Pulo / double jump
+	if Input.is_action_just_pressed("ui_accept"):
+		if is_on_floor():
+			velocity.y = JUMP_VELOCITY
+			$AnimationPlayer.play("jump")
+		elif pulo_extra_disponivel:
+			velocity.y = JUMP_VELOCITY
+			$AnimationPlayer.play("jump")
+			pulo_extra_disponivel = false
+
+	# Ataque
+	if Input.is_action_just_pressed("ataque") and pode_atacar:
 		atacando = true
 		pode_atacar = false
-		$ataque.visible = true
-		$ataque.flip_h = olhando_para_esquerda
-		$ataque.play("ataque")
-		$RunSprite.visible = false
-		$JumpSprite.visible = false
+
+		if is_on_floor():
+			ataque_aereo = false
+			$AnimationPlayer.play("ataque")
+		else:
+			ataque_aereo = true
+			$AnimationPlayer.play("ataque_ar")
+			if olhando_para_esquerda:
+				velocity.x -= AIR_ATTACK_PUSH
+			else:
+				velocity.x += AIR_ATTACK_PUSH
+
+		$Sprite.flip_h = olhando_para_esquerda
 		return
 
-	# Animações normais
-	if not is_on_floor():
-		$RunSprite.visible = false
-		$JumpSprite.visible = true
-		$JumpSprite.play("jump")
-	else:
-		$JumpSprite.visible = false
-		$RunSprite.visible = true
-
-		if direction != 0:
-			$RunSprite.flip_h = direction < 0
-			olhando_para_esquerda = direction < 0
-			$RunSprite.play("anim")
+	# Dash
+	if Input.is_action_just_pressed("dash") and not dashing and pode_dash and not atacando:
+		dashing = true
+		dash_timer = DASH_TIME
+		pode_dash = false
+		dash_cooldown_timer = DASH_COOLDOWN
+		$AnimationPlayer.play("dash")
+		if olhando_para_esquerda:
+			velocity.x = -DASH_SPEED
 		else:
-			$RunSprite.play("idle")
+			velocity.x = DASH_SPEED
+		return
 
-func _on_ataque_animation_finished():
-	atacando = false
-	$ataque.visible = false
-	$CooldownAtaque.start(tempo_cooldown_ataque)
+	# Animações normais (se não estiver atacando ou dash)
+	if not atacando and not dashing:
+		if not is_on_floor():
+			# Espelhamento no ar
+			if direction != 0:
+				$Sprite.flip_h = direction < 0
+				olhando_para_esquerda = direction < 0
 
-func _on_testeCarga_animation_finished():
-	testeCarga = false
-	$testeCarga.visible = false
-	
-func _on_testeCarga2_animation_finished():
-	testeCarga2 = false
-	$testeCarga2.visible = false
-	
+			if velocity.y < 0:
+				$AnimationPlayer.play("jump")
+			else:
+				$AnimationPlayer.play("fall")
+		else:
+			if direction != 0:
+				$AnimationPlayer.play("run")
+			else:
+				$AnimationPlayer.play("idle")
+
+# === Eventos ===
+func _on_animation_finished(anim_name):
+	if anim_name in ["ataque", "ataque_ar"]:
+		atacando = false
+		$CooldownAtaque.start(tempo_cooldown_ataque)
+
+	if anim_name == "dash":
+		dashing = false
+		# volta para a animação adequada
+		if not is_on_floor():
+			if velocity.y < 0:
+				$AnimationPlayer.play("jump")
+			else:
+				$AnimationPlayer.play("fall")
+		else:
+			$AnimationPlayer.play("idle")
+
 func _on_cooldown_ataque_timeout():
 	pode_atacar = true
-	
-	
