@@ -22,6 +22,11 @@ var pode_dash = true
 var pode_atacar = true
 var tempo_cooldown_ataque = 0.5
 
+# === SFX ===
+@onready var jump_sfx = $jump_sfx as AudioStreamPlayer
+@onready var ataque_sfx = $ataque_sfx as AudioStreamPlayer
+@onready var andando_sfx = $andando_sfx as AudioStreamPlayer
+
 func _ready():
 	$CooldownAtaque.timeout.connect(_on_cooldown_ataque_timeout)
 	$AnimationPlayer.animation_finished.connect(_on_animation_finished)
@@ -53,6 +58,7 @@ func _physics_process(delta: float) -> void:
 			olhando_para_esquerda = direction < 0
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
+			andando_sfx.play()
 
 	move_and_slide()
 
@@ -61,10 +67,12 @@ func _physics_process(delta: float) -> void:
 		if is_on_floor():
 			velocity.y = JUMP_VELOCITY
 			$AnimationPlayer.play("jump")
+			jump_sfx.play()
 		elif pulo_extra_disponivel:
 			velocity.y = JUMP_VELOCITY
 			$AnimationPlayer.play("jump")
 			pulo_extra_disponivel = false
+			jump_sfx.play()
 
 	# Ataque
 	if Input.is_action_just_pressed("ataque") and pode_atacar:
@@ -74,9 +82,11 @@ func _physics_process(delta: float) -> void:
 		if is_on_floor():
 			ataque_aereo = false
 			$AnimationPlayer.play("ataque")
+			ataque_sfx.play()
 		else:
 			ataque_aereo = true
 			$AnimationPlayer.play("ataque_ar")
+			ataque_sfx.play()
 			if olhando_para_esquerda:
 				velocity.x -= AIR_ATTACK_PUSH
 			else:
