@@ -23,8 +23,8 @@ Global="*res://scripts/singleton/global.gd"
 [dialogic]
 
 directories/dch_directory={
-"characters/mendelev": "res://data/characters/mendelev.dch",
 "marie": "res://data/characters/marie.dch",
+"mendelev": "res://data/characters/mendelev.dch",
 "npc": "res://data/characters/npc.dch",
 "teste": "res://data/characters/teste.dch"
 }
