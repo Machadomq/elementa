@@ -22,8 +22,6 @@ var pode_dash = true
 var pode_atacar = true
 var tempo_cooldown_ataque = 0.5
 
-#teste teste
-
 func _ready():
 	$CooldownAtaque.timeout.connect(_on_cooldown_ataque_timeout)
 	$AnimationPlayer.animation_finished.connect(_on_animation_finished)
