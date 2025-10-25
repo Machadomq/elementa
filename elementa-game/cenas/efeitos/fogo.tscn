@@ -149,3 +149,5 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_ci7s8")
 autoplay = "default"
 frame_progress = 0.20021
+
+[node name="fire_sfx" type="AudioStreamPlayer" parent="."]
