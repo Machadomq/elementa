@@ -26,6 +26,7 @@ var tempo_cooldown_ataque = 0.5
 @onready var jump_sfx = $jump_sfx as AudioStreamPlayer
 @onready var ataque_sfx = $ataque_sfx as AudioStreamPlayer
 @onready var andando_sfx = $andando_sfx as AudioStreamPlayer
+@onready var fire_sfx = $fire_sfx as AudioStreamPlayer
 
 func _ready():
 	$CooldownAtaque.timeout.connect(_on_cooldown_ataque_timeout)
@@ -59,6 +60,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			andando_sfx.play()
+			
 
 	move_and_slide()
 

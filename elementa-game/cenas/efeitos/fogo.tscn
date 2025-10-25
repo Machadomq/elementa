@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://bhjky1jkunh57"]
+[gd_scene load_steps=23 format=3 uid="uid://bhjky1jkunh57"]
 
 [ext_resource type="Texture2D" uid="uid://oyghor6n1bpt" path="res://assetsIncompletos/Assets-Erik/Particle FX 1.3 Free/Spritesheets/Fire+Sparks-Sheet.png" id="1_v42l3"]
+[ext_resource type="AudioStream" uid="uid://dsyl0cmyyb6o1" path="res://data/musics/sfx_bonfire.wav" id="2_xivtw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pfqve"]
 atlas = ExtResource("1_v42l3")
@@ -151,3 +152,5 @@ autoplay = "default"
 frame_progress = 0.20021
 
 [node name="fire_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_xivtw")
+volume_db = -30.0
