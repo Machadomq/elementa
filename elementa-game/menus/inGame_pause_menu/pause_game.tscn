@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://bw8ckhrbrjsoh"]
+
+[ext_resource type="Script" path="res://menus/inGame_pause_menu/pause_game.gd" id="1_bwdxl"]
+[ext_resource type="Texture2D" uid="uid://bl87876hvv01p" path="res://menus/inGame_pause_menu/assets/continuar.png" id="1_ci0sh"]
+[ext_resource type="Texture2D" uid="uid://tw4hc8cq6nrl" path="res://menus/inGame_pause_menu/assets/continuarHover.png" id="2_e0fck"]
+[ext_resource type="Texture2D" uid="uid://bxbthu36io8rh" path="res://menus/main_menu/assets/elementa logo.png" id="2_ejfr6"]
+[ext_resource type="Texture2D" uid="uid://cbgnvyo6ccqvj" path="res://menus/inGame_pause_menu/assets/sair.png" id="3_bvdxf"]
+[ext_resource type="Texture2D" uid="uid://d4nby61oji4h3" path="res://menus/inGame_pause_menu/assets/sairHover.png" id="4_uv44k"]
+
+[node name="pause_menu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_bwdxl")
+
+[node name="bg_overlay" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.027451, 0.027451, 0.027451, 0.513726)
+
+[node name="Title" type="TextureRect" parent="bg_overlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 623.0
+offset_top = 117.0
+offset_right = -647.0
+offset_bottom = -759.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ejfr6")
+expand_mode = 1
+
+[node name="resume_btn" type="TextureButton" parent="."]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 744.0
+offset_top = 500.0
+offset_right = -815.0
+offset_bottom = -487.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("1_ci0sh")
+texture_hover = ExtResource("2_e0fck")
+stretch_mode = 0
+metadata/_edit_group_ = true
+
+[node name="quit_btn" type="TextureButton" parent="."]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 745.0
+offset_top = 645.0
+offset_right = -817.0
+offset_bottom = -342.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("3_bvdxf")
+texture_hover = ExtResource("4_uv44k")
+stretch_mode = 0
+metadata/_edit_group_ = true
+
+[connection signal="pressed" from="resume_btn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="quit_btn" to="." method="_on_quit_btn_pressed"]
