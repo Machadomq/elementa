@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=233 format=3 uid="uid://wkytte7y28ta"]
+=======
+[gd_scene load_steps=232 format=3 uid="uid://b8scu82s4nmic"]
+>>>>>>> Stashed changes
 =======
 [gd_scene load_steps=232 format=3 uid="uid://b8scu82s4nmic"]
 >>>>>>> Stashed changes
@@ -128,8 +132,12 @@
 [ext_resource type="PackedScene" uid="uid://dqind1y43s5qj" path="res://cenas/Interactions/Puzzles/puzzle1.tscn" id="121_3nlqd"]
 [ext_resource type="PackedScene" uid="uid://cke68p3p8y03n" path="res://cenas/Interactions/Puzzles/door.tscn" id="122_c1lwm"]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://da05vccxbs5gm" path="res://levels/fases/transition.tscn" id="124_io5fc"]
 [ext_resource type="PackedScene" uid="uid://bw8ckhrbrjsoh" path="res://menus/inGame_pause_menu/pause_game.tscn" id="125_jqjuj"]
+=======
+[ext_resource type="PackedScene" path="res://levels/fases/transition.tscn" id="124_io5fc"]
+>>>>>>> Stashed changes
 =======
 [ext_resource type="PackedScene" path="res://levels/fases/transition.tscn" id="124_io5fc"]
 >>>>>>> Stashed changes
