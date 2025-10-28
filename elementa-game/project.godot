@@ -24,14 +24,20 @@ Global="*res://scripts/singleton/global.gd"
 
 directories/dch_directory={
 "characters/mendelev": "res://data/characters/mendelev.dch",
+"claudio-cn": "res://data/characters/claudio-cn.dch",
+"claudio-sn": "res://data/characters/claudio-sn.dch",
 "marie": "res://data/characters/marie.dch",
 "npc": "res://data/characters/npc.dch",
 "teste": "res://data/characters/teste.dch"
 }
 directories/dtl_directory={
+"dog": "res://data/dialogues/vila-catalis/dog.dtl",
 "intro": "res://data/dialogues/intro.dtl",
+"intro-ruinas": "res://data/dialogues/intro-ruinas.dtl",
 "introducao": "res://data/dialogues/introducao.dtl",
+"npc-inicial": "res://data/dialogues/vila-catalis/npc-inicial.dtl",
 "placadupla": "res://data/dialogues/MapsInteractions/prólogo-vila/placadupla.dtl",
+"placasimples": "res://data/dialogues/MapsInteractions/ConectorHub/placasimples.dtl",
 "puzzle1": "res://data/dialogues/puzzle1.dtl",
 "stone1": "res://data/dialogues/stone1.dtl",
 "stone2": "res://data/dialogues/stone2.dtl",
@@ -39,7 +45,7 @@ directories/dtl_directory={
 "stone4": "res://data/dialogues/stone4.dtl",
 "stone5": "res://data/dialogues/stone5.dtl"
 }
-layout/style_list=["res://data/styles/defaultstyle.tres", "res://data/styles/simples.tres"]
+layout/style_list=["res://data/styles/defaultstyle.tres", "res://data/styles/simples.tres", "res://data/styles/novel.tres", "res://data/styles/npc-simples.tres"]
 layout/default_style="res://data/styles/simples.tres"
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01

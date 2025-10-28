@@ -1,4 +1,4 @@
-[gd_scene load_steps=232 format=3 uid="uid://d27cpf6ieogg3"]
+[gd_scene load_steps=236 format=3 uid="uid://d27cpf6ieogg3"]
 
 [ext_resource type="Script" path="res://levels/fases/cena_1.gd" id="1_8yk2m"]
 [ext_resource type="Texture2D" uid="uid://cqnehlx22o1ox" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Tiles/lion_column_9.png" id="1_ejdk5"]
@@ -122,8 +122,12 @@
 [ext_resource type="PackedScene" uid="uid://1jcrkth8kht2" path="res://cenas/npcs/mendelev2.tscn" id="119_ax00q"]
 [ext_resource type="AudioStream" uid="uid://bjmbnx8yo80c6" path="res://data/musics/Scott Buckley - Signal To Noise.mp3" id="120_x6gjq"]
 [ext_resource type="PackedScene" uid="uid://dqind1y43s5qj" path="res://cenas/Interactions/Puzzles/puzzle1.tscn" id="121_3nlqd"]
+[ext_resource type="Script" path="res://scripts/systems/pedras/stone2.gd" id="121_54wuj"]
+[ext_resource type="Script" path="res://scripts/systems/pedras/stone3.gd" id="122_1nrde"]
 [ext_resource type="PackedScene" uid="uid://cke68p3p8y03n" path="res://cenas/Interactions/Puzzles/door.tscn" id="122_c1lwm"]
+[ext_resource type="Script" path="res://scripts/systems/pedras/stone4.gd" id="123_fxbnv"]
 [ext_resource type="PackedScene" uid="uid://da05vccxbs5gm" path="res://levels/fases/transition.tscn" id="124_io5fc"]
+[ext_resource type="Script" path="res://scripts/systems/pedras/stone5.gd" id="124_vv2r6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_02ick"]
 texture = ExtResource("1_ejdk5")
@@ -7386,6 +7390,7 @@ position = Vector2(401, 327)
 position = Vector2(1178.75, 405.039)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(81, 47)
@@ -7452,19 +7457,19 @@ position = Vector2(1906, 1275)
 
 [node name="Tocha2" parent="." instance=ExtResource("100_kdsuo")]
 z_index = 6
-position = Vector2(889, 193)
+position = Vector2(848, 409)
 
 [node name="Tocha3" parent="." instance=ExtResource("100_kdsuo")]
 z_index = 6
-position = Vector2(1145, 188)
+position = Vector2(1106, 406)
 
 [node name="Tocha4" parent="." instance=ExtResource("100_kdsuo")]
 z_index = 6
-position = Vector2(1785, 254)
+position = Vector2(1745, 479)
 
 [node name="Tocha5" parent="." instance=ExtResource("100_kdsuo")]
 z_index = 6
-position = Vector2(1016, 191)
+position = Vector2(976, 410)
 
 [node name="Coin" parent="." instance=ExtResource("114_53m81")]
 z_index = 6
@@ -7488,21 +7493,25 @@ collision_layer = 2
 z_index = 8
 position = Vector2(82, 416)
 scale = Vector2(0.3, 0.3)
+script = ExtResource("121_54wuj")
 
 [node name="Eletric3" parent="." instance=ExtResource("118_4xsct")]
 z_index = 8
 position = Vector2(2387, 559)
 scale = Vector2(0.3, 0.3)
+script = ExtResource("122_1nrde")
 
 [node name="Eletric4" parent="." instance=ExtResource("118_4xsct")]
 z_index = 7
 position = Vector2(1121, 897)
 scale = Vector2(0.3, 0.3)
+script = ExtResource("123_fxbnv")
 
 [node name="Eletric5" parent="." instance=ExtResource("118_4xsct")]
 z_index = 8
 position = Vector2(1026, 1249)
 scale = Vector2(0.3, 0.3)
+script = ExtResource("124_vv2r6")
 
 [node name="Tocha6" parent="." instance=ExtResource("100_kdsuo")]
 z_index = 6

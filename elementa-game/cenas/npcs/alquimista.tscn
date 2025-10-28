@@ -110,7 +110,7 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Area2D" type="Area2D"]
+[node name="Alquimista" type="Area2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_c5bbk")

@@ -20,7 +20,7 @@ func _on_body_exited(body) -> void:
 
 func _process(_delta) -> void:
 	if player_in_area and Input.is_action_just_pressed("INTERACT"):
-		Dialogic.start("stone5")
+		Dialogic.start("stone1")
 		desaparecer_elementos()
 
 func desaparecer_elementos() -> void:

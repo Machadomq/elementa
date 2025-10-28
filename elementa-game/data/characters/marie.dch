@@ -2,7 +2,7 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 "_translation_id": "",
-"color": Color(0.439216, 0.411765, 0.780392, 1),
+"color": Color(1, 1, 1, 1),
 "custom_info": {
 "sound_mood_default": "",
 "sound_moods": {
@@ -17,7 +17,7 @@
 "volume_variance": 0.0
 }
 },
-"style": "defaultstyle"
+"style": "simples"
 },
 "default_portrait": "Preocupada",
 "description": "Personagem principal",
@@ -32,17 +32,18 @@
 },
 "ignore_char_scale": false,
 "mirror": false,
-"offset": Vector2(20, -20),
-"scale": 0.8,
+"offset": Vector2(-20, -40),
+"scale": 0.25,
 "scene": ""
 },
 "Preocupada": {
 "export_overrides": {
 "image": "\"res://data/styles/portait/Portraits_v1/Portraits/Joanna/JoannaPortrait1(NOBG)1.png\""
 },
+"ignore_char_scale": false,
 "mirror": false,
-"offset": Vector2(20, -30),
-"scale": 0.8,
+"offset": Vector2(-20, -40),
+"scale": 0.25,
 "scene": ""
 }
 },
