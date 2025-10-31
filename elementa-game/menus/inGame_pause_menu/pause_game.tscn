@@ -34,7 +34,7 @@ texture = ExtResource("2_ejfr6")
 expand_mode = 1
 
 [node name="resume_btn" type="TextureButton" parent="."]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 744.0
@@ -50,7 +50,7 @@ stretch_mode = 0
 metadata/_edit_group_ = true
 
 [node name="quit_btn" type="TextureButton" parent="."]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 745.0
