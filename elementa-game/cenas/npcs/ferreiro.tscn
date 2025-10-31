@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://cc3dkg0kyiwak"]
+[gd_scene load_steps=15 format=3 uid="uid://cc3dkg0kyiwak"]
 
 [ext_resource type="Texture2D" uid="uid://cirsrgtp7xu8f" path="res://assetsIncompletos/Assets-Erik/NPCS/FREE Character Blacksmith - MoonRoar Asset Series - Codename Yanes/01_Spritesheet/00_General_v1.0.png" id="1_s1op3"]
+[ext_resource type="AudioStream" uid="uid://dsy4eeoox11ty" path="res://data/musics/sfx_anvil.wav" id="2_5b683"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_odj46"]
 atlas = ExtResource("1_s1op3")
@@ -92,3 +93,9 @@ flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ijgxh")
+
+[node name="sfx_anvil" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_5b683")
+volume_db = -25.0
+max_distance = 300.0
+attenuation = 1.8025

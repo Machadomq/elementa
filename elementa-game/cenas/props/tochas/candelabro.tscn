@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://did2ih7uqou0"]
+[gd_scene load_steps=9 format=3 uid="uid://did2ih7uqou0"]
 
 [ext_resource type="Texture2D" uid="uid://bqjd62qou16bp" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_1.png" id="1_5rsco"]
 [ext_resource type="Texture2D" uid="uid://ds1v5xs5ph2vo" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_2.png" id="2_ews86"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://7goeqtatj7x2" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_4.png" id="4_sv1xg"]
 [ext_resource type="Texture2D" uid="uid://dubo5mn1lgk20" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_5.png" id="5_gemsm"]
 [ext_resource type="Texture2D" uid="uid://cdojtcos881j5" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_6.png" id="6_p57pi"]
+[ext_resource type="AudioStream" uid="uid://bawrobfgww21k" path="res://data/musics/sfx_torch.wav" id="7_2mxq7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gpygw"]
 animations = [{
@@ -39,3 +40,10 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_gpygw")
 autoplay = "default"
 frame_progress = 0.388765
+
+[node name="candelabro_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_2mxq7")
+volume_db = -15.0
+autoplay = true
+max_distance = 150.0
+attenuation = 1.8025

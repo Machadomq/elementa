@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dspcerl0hf17k"]
+[gd_scene load_steps=46 format=3 uid="uid://dspcerl0hf17k"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_55317"]
 [ext_resource type="Texture2D" uid="uid://eapw14sydydj" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Run/Running/Running1.png" id="2_pm3ru"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://dcns554ibmkl6" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Attacks/AirHeavyAtk/Pose1/Full/AirHeavyAtk1.png" id="34_oywwj"]
 [ext_resource type="Texture2D" uid="uid://cxx63o2i73gpf" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/JumpAndFall/Jumping/Jumping1.png" id="34_s2q6a"]
 [ext_resource type="AudioStream" uid="uid://cp5xx4bx4birb" path="res://data/musics/sfx_andando.wav" id="34_xp56t"]
+[ext_resource type="AudioStream" uid="uid://mng6q3ikma00" path="res://data/musics/dash_sfx.wav" id="35_8g20m"]
 [ext_resource type="Texture2D" uid="uid://b75j27dyanjfb" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/JumpAndFall/Jumping/Jumping2.png" id="35_mwweb"]
 [ext_resource type="Texture2D" uid="uid://c5kllcbk4fco1" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/JumpAndFall/Jumping/Jumping3.png" id="36_unsqu"]
 [ext_resource type="Texture2D" uid="uid://cieyrbp4he10e" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/JumpAndFall/Falling/Fall1.png" id="37_a83c5"]
@@ -232,3 +233,7 @@ volume_db = -20.0
 [node name="andando_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("34_xp56t")
 volume_db = -22.0
+
+[node name="dash_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("35_8g20m")
+volume_db = -19.0

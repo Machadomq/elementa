@@ -27,6 +27,7 @@ var tempo_cooldown_ataque = 0.5
 @onready var ataque_sfx = $ataque_sfx as AudioStreamPlayer
 @onready var andando_sfx = $andando_sfx as AudioStreamPlayer
 @onready var fire_sfx = $fire_sfx as AudioStreamPlayer
+@onready var dash_sfx = $dash_sfx as AudioStreamPlayer
 
 func _ready():
 	$CooldownAtaque.timeout.connect(_on_cooldown_ataque_timeout)
@@ -104,6 +105,7 @@ func _physics_process(delta: float) -> void:
 		pode_dash = false
 		dash_cooldown_timer = DASH_COOLDOWN
 		$AnimationPlayer.play("dash")
+		dash_sfx.play()
 		if olhando_para_esquerda:
 			velocity.x = -DASH_SPEED
 		else:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=4 uid="uid://brwt6uokanpcu"]
+[gd_scene load_steps=75 format=4 uid="uid://brwt6uokanpcu"]
 
 [ext_resource type="Script" path="res://scripts/systems/Fases/vila_catalisa.gd" id="1_v3pqk"]
 [ext_resource type="PackedScene" uid="uid://cke68p3p8y03n" path="res://cenas/Interactions/Puzzles/door.tscn" id="2_rxien"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://dj7iv5jpwrhaw" path="res://assetsIncompletos/Assets-Erik/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Autumn BG/GandalfHardcore Background layers_layer 3.png" id="28_605vd"]
 [ext_resource type="Texture2D" uid="uid://bgs102wircg8p" path="res://assetsIncompletos/Assets-Erik/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Autumn BG/GandalfHardcore Background layers_layer 2.png" id="29_cqi1l"]
 [ext_resource type="Texture2D" uid="uid://do2jl527vtotr" path="res://assetsIncompletos/Assets-Erik/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Autumn BG/GandalfHardcore Background layers_layer 1.png" id="30_tb7mw"]
+[ext_resource type="AudioStream" uid="uid://brchrpe8qm30y" path="res://data/musics/Villalge music.mp3" id="34_a231d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t28ki"]
 texture = ExtResource("5_mn6mt")
@@ -11744,3 +11745,8 @@ position = Vector2(1, -17)
 scale = Vector2(1.00098, 1.04913)
 texture = ExtResource("30_tb7mw")
 centered = false
+
+[node name="Village music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("34_a231d")
+volume_db = -40.0
+autoplay = true

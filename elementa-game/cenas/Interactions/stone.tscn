@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://cqqccyakwjwmv"]
+[gd_scene load_steps=19 format=3 uid="uid://cqqccyakwjwmv"]
 
 [ext_resource type="Script" path="res://cenas/Interactions/stone.gd" id="1_0d1c1"]
 [ext_resource type="Texture2D" uid="uid://ba7k3hhiligds" path="res://assetsIncompletos/Assets-Erik/Particle FX 1.3 Free/Spritesheets/Eletric A-Sheet.png" id="1_4iifn"]
 [ext_resource type="Texture2D" uid="uid://c6ksnpv3k43i1" path="res://assetsIncompletos/Assets-Erik/Pixel Art Platformer - Village Props v2.3.0/Texture/imagem_2025-06-26_195253556-removebg-preview.png" id="2_hlore"]
 [ext_resource type="Texture2D" uid="uid://ctu6hu72w5bye" path="res://data/styles/portait/Portraits_v1/hud/Speech_Emotes (16 x 16).png" id="4_a2spn"]
+[ext_resource type="AudioStream" uid="uid://t7t6dwyiuvqt" path="res://data/musics/sfx_pedras_magicas.wav" id="5_lgqtb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_60r7n"]
 atlas = ExtResource("1_4iifn")
@@ -130,6 +131,12 @@ z_index = 7
 position = Vector2(70.1493, -32.8358)
 scale = Vector2(2.96595, 2.75606)
 texture = ExtResource("4_a2spn")
+
+[node name="sfx_pedras" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_lgqtb")
+volume_db = -15.0
+max_distance = 300.0
+attenuation = 1.8025
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

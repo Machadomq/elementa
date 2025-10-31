@@ -1,6 +1,7 @@
-[gd_scene load_steps=43 format=3 uid="uid://d3xb7u0s5dps"]
+[gd_scene load_steps=44 format=3 uid="uid://d3xb7u0s5dps"]
 
 [ext_resource type="Texture2D" uid="uid://dybvm5jtegh8p" path="res://assetsIncompletos/Assets-Erik/GandalfHardcore FREE Platformer Assets/Animated Sprites/Campfire with food sheet.png" id="1_45gmy"]
+[ext_resource type="AudioStream" uid="uid://dsyl0cmyyb6o1" path="res://data/musics/sfx_bonfire.wav" id="2_s5vyc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pfdtx"]
 atlas = ExtResource("1_45gmy")
@@ -296,3 +297,9 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_ue87o")
 autoplay = "default"
 frame_progress = 0.364871
+
+[node name="sfx_bonfire" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_s5vyc")
+volume_db = -15.0
+max_distance = 150.0
+attenuation = 1.8025

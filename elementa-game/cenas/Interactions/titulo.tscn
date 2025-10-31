@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://drldipgcjdral"]
+[gd_scene load_steps=7 format=3 uid="uid://drldipgcjdral"]
 
 [ext_resource type="Script" path="res://scripts/systems/dialogues-map/titulo.gd" id="1_d6aix"]
 [ext_resource type="FontFile" uid="uid://b5o2c3rvv2jrx" path="res://data/styles/Jim_Nightshade/JimNightshade-Regular.ttf" id="2_0c5b6"]
 [ext_resource type="Script" path="res://scripts/systems/dialogues-map/label-tittle.gd" id="2_cb6d7"]
+[ext_resource type="AudioStream" uid="uid://cfgalogbpcrs4" path="res://data/musics/intro_sfx.mp3" id="4_dffth"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_delv4"]
 size = Vector2(66, 73)
@@ -38,5 +39,10 @@ theme_override_fonts/font = ExtResource("2_0c5b6")
 theme_override_font_sizes/font_size = 250
 text = "ELEMENTA"
 script = ExtResource("2_cb6d7")
+
+[node name="titulo_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_dffth")
+volume_db = -30.0
+autoplay = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
