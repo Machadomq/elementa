@@ -120,6 +120,7 @@
 [ext_resource type="PackedScene" uid="uid://bhjky1jkunh57" path="res://cenas/efeitos/fogo.tscn" id="117_upf7f"]
 [ext_resource type="PackedScene" uid="uid://cqqccyakwjwmv" path="res://cenas/Interactions/stone.tscn" id="118_4xsct"]
 [ext_resource type="PackedScene" uid="uid://1jcrkth8kht2" path="res://cenas/npcs/mendelev2.tscn" id="119_ax00q"]
+[ext_resource type="AudioStream" uid="uid://dsyl0cmyyb6o1" path="res://data/musics/sfx_bonfire.wav" id="119_sl2xl"]
 [ext_resource type="AudioStream" uid="uid://bjmbnx8yo80c6" path="res://data/musics/Scott Buckley - Signal To Noise.mp3" id="120_x6gjq"]
 [ext_resource type="PackedScene" uid="uid://dqind1y43s5qj" path="res://cenas/Interactions/Puzzles/puzzle1.tscn" id="121_3nlqd"]
 [ext_resource type="Script" path="res://scripts/systems/pedras/stone2.gd" id="121_54wuj"]
@@ -7478,6 +7479,13 @@ scale = Vector2(2, 2)
 
 [node name="Fogo" parent="." instance=ExtResource("117_upf7f")]
 position = Vector2(431, 403)
+
+[node name="sfx_bonfire" type="AudioStreamPlayer2D" parent="Fogo"]
+stream = ExtResource("119_sl2xl")
+volume_db = -15.0
+autoplay = true
+max_distance = 500.0
+attenuation = 1.8025
 
 [node name="Eletric" parent="." instance=ExtResource("118_4xsct")]
 z_index = 7

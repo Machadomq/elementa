@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://s162qrmmeqp5"]
+[gd_scene load_steps=9 format=3 uid="uid://s162qrmmeqp5"]
 
 [ext_resource type="Texture2D" uid="uid://bjyafnbiedasu" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/torch_small/torch_small_1.png" id="1_cml4o"]
 [ext_resource type="Texture2D" uid="uid://w4nsu8fer7b" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/torch_small/torch_small_2.png" id="2_arjaj"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c62mrdp5pr4m1" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/torch_small/torch_small_4.png" id="4_saywe"]
 [ext_resource type="Texture2D" uid="uid://chfu8j1rtfpxa" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/torch_small/torch_small_5.png" id="5_mn7a5"]
 [ext_resource type="Texture2D" uid="uid://goxy5cq6nw7x" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/torch_small/torch_small_6.png" id="6_v2cs4"]
+[ext_resource type="AudioStream" uid="uid://bawrobfgww21k" path="res://data/musics/sfx_torch.wav" id="7_kiiyb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_udhcv"]
 animations = [{
@@ -38,3 +39,9 @@ animations = [{
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_udhcv")
 autoplay = "default"
+
+[node name="sfx_torch" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_kiiyb")
+volume_db = -10.0
+max_distance = 300.0
+attenuation = 1.8025

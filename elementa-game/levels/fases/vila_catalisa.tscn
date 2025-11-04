@@ -13113,9 +13113,7 @@ scale = Vector2(1.00098, 1.04913)
 texture = ExtResource("30_tb7mw")
 centered = false
 
-[node name="interaçoes" type="Node" parent="."]
-
-[node name="Eletric" parent="interaçoes" instance=ExtResource("22_78nx7")]
-z_index = 2
-position = Vector2(2656, -24)
-scale = Vector2(0.3, 0.3)
+[node name="Village music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("34_a231d")
+volume_db = -40.0
+autoplay = true
