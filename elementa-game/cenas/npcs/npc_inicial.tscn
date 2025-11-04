@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://b5ho7tr04swmn"]
+
+[ext_resource type="Texture2D" uid="uid://261upqdjylox" path="res://assetsIncompletos/Assets-Erik/NPCS/Lively_NPCs_v3.0/sprite sheets/medieval/adventurer_01.png" id="1_3wbsw"]
+[ext_resource type="Script" path="res://scripts/systems/NPCS/npc_inicial.gd" id="1_jen55"]
+[ext_resource type="Texture2D" uid="uid://ctu6hu72w5bye" path="res://data/styles/portait/Portraits_v1/hud/Speech_Emotes (16 x 16).png" id="3_203ju"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2fy2p"]
+size = Vector2(64, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8dp3"]
+atlas = ExtResource("1_3wbsw")
+region = Rect2(0, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c68m6"]
+atlas = ExtResource("1_3wbsw")
+region = Rect2(34, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7tlm"]
+atlas = ExtResource("1_3wbsw")
+region = Rect2(68, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arbvd"]
+atlas = ExtResource("1_3wbsw")
+region = Rect2(102, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6and"]
+atlas = ExtResource("1_3wbsw")
+region = Rect2(136, 0, 34, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l2a5q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8dp3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c68m6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7tlm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arbvd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6and")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="npc-inicial" type="Area2D"]
+script = ExtResource("1_jen55")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-13, -14)
+shape = SubResource("RectangleShape2D_2fy2p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-8.75, -12)
+scale = Vector2(1.39706, 1.29412)
+sprite_frames = SubResource("SpriteFrames_l2a5q")
+autoplay = "default"
+frame_progress = 0.733136
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(2, -39)
+scale = Vector2(0.625, 0.5625)
+texture = ExtResource("3_203ju")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

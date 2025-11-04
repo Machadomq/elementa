@@ -1,0 +1,36 @@
+join marie (Preocupada) left
+marie (Preocupada): Onde... onde estou?
+marie (Preocupada): A última coisa que lembro é o clarão... e depois, silêncio.
+leave marie [length="0.1"]
+join claudio-sn (normal) right
+claudio-sn (normal): Ah, então é você — a forasteira que caiu do céu como uma fagulha de luz!
+claudio-sn (serio): Bem-vinda à Vila Catalis, o que restou do antigo Reino da Matéria.
+leave claudio-sn
+join marie (Preocupada) left
+marie (Preocupada): Reino da Matéria? Eu não entendo... tudo parece... vivo, e ao mesmo tempo, partido.
+leave marie
+join claudio-sn right
+claudio-sn (normal): É, menina... aqui, o tempo se mistura com o conhecimento.
+claudio-sn (serio): As famílias da antiga Tabela se dispersaram, e o equilíbrio se perdeu.\
+Nós, os Catalis, vivemos entre ruínas e fórmulas esquecidas, tentando reacender o que um dia foi ordem.
+leave claudio-sn
+join marie left
+marie (Marie-normal): Catalis... como “catalisadores”? Os que aceleram reações?
+leave marie
+join claudio-sn right [length="0.1"]
+claudio-sn (normal): Vejo que o nome te soa familiar.
+claudio-sn (normal): Sim — acreditamos que cada um de nós pode provocar mudança, se usado no momento certo.\
+Talvez... seja por isso que você está aqui.
+leave claudio-sn
+join marie left
+marie (Preocupada): Então devo ajudar a restaurar o equilíbrio...?
+leave marie
+join claudio-sn right
+claudio-sn (normal): Talvez.\
+Ou talvez o equilíbrio precise de você tanto quanto você precisa dele.
+claudio-sn (normal): De qualquer forma, explore a vila e converse com os habitantes — as pedras do conhecimento vão te guiar.\
+Procure nosso líder, Giovani. Ele deve te ajudar
+claudio-sn (normal): Mas cuidado\: nem todo saber dorme em paz.
+leave claudio-sn
+join claudio-cn right
+claudio-cn (serio): A próposito, meu nome é Cláudio!

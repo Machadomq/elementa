@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://ctm02cab3tvpo"]
+
+[ext_resource type="Script" path="res://scripts/systems/fazendeiro.gd" id="1_1dn5f"]
+[ext_resource type="Texture2D" uid="uid://ctu6hu72w5bye" path="res://data/styles/portait/Portraits_v1/hud/Speech_Emotes (16 x 16).png" id="1_rc1ig"]
+[ext_resource type="Texture2D" uid="uid://475xo4odjp5c" path="res://assetsIncompletos/Assets-Erik/NPCS/Lively_NPCs_v3.0/sprite sheets/medieval/farmer_01.png" id="2_kbu8t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h6vkn"]
+size = Vector2(60, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqtuv"]
+atlas = ExtResource("2_kbu8t")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngsgi"]
+atlas = ExtResource("2_kbu8t")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxr0e"]
+atlas = ExtResource("2_kbu8t")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6py3"]
+atlas = ExtResource("2_kbu8t")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ov5wr"]
+atlas = ExtResource("2_kbu8t")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_arj6e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jqtuv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngsgi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxr0e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6py3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ov5wr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Fazendeiro" type="Area2D"]
+script = ExtResource("1_1dn5f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -4)
+shape = SubResource("RectangleShape2D_h6vkn")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(4, -29)
+scale = Vector2(0.75, 0.65625)
+texture = ExtResource("1_rc1ig")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-7, -5)
+scale = Vector2(1.3125, 1.3125)
+sprite_frames = SubResource("SpriteFrames_arj6e")
+autoplay = "default"
+frame_progress = 0.154908
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

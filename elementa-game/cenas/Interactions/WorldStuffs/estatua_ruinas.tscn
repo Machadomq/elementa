@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://chjpvebaxot7l"]
+
+[ext_resource type="Script" path="res://scripts/systems/WorldStuffs/estatua_ruinas.gd" id="1_v2i5d"]
+[ext_resource type="Texture2D" uid="uid://4gpm8e478alb" path="res://assetsIncompletos/Assets-Erik/Final/Salt.png" id="2_qpfkm"]
+[ext_resource type="Texture2D" uid="uid://ctu6hu72w5bye" path="res://data/styles/portait/Portraits_v1/hud/Speech_Emotes (16 x 16).png" id="3_5htsg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngdfs"]
+size = Vector2(112.5, 95.5)
+
+[node name="Estatua-ruinas" type="Area2D"]
+script = ExtResource("1_v2i5d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, 42)
+shape = SubResource("RectangleShape2D_ngdfs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.75, 45.25)
+scale = Vector2(0.540179, 0.395089)
+texture = ExtResource("2_qpfkm")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(15, -1)
+scale = Vector2(0.875, 0.875)
+texture = ExtResource("3_5htsg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

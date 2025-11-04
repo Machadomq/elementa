@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://chlppnqoxjaaw"]
+
+[ext_resource type="Script" path="res://scripts/systems/NPCS/npc_sentado.gd" id="1_814xn"]
+[ext_resource type="Texture2D" uid="uid://ctu6hu72w5bye" path="res://data/styles/portait/Portraits_v1/hud/Speech_Emotes (16 x 16).png" id="1_i0evw"]
+[ext_resource type="Texture2D" uid="uid://d3gqp70iv8hqj" path="res://assetsIncompletos/Assets-Erik/NPCS/Lively_NPCs_v3.0/sprite sheets/medieval/beggar.png" id="2_vbnlv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7amd4"]
+size = Vector2(66, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uliy8"]
+atlas = ExtResource("2_vbnlv")
+region = Rect2(0, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvqc2"]
+atlas = ExtResource("2_vbnlv")
+region = Rect2(34, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_177gi"]
+atlas = ExtResource("2_vbnlv")
+region = Rect2(68, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87qsl"]
+atlas = ExtResource("2_vbnlv")
+region = Rect2(102, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyf40"]
+atlas = ExtResource("2_vbnlv")
+region = Rect2(136, 0, 34, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xe08t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uliy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvqc2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_177gi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87qsl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyf40")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="npc-sentado" type="Area2D"]
+script = ExtResource("1_814xn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(23, 21)
+shape = SubResource("RectangleShape2D_7amd4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(32, 13)
+scale = Vector2(0.875, 0.75)
+texture = ExtResource("1_i0evw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(25, 30)
+scale = Vector2(1.58824, 1.47059)
+sprite_frames = SubResource("SpriteFrames_xe08t")
+autoplay = "default"
+frame_progress = 0.143777
+flip_h = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

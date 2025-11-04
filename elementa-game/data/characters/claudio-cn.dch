@@ -1,0 +1,39 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(1, 1, 1, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "npc-simples"
+},
+"default_portrait": "normal",
+"description": "",
+"display_name": "Cláudio",
+"mirror": true,
+"nicknames": ["Cláudio"],
+"offset": Vector2(0, 0),
+"portraits": {
+"normal": {
+"export_overrides": {
+"image": "\"res://assetsIncompletos/Assets-Erik/NPCS/Criados-IA/npc1-normal-Photoroom.png\""
+},
+"ignore_char_scale": true,
+"mirror": false,
+"offset": Vector2(40, -30),
+"scale": 0.05,
+"scene": ""
+},
+"sorrindo": {
+"export_overrides": {
+"image": "\"res://assetsIncompletos/Assets-Erik/NPCS/Criados-IA/npc1-sorrindo-Photoroom.png\""
+},
+"mirror": false,
+"offset": Vector2(0, -25),
+"scale": 0.15,
+"scene": ""
+}
+},
+"scale": 1.0
+}

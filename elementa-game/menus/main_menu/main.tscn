@@ -1,0 +1,149 @@
+[gd_scene load_steps=14 format=3 uid="uid://bmu3lso8q4bmr"]
+
+[ext_resource type="Script" path="res://menus/main_menu/main.gd" id="1_ub7ao"]
+[ext_resource type="Texture2D" uid="uid://c74ibo4gt5y1p" path="res://menus/main_menu/assets/background_main.png" id="1_xcs3v"]
+[ext_resource type="Texture2D" uid="uid://c4hk44cnf0ivd" path="res://menus/main_menu/assets/Property 1=Default.png" id="2_47b0j"]
+[ext_resource type="Texture2D" uid="uid://chrbfx08exh5e" path="res://menus/main_menu/assets/botaoRover.png" id="2_phrey"]
+[ext_resource type="Texture2D" uid="uid://bxbthu36io8rh" path="res://menus/main_menu/assets/elementa logo.png" id="3_dmxpi"]
+[ext_resource type="Texture2D" uid="uid://ca8h60ybqm36j" path="res://menus/main_menu/assets/Group 11 (1).png" id="3_s2dja"]
+[ext_resource type="Texture2D" uid="uid://b3hq41w86oidw" path="res://menus/main_menu/assets/Property 1=button background-Photoroom 5.png" id="4_4a7tn"]
+[ext_resource type="Texture2D" uid="uid://bvw7giuappo4y" path="res://menus/main_menu/assets/creditsRover.png" id="5_400pa"]
+[ext_resource type="Texture2D" uid="uid://dx3wla30fjtd6" path="res://menus/main_menu/assets/Property 1=Variant2.png" id="5_v3cs7"]
+[ext_resource type="Texture2D" uid="uid://ck1cbygecrp0f" path="res://menus/main_menu/assets/exitButton.png" id="8_6dgxb"]
+[ext_resource type="Texture2D" uid="uid://cta6rrg7o2agd" path="res://menus/main_menu/assets/mute_on_1.png" id="8_yw0po"]
+[ext_resource type="Texture2D" uid="uid://c81yblhpenty8" path="res://menus/main_menu/assets/mute_on_2.png" id="9_lxv4t"]
+[ext_resource type="Texture2D" uid="uid://5aewqml5w6rp" path="res://menus/main_menu/assets/exitButtonRover.png" id="9_qd8rn"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ub7ao")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xcs3v")
+expand_mode = 2
+
+[node name="playButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -271.0
+offset_top = -123.0
+offset_right = 177.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("2_47b0j")
+texture_hover = ExtResource("2_phrey")
+stretch_mode = 0
+metadata/_edit_group_ = true
+
+[node name="creditButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -267.0
+offset_top = 36.0
+offset_right = 175.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("3_s2dja")
+texture_hover = ExtResource("5_400pa")
+stretch_mode = 0
+metadata/_edit_group_ = true
+
+[node name="configButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -261.0
+offset_top = 199.0
+offset_right = -51.0
+offset_bottom = 317.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("4_4a7tn")
+texture_hover = ExtResource("5_v3cs7")
+stretch_mode = 0
+metadata/_edit_group_ = true
+
+[node name="muteButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 690.0
+offset_top = 323.0
+offset_right = 867.0
+offset_bottom = 441.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+keep_pressed_outside = true
+texture_normal = ExtResource("8_yw0po")
+texture_hover = ExtResource("9_lxv4t")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="exitButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 18.0
+offset_top = 198.0
+offset_right = 223.0
+offset_bottom = 317.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("8_6dgxb")
+texture_hover = ExtResource("9_qd8rn")
+stretch_mode = 0
+metadata/_edit_group_ = true
+
+[node name="Title" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 614.0
+offset_top = 116.0
+offset_right = -656.0
+offset_bottom = -760.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_dmxpi")
+expand_mode = 1
+
+[connection signal="pressed" from="Control/playButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Control/creditButton" to="." method="_on_credit_button_pressed"]
+[connection signal="pressed" from="Control/configButton" to="." method="_on_config_button_pressed"]
+[connection signal="pressed" from="Control/exitButton" to="." method="_on_exit_button_pressed"]
