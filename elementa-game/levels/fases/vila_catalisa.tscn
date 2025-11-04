@@ -13066,7 +13066,6 @@ position = Vector2(1042, -29)
 [node name="background" type="Node" parent="."]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="background"]
-visible = false
 
 [node name="camada1" type="ParallaxLayer" parent="background/ParallaxBackground"]
 position = Vector2(-225, -202)
