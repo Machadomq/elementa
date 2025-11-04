@@ -96,6 +96,6 @@ shape = SubResource("RectangleShape2D_ijgxh")
 
 [node name="sfx_anvil" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_5b683")
-volume_db = -25.0
+volume_db = -15.0
 max_distance = 300.0
 attenuation = 1.8025
