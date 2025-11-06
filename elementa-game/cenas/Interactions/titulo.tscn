@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://drldipgcjdral"]
 
 [ext_resource type="Script" path="res://scripts/systems/dialogues-map/titulo.gd" id="1_d6aix"]
-[ext_resource type="FontFile" uid="uid://b5o2c3rvv2jrx" path="res://data/styles/Jim_Nightshade/JimNightshade-Regular.ttf" id="2_0c5b6"]
+[ext_resource type="FontFile" uid="uid://b5o2c3rvv2jrx" path="res://data/styles/Nova pasta/Jim_Nightshade/JimNightshade-Regular.ttf" id="2_0c5b6"]
 [ext_resource type="Script" path="res://scripts/systems/dialogues-map/label-tittle.gd" id="2_cb6d7"]
 [ext_resource type="AudioStream" uid="uid://cfgalogbpcrs4" path="res://data/musics/intro_sfx.mp3" id="4_dffth"]
 
