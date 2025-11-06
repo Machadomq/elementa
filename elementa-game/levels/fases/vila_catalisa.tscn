@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=4 uid="uid://brwt6uokanpcu"]
+[gd_scene load_steps=79 format=4 uid="uid://brwt6uokanpcu"]
 
 [ext_resource type="Script" path="res://scripts/systems/Fases/vila_catalisa.gd" id="1_v3pqk"]
 [ext_resource type="PackedScene" uid="uid://cke68p3p8y03n" path="res://cenas/Interactions/Puzzles/door.tscn" id="2_rxien"]
@@ -23,7 +23,6 @@
 [ext_resource type="Texture2D" uid="uid://c5ah7gu5ef3t6" path="res://assetsIncompletos/Assets-Erik/Pixel Art Platformer - Village Props v2.3.0/Texture/TX Village Props.png" id="20_0ho1v"]
 [ext_resource type="PackedScene" uid="uid://cc3dkg0kyiwak" path="res://cenas/npcs/ferreiro.tscn" id="20_nrecw"]
 [ext_resource type="PackedScene" uid="uid://d3xb7u0s5dps" path="res://cenas/efeitos/fogareiro.tscn" id="21_tlaft"]
-[ext_resource type="PackedScene" uid="uid://cqqccyakwjwmv" path="res://cenas/Interactions/stone.tscn" id="22_78nx7"]
 [ext_resource type="PackedScene" uid="uid://cr16e7k3akou6" path="res://cenas/npcs/lateral_direita_agua.tscn" id="22_jfrw1"]
 [ext_resource type="PackedScene" uid="uid://ocoph0lyugrj" path="res://cenas/npcs/alquimista.tscn" id="23_6o5r1"]
 [ext_resource type="PackedScene" uid="uid://bij63j8ft5gcm" path="res://cenas/Interactions/area_2d.tscn" id="24_tdqgj"]
@@ -13066,7 +13065,6 @@ position = Vector2(1042, -29)
 [node name="background" type="Node" parent="."]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="background"]
-visible = false
 
 [node name="camada1" type="ParallaxLayer" parent="background/ParallaxBackground"]
 position = Vector2(-225, -202)
@@ -13113,4 +13111,3 @@ position = Vector2(1, -17)
 scale = Vector2(1.00098, 1.04913)
 texture = ExtResource("30_tb7mw")
 centered = false
-
