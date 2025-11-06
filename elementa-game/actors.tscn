@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://dspcerl0hf17k"]
+[gd_scene load_steps=45 format=3 uid="uid://dspcerl0hf17k"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_55317"]
 [ext_resource type="Texture2D" uid="uid://eapw14sydydj" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Run/Running/Running1.png" id="2_pm3ru"]
@@ -156,6 +156,22 @@ tracks/0/keys = {
 "values": [ExtResource("34_s2q6a"), ExtResource("35_mwweb"), ExtResource("36_unsqu")]
 }
 
+[sub_resource type="Animation" id="Animation_68qqu"]
+resource_name = "knockback"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("40_kwr3r")]
+}
+
 [sub_resource type="Animation" id="Animation_t4ms7"]
 resource_name = "run"
 length = 1.66668
@@ -183,8 +199,16 @@ _data = {
 "fall": SubResource("Animation_75pex"),
 "idle": SubResource("Animation_uljec"),
 "jump": SubResource("Animation_n6s7x"),
+"knockback": SubResource("Animation_68qqu"),
 "run": SubResource("Animation_t4ms7")
 }
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lsrk4"]
+radius = 13.0
+height = 42.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s7706"]
+radius = 17.0
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_55317")
@@ -204,7 +228,7 @@ scale = Vector2(6.70373, 1.90072)
 zoom = Vector2(5, 5)
 
 [node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(0, 31)
+position = Vector2(1, 31)
 scale = Vector2(0.871094, 0.8125)
 texture = ExtResource("34_oywwj")
 
@@ -214,6 +238,17 @@ libraries = {
 }
 autoplay = "idle"
 
-[node name="HitboxAtaque" type="Area2D" parent="."]
+[node name="areaAtaqueChao" type="Area2D" parent="."]
+monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxAtaque"]
+[node name="hitboxAttackChao" type="CollisionShape2D" parent="areaAtaqueChao"]
+position = Vector2(29, 34)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_lsrk4")
+
+[node name="areaAtaqueAr" type="Area2D" parent="."]
+monitorable = false
+
+[node name="hitboxAttackAr" type="CollisionShape2D" parent="areaAtaqueAr"]
+position = Vector2(17, 32)
+shape = SubResource("CircleShape2D_s7706")

@@ -15,6 +15,11 @@ var dashing = false
 var olhando_para_esquerda = false
 var pulo_extra_disponivel = true
 
+# === Status do Player ===
+var vida_maxima = 100
+var vida_atual = 100
+var morto = false
+
 # === Timers internos ===
 var dash_timer = 0.0
 var dash_cooldown_timer = 0.0
@@ -25,8 +30,20 @@ var tempo_cooldown_ataque = 0.5
 func _ready():
 	$CooldownAtaque.timeout.connect(_on_cooldown_ataque_timeout)
 	$AnimationPlayer.animation_finished.connect(_on_animation_finished)
+	
+	# Conecta sinais das áreas de ataque
+	$areaAtaqueChao.body_entered.connect(_on_area_ataque_body_entered)
+	$areaAtaqueAr.body_entered.connect(_on_area_ataque_body_entered)
+
+	# Desativa as áreas de ataque no início
+	$areaAtaqueChao.monitoring = false
+	$areaAtaqueAr.monitoring = false
+
 
 func _physics_process(delta: float) -> void:
+	if morto:
+		return
+
 	# Atualiza dash e cooldown
 	if dashing:
 		dash_timer -= delta
@@ -74,9 +91,12 @@ func _physics_process(delta: float) -> void:
 		if is_on_floor():
 			ataque_aereo = false
 			$AnimationPlayer.play("ataque")
+			$areaAtaqueChao.monitoring = true
 		else:
 			ataque_aereo = true
 			$AnimationPlayer.play("ataque_ar")
+			$areaAtaqueAr.monitoring = true
+
 			if olhando_para_esquerda:
 				velocity.x -= AIR_ATTACK_PUSH
 			else:
@@ -98,10 +118,9 @@ func _physics_process(delta: float) -> void:
 			velocity.x = DASH_SPEED
 		return
 
-	# Animações normais (se não estiver atacando ou dash)
+	# Animações normais
 	if not atacando and not dashing:
 		if not is_on_floor():
-			# Espelhamento no ar
 			if direction != 0:
 				$Sprite.flip_h = direction < 0
 				olhando_para_esquerda = direction < 0
@@ -129,15 +148,50 @@ func _physics_process(delta: float) -> void:
 			collision.get_collider().has_collided_with(collision,self)
 
 
+# === Função de dano (só recebe dano, não causa) ===
+func receive_damage(amount: int):
+	if morto:
+		return
+
+	vida_atual -= amount
+	print("Player recebeu ", amount, " de dano. Vida: ", vida_atual)
+
+	if vida_atual <= 0:
+		morrer()
+
+
+func morrer():
+	morto = true
+	$AnimationPlayer.play("morte")
+	print("Player morreu!")
+
+
+# === Área de ataque detectando inimigos ===
+func _on_area_ataque_body_entered(body):
+	if morto:
+		return
+
+	# Garante que não atinge o próprio player
+	if body == self:
+		return
+
+	# Só causa dano em inimigos (quando existirem)
+	if body.has_method("take_damage"):
+		body.take_damage(25) # valor fixo de dano
+
+
 # === Eventos ===
 func _on_animation_finished(anim_name):
 	if anim_name in ["ataque", "ataque_ar"]:
 		atacando = false
 		$CooldownAtaque.start(tempo_cooldown_ataque)
 
+		# Desativa as áreas após o ataque
+		$areaAtaqueChao.monitoring = false
+		$areaAtaqueAr.monitoring = false
+
 	if anim_name == "dash":
 		dashing = false
-		# volta para a animação adequada
 		if not is_on_floor():
 			if velocity.y < 0:
 				$AnimationPlayer.play("jump")
@@ -145,6 +199,7 @@ func _on_animation_finished(anim_name):
 				$AnimationPlayer.play("fall")
 		else:
 			$AnimationPlayer.play("idle")
+
 
 func _on_cooldown_ataque_timeout():
 	pode_atacar = true
