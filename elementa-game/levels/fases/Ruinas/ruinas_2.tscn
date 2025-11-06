@@ -1,3 +1,18 @@
-[gd_scene format=3 uid="uid://b40sgfmmoejqp"]
+[gd_scene load_steps=4 format=3 uid="uid://b40sgfmmoejqp"]
+
+[ext_resource type="PackedScene" uid="uid://da05vccxbs5gm" path="res://levels/fases/transition.tscn" id="1_ht66a"]
+[ext_resource type="PackedScene" uid="uid://dspcerl0hf17k" path="res://actors.tscn" id="2_6cvs1"]
+[ext_resource type="PackedScene" uid="uid://cke68p3p8y03n" path="res://cenas/Interactions/Puzzles/door.tscn" id="3_ohcdo"]
 
 [node name="ruinas2" type="Node2D"]
+
+[node name="transition" parent="." instance=ExtResource("1_ht66a")]
+visible = false
+
+[node name="player" parent="." instance=ExtResource("2_6cvs1")]
+z_index = 8
+position = Vector2(-2129, -67)
+
+[node name="door" parent="." instance=ExtResource("3_ohcdo")]
+position = Vector2(-56, 7)
+next_level = "res://levels/fases/conecta_mapas.tscn"
