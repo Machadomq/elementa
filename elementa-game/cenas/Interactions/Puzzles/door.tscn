@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cke68p3p8y03n"]
+[gd_scene load_steps=4 format=3 uid="uid://cke68p3p8y03n"]
 
 [ext_resource type="Script" path="res://cenas/Interactions/Puzzles/door.gd" id="1_2s0ms"]
+[ext_resource type="AudioStream" uid="uid://ss22oedh1igy" path="res://data/musics/sfx_door.wav" id="2_vhgt5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_paq02"]
 size = Vector2(31, 47)
@@ -11,3 +12,9 @@ script = ExtResource("1_2s0ms")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(5.5, 0.5)
 shape = SubResource("RectangleShape2D_paq02")
+
+[node name="sfx_door" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_vhgt5")
+volume_db = 1.0
+max_distance = 50.0
+attenuation = 1.8025

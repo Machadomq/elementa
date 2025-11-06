@@ -9404,7 +9404,6 @@ next_level = "res://levels/fases/vila_catalisa.tscn"
 transition_controller = NodePath("../transition")
 
 [node name="transition" parent="Portas" instance=ExtResource("2_v2dj8")]
-visible = false
 
 [node name="Interactions" type="Node" parent="."]
 

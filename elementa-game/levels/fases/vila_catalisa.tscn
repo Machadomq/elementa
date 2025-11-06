@@ -23,7 +23,6 @@
 [ext_resource type="Texture2D" uid="uid://c5ah7gu5ef3t6" path="res://assetsIncompletos/Assets-Erik/Pixel Art Platformer - Village Props v2.3.0/Texture/TX Village Props.png" id="20_0ho1v"]
 [ext_resource type="PackedScene" uid="uid://cc3dkg0kyiwak" path="res://cenas/npcs/ferreiro.tscn" id="20_nrecw"]
 [ext_resource type="PackedScene" uid="uid://d3xb7u0s5dps" path="res://cenas/efeitos/fogareiro.tscn" id="21_tlaft"]
-[ext_resource type="PackedScene" uid="uid://cqqccyakwjwmv" path="res://cenas/Interactions/stone.tscn" id="22_78nx7"]
 [ext_resource type="PackedScene" uid="uid://cr16e7k3akou6" path="res://cenas/npcs/lateral_direita_agua.tscn" id="22_jfrw1"]
 [ext_resource type="PackedScene" uid="uid://ocoph0lyugrj" path="res://cenas/npcs/alquimista.tscn" id="23_6o5r1"]
 [ext_resource type="PackedScene" uid="uid://bij63j8ft5gcm" path="res://cenas/Interactions/area_2d.tscn" id="24_tdqgj"]
@@ -13031,7 +13030,6 @@ position = Vector2(293, 0)
 position = Vector2(2444, 34)
 
 [node name="Fogareiro2" parent="AnimatedDecorations" instance=ExtResource("21_tlaft")]
-visible = false
 position = Vector2(1941, 0)
 
 [node name="NomeCidade" parent="AnimatedDecorations" instance=ExtResource("24_tdqgj")]
@@ -13066,7 +13064,6 @@ position = Vector2(1042, -29)
 [node name="background" type="Node" parent="."]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="background"]
-visible = false
 
 [node name="camada1" type="ParallaxLayer" parent="background/ParallaxBackground"]
 position = Vector2(-225, -202)
@@ -13113,10 +13110,3 @@ position = Vector2(1, -17)
 scale = Vector2(1.00098, 1.04913)
 texture = ExtResource("30_tb7mw")
 centered = false
-
-[node name="interaçoes" type="Node" parent="."]
-
-[node name="Eletric" parent="interaçoes" instance=ExtResource("22_78nx7")]
-z_index = 2
-position = Vector2(2656, -24)
-scale = Vector2(0.3, 0.3)

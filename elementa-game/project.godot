@@ -27,6 +27,7 @@ directories/dch_directory={
 "claudio-cn": "res://data/characters/claudio-cn.dch",
 "claudio-sn": "res://data/characters/claudio-sn.dch",
 "marie": "res://data/characters/marie.dch",
+"mendelev": "res://data/characters/mendelev.dch",
 "npc": "res://data/characters/npc.dch",
 "teste": "res://data/characters/teste.dch"
 }
@@ -39,6 +40,7 @@ directories/dtl_directory={
 "placadupla": "res://data/dialogues/MapsInteractions/prólogo-vila/placadupla.dtl",
 "placasimples": "res://data/dialogues/MapsInteractions/ConectorHub/placasimples.dtl",
 "puzzle1": "res://data/dialogues/puzzle1.dtl",
+"ruinas/stone1": "res://data/dialogues/ruinas/stone1.dtl",
 "stone1": "res://data/dialogues/stone1.dtl",
 "stone2": "res://data/dialogues/stone2.dtl",
 "stone3": "res://data/dialogues/stone3.dtl",
