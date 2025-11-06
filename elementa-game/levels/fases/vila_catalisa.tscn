@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=4 uid="uid://brwt6uokanpcu"]
+[gd_scene load_steps=79 format=4 uid="uid://brwt6uokanpcu"]
 
 [ext_resource type="Script" path="res://scripts/systems/Fases/vila_catalisa.gd" id="1_v3pqk"]
 [ext_resource type="PackedScene" uid="uid://cke68p3p8y03n" path="res://cenas/Interactions/Puzzles/door.tscn" id="2_rxien"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=237 format=3 uid="uid://d27cpf6ieogg3"]
+[gd_scene load_steps=238 format=3 uid="uid://d27cpf6ieogg3"]
 
 [ext_resource type="Script" path="res://levels/fases/cena_1.gd" id="1_8yk2m"]
 [ext_resource type="Texture2D" uid="uid://cqnehlx22o1ox" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Tiles/lion_column_9.png" id="1_ejdk5"]
@@ -129,6 +129,7 @@
 [ext_resource type="Script" path="res://scripts/systems/pedras/stone4.gd" id="123_fxbnv"]
 [ext_resource type="PackedScene" uid="uid://da05vccxbs5gm" path="res://levels/fases/transition.tscn" id="124_io5fc"]
 [ext_resource type="Script" path="res://scripts/systems/pedras/stone5.gd" id="124_vv2r6"]
+[ext_resource type="PackedScene" uid="uid://bw8ckhrbrjsoh" path="res://menus/inGame_pause_menu/pause_game.tscn" id="130_xrivt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_02ick"]
 texture = ExtResource("1_ejdk5")
@@ -7555,3 +7556,5 @@ position = Vector2(1748, 1283)
 
 [node name="transition" parent="." instance=ExtResource("124_io5fc")]
 visible = false
+
+[node name="pause_menu" parent="." instance=ExtResource("130_xrivt")]
