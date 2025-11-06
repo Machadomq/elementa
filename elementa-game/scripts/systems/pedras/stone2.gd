@@ -4,6 +4,7 @@ extends Area2D
 @onready var eletric1 = $eletri1
 @onready var eletric2 = $eletri2
 @onready var luz = $luz
+@onready var sfx_pedras = $sfx_pedras as AudioStreamPlayer2D
 
 var player_in_area = false
 
@@ -11,12 +12,14 @@ func _on_body_entered(body) -> void:
 	if body.name == "player": 
 		player_in_area = true
 		label_interacao.visible = true
+		sfx_pedras.play()
 
 
 func _on_body_exited(body) -> void:
 	if body.name == "player": 
 		player_in_area = false
 		label_interacao.visible = false
+		sfx_pedras.play()
 
 func _process(_delta) -> void:
 	if player_in_area and Input.is_action_just_pressed("INTERACT"):
@@ -34,3 +37,4 @@ func _ready() -> void:
 	eletric1.visible = true
 	eletric2.visible = true
 	luz.visible = true	
+	sfx_pedras.play()

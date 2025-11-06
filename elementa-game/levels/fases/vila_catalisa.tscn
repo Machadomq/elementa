@@ -13030,7 +13030,6 @@ position = Vector2(293, 0)
 position = Vector2(2444, 34)
 
 [node name="Fogareiro2" parent="AnimatedDecorations" instance=ExtResource("21_tlaft")]
-visible = false
 position = Vector2(1941, 0)
 
 [node name="NomeCidade" parent="AnimatedDecorations" instance=ExtResource("24_tdqgj")]
