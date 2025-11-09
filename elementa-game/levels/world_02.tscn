@@ -115,7 +115,7 @@
 [ext_resource type="PackedScene" uid="uid://s162qrmmeqp5" path="res://cenas/props/tochas/tocha.tscn" id="100_kdsuo"]
 [ext_resource type="PackedScene" uid="uid://did2ih7uqou0" path="res://cenas/props/tochas/candelabro.tscn" id="102_83kqy"]
 [ext_resource type="PackedScene" uid="uid://cm0uqd80dbifn" path="res://cenas/props/tochas/vela.tscn" id="106_gguto"]
-[ext_resource type="PackedScene" uid="uid://dj6tuj4oxp013" path="res://enemy2.tscn" id="108_amure"]
+[ext_resource type="PackedScene" uid="uid://cvg4smmcmitkx" path="res://enemy2.tscn" id="108_amure"]
 [ext_resource type="PackedScene" uid="uid://dfmsson1fbl1k" path="res://cenas/props/tochas/castiçal.tscn" id="112_gn4op"]
 [ext_resource type="PackedScene" uid="uid://c2afrfioxjkba" path="res://cenas/Coletáveis/coin.tscn" id="114_53m81"]
 [ext_resource type="PackedScene" uid="uid://bhjky1jkunh57" path="res://cenas/efeitos/fogo.tscn" id="117_upf7f"]

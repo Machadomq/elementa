@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dspcerl0hf17k"]
+[gd_scene load_steps=73 format=3 uid="uid://dspcerl0hf17k"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_55317"]
 [ext_resource type="Texture2D" uid="uid://eapw14sydydj" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Run/Running/Running1.png" id="2_pm3ru"]
@@ -15,22 +15,49 @@
 [ext_resource type="Texture2D" uid="uid://dvrnm6uw1vuwl" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Idle/Idle4.png" id="13_fpa2n"]
 [ext_resource type="Texture2D" uid="uid://nvoya8pumj2v" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Idle/Idle5.png" id="14_c1rx1"]
 [ext_resource type="Texture2D" uid="uid://b3bxjoi7e2gim" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Idle/Idle6.png" id="15_sr36t"]
+[ext_resource type="Texture2D" uid="uid://cmm87xuikf8rw" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Knockback/Knockback1.png" id="24_3vbv8"]
+[ext_resource type="Texture2D" uid="uid://1nbfik1ovhwb" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Knockback/Knockback7.png" id="25_blldc"]
+[ext_resource type="Texture2D" uid="uid://ccs8tl1w03wuo" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Knockback/Knockback2.png" id="26_u0gyx"]
 [ext_resource type="Texture2D" uid="uid://c1x6ou30gaqnj" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Attacks/FrontLightAtk/FrontLightAtk7.png" id="28_r8ku3"]
 [ext_resource type="Texture2D" uid="uid://cf1ouhyj3qu0c" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Attacks/FrontLightAtk/FrontLightAtk8.png" id="29_fm0hj"]
 [ext_resource type="Texture2D" uid="uid://d04ng08t5ktt5" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Attacks/FrontLightAtk/FrontLightAtk9.png" id="30_2ytxo"]
 [ext_resource type="Texture2D" uid="uid://dcns554ibmkl6" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Attacks/AirHeavyAtk/Pose1/Full/AirHeavyAtk1.png" id="34_oywwj"]
 [ext_resource type="Texture2D" uid="uid://cxx63o2i73gpf" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/JumpAndFall/Jumping/Jumping1.png" id="34_s2q6a"]
+[ext_resource type="Texture2D" uid="uid://bf6qflyoj04ul" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Death/Death2.png" id="35_eu1gf"]
 [ext_resource type="Texture2D" uid="uid://b75j27dyanjfb" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/JumpAndFall/Jumping/Jumping2.png" id="35_mwweb"]
+[ext_resource type="Texture2D" uid="uid://bw8j7d8kcmp8y" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Death/Death3.png" id="36_0o5hs"]
 [ext_resource type="Texture2D" uid="uid://c5kllcbk4fco1" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/JumpAndFall/Jumping/Jumping3.png" id="36_unsqu"]
+[ext_resource type="Texture2D" uid="uid://bt51nmngs6s56" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Death/Death4.png" id="37_1qvi0"]
 [ext_resource type="Texture2D" uid="uid://cieyrbp4he10e" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/JumpAndFall/Falling/Fall1.png" id="37_a83c5"]
+[ext_resource type="Texture2D" uid="uid://c24rcrgbfr148" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Death/Death5.png" id="38_2ov2v"]
 [ext_resource type="Texture2D" uid="uid://cniggb45ycetm" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Attacks/AirAtk/FX/AirAtk11.png" id="38_cjbmo"]
 [ext_resource type="Texture2D" uid="uid://oqk61rhpqktw" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/JumpAndFall/Falling/Fall2.png" id="38_v4pgh"]
 [ext_resource type="Texture2D" uid="uid://vpuqtig7t542" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/JumpAndFall/Falling/Fall3.png" id="39_ey0x1"]
 [ext_resource type="Texture2D" uid="uid://c840u7wyvjlsl" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Attacks/AirAtk/FX/AirAtk12.png" id="39_jsv6b"]
+[ext_resource type="Texture2D" uid="uid://dyd08yi26yo5p" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Death/Death6.png" id="39_tghxe"]
+[ext_resource type="Texture2D" uid="uid://bffmba5ofhggw" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Death/Death7.png" id="40_4qyuq"]
 [ext_resource type="Texture2D" uid="uid://g0guigdib28x" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Attacks/AirAtk/FX/AirAtk13.png" id="40_g6eyu"]
 [ext_resource type="Texture2D" uid="uid://d00dy3lmr7nxb" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Dash/Dashing/Dashing1.png" id="40_kwr3r"]
 [ext_resource type="Texture2D" uid="uid://dloyly6hpbcsg" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Dash/Dashing/Dashing2.png" id="41_4ork3"]
+[ext_resource type="Texture2D" uid="uid://yi7c1bqfwd7m" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Death/Death8.png" id="41_5gfct"]
+[ext_resource type="Texture2D" uid="uid://carhfeswdddtg" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Death/Death9.png" id="42_6drei"]
 [ext_resource type="Texture2D" uid="uid://csqgy2ulqnyyy" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Dash/Dashing/Dashing3.png" id="42_w6e7n"]
+[ext_resource type="Texture2D" uid="uid://bsedgl6r4v3tq" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Death/Death10.png" id="43_b1fdx"]
+[ext_resource type="Texture2D" uid="uid://dta8bvuaflhcd" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Death/Death12.png" id="44_oxc6l"]
+[ext_resource type="Texture2D" uid="uid://drkimw3pp47o0" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Death/Death13.png" id="45_g1h6p"]
+[ext_resource type="Texture2D" uid="uid://wig5cx3ber07" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Death/Death14.png" id="46_tu8of"]
+[ext_resource type="Texture2D" uid="uid://dpkvatvplg5k8" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Death/Death15.png" id="47_jqupn"]
+[ext_resource type="Texture2D" uid="uid://bil7x7puds71" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Death/Death16.png" id="48_tq034"]
+[ext_resource type="Texture2D" uid="uid://dart3h8sjojky" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Death/Death17.png" id="49_ffgyg"]
+[ext_resource type="Texture2D" uid="uid://dcqgm3pnk120i" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Death/Death18.png" id="50_crcui"]
+[ext_resource type="Texture2D" uid="uid://c5uco7le6dbtu" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Death/Death19.png" id="51_xau5f"]
+[ext_resource type="Texture2D" uid="uid://bbpphu55rvwmt" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Death/Death20.png" id="52_c3a7u"]
+[ext_resource type="Texture2D" uid="uid://2nbxfcn4xxxf" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Death/Death21.png" id="53_12jem"]
+[ext_resource type="Texture2D" uid="uid://qfu1haxx86pu" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Death/Death22.png" id="54_h6q4r"]
+[ext_resource type="Texture2D" uid="uid://b18v1o3kfdxhe" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Death/Death23.png" id="55_fxvn1"]
+[ext_resource type="Texture2D" uid="uid://b774cfhsq53it" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Death/Death24.png" id="56_dk5w7"]
+[ext_resource type="Texture2D" uid="uid://drgqk4bs2xe2w" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Death/Death25.png" id="57_h461h"]
+[ext_resource type="Texture2D" uid="uid://ktvvu7ao4bve" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Death/Death26.png" id="58_mbuev"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ifpro"]
 size = Vector2(11.9035, 24.2256)
@@ -158,7 +185,9 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_68qqu"]
 resource_name = "knockback"
-step = 0.1
+length = 0.500017
+loop_mode = 1
+step = 0.166667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -166,17 +195,17 @@ tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("40_kwr3r")]
+"values": [ExtResource("24_3vbv8"), ExtResource("25_blldc"), ExtResource("26_u0gyx"), ExtResource("26_u0gyx")]
 }
 
 [sub_resource type="Animation" id="Animation_t4ms7"]
 resource_name = "run"
 length = 1.66668
 loop_mode = 1
-step = 0.111111
+step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -190,12 +219,30 @@ tracks/0/keys = {
 "values": [ExtResource("2_pm3ru"), ExtResource("3_hux64"), ExtResource("4_jybw0"), ExtResource("5_jxsxa"), ExtResource("6_hmxkq"), ExtResource("7_v4tqb"), ExtResource("8_djwvq"), ExtResource("9_4qlsw"), ExtResource("2_pm3ru"), ExtResource("3_hux64"), ExtResource("4_jybw0"), ExtResource("5_jxsxa"), ExtResource("6_hmxkq"), ExtResource("7_v4tqb"), ExtResource("8_djwvq"), ExtResource("9_4qlsw")]
 }
 
+[sub_resource type="Animation" id="Animation_1qgic"]
+resource_name = "death"
+length = 2.40001
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("35_eu1gf"), ExtResource("36_0o5hs"), ExtResource("37_1qvi0"), ExtResource("38_2ov2v"), ExtResource("39_tghxe"), ExtResource("40_4qyuq"), ExtResource("41_5gfct"), ExtResource("42_6drei"), ExtResource("43_b1fdx"), ExtResource("44_oxc6l"), ExtResource("45_g1h6p"), ExtResource("46_tu8of"), ExtResource("47_jqupn"), ExtResource("48_tq034"), ExtResource("49_ffgyg"), ExtResource("50_crcui"), ExtResource("51_xau5f"), ExtResource("52_c3a7u"), ExtResource("53_12jem"), ExtResource("54_h6q4r"), ExtResource("55_fxvn1"), ExtResource("56_dk5w7"), ExtResource("57_h461h"), ExtResource("58_mbuev")]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5df16"]
 _data = {
 "RESET": SubResource("Animation_8nnog"),
 "ataque": SubResource("Animation_i5bpl"),
 "ataque_ar": SubResource("Animation_vv80c"),
 "dash": SubResource("Animation_bnsss"),
+"death": SubResource("Animation_1qgic"),
 "fall": SubResource("Animation_75pex"),
 "idle": SubResource("Animation_uljec"),
 "jump": SubResource("Animation_n6s7x"),
@@ -211,6 +258,8 @@ height = 42.0
 radius = 17.0
 
 [node name="player" type="CharacterBody2D"]
+scale = Vector2(1.03475, 1.03782)
+collision_layer = 4
 script = ExtResource("1_55317")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
@@ -239,6 +288,8 @@ libraries = {
 autoplay = "idle"
 
 [node name="areaAtaqueChao" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 monitorable = false
 
 [node name="hitboxAttackChao" type="CollisionShape2D" parent="areaAtaqueChao"]
@@ -247,6 +298,8 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_lsrk4")
 
 [node name="areaAtaqueAr" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 monitorable = false
 
 [node name="hitboxAttackAr" type="CollisionShape2D" parent="areaAtaqueAr"]
