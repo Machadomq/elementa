@@ -1,4 +1,4 @@
-[gd_scene load_steps=114 format=4 uid="uid://bj3tn6d0p6ylp"]
+[gd_scene load_steps=115 format=4 uid="uid://bj3tn6d0p6ylp"]
 
 [ext_resource type="PackedScene" uid="uid://cke68p3p8y03n" path="res://cenas/Interactions/Puzzles/door.tscn" id="1_uybhq"]
 [ext_resource type="PackedScene" uid="uid://da05vccxbs5gm" path="res://levels/fases/transition.tscn" id="2_v2dj8"]
@@ -52,6 +52,7 @@
 [ext_resource type="Texture2D" uid="uid://kphlyho5jdq4" path="res://assetsIncompletos/Assets-Erik/Final/Grass_background_2.png" id="44_kpf7e"]
 [ext_resource type="PackedScene" uid="uid://dr54tukxxdm1e" path="res://cenas/Interactions/WorldStuffs/placa-simples.tscn" id="46_nwfhf"]
 [ext_resource type="Script" path="res://scripts/systems/WorldStuffs/placa_simples2.gd" id="50_vsdus"]
+[ext_resource type="AudioStream" uid="uid://rlj1mi40vn4d" path="res://data/musics/ConecctaareaSong.mp3" id="53_uwg3j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ox6qo"]
 texture = ExtResource("4_7ldng")
@@ -9415,3 +9416,8 @@ position = Vector2(-515, 309)
 y_sort_enabled = true
 position = Vector2(526, 85)
 script = ExtResource("50_vsdus")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("53_uwg3j")
+volume_db = -35.0
+autoplay = true

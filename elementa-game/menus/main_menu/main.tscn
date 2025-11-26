@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bmu3lso8q4bmr"]
+[gd_scene load_steps=16 format=3 uid="uid://bmu3lso8q4bmr"]
 
 [ext_resource type="Script" path="res://menus/main_menu/main.gd" id="1_ub7ao"]
 [ext_resource type="Texture2D" uid="uid://c74ibo4gt5y1p" path="res://menus/main_menu/assets/background_main.png" id="1_xcs3v"]
@@ -8,11 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://ca8h60ybqm36j" path="res://menus/main_menu/assets/Group 11 (1).png" id="3_s2dja"]
 [ext_resource type="Texture2D" uid="uid://b3hq41w86oidw" path="res://menus/main_menu/assets/Property 1=button background-Photoroom 5.png" id="4_4a7tn"]
 [ext_resource type="Texture2D" uid="uid://bvw7giuappo4y" path="res://menus/main_menu/assets/creditsRover.png" id="5_400pa"]
+[ext_resource type="AudioStream" uid="uid://c0gcwc7t8e4w3" path="res://data/musics/Menubutton.wav" id="5_ptfhm"]
 [ext_resource type="Texture2D" uid="uid://dx3wla30fjtd6" path="res://menus/main_menu/assets/Property 1=Variant2.png" id="5_v3cs7"]
 [ext_resource type="Texture2D" uid="uid://ck1cbygecrp0f" path="res://menus/main_menu/assets/exitButton.png" id="8_6dgxb"]
 [ext_resource type="Texture2D" uid="uid://cta6rrg7o2agd" path="res://menus/main_menu/assets/mute_on_1.png" id="8_yw0po"]
 [ext_resource type="Texture2D" uid="uid://c81yblhpenty8" path="res://menus/main_menu/assets/mute_on_2.png" id="9_lxv4t"]
 [ext_resource type="Texture2D" uid="uid://5aewqml5w6rp" path="res://menus/main_menu/assets/exitButtonRover.png" id="9_qd8rn"]
+[ext_resource type="AudioStream" uid="uid://c7m8hwuvwplrk" path="res://data/musics/Menu Song.mp3" id="14_kv8a5"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ub7ao")
@@ -142,6 +144,16 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_dmxpi")
 expand_mode = 1
+
+[node name="MenuSong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_kv8a5")
+volume_db = -25.0
+autoplay = true
+
+[node name="Menubutton" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ptfhm")
+volume_db = -15.0
+autoplay = true
 
 [connection signal="pressed" from="Control/playButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Control/creditButton" to="." method="_on_credit_button_pressed"]

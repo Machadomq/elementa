@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=4 uid="uid://brwt6uokanpcu"]
+[gd_scene load_steps=80 format=4 uid="uid://brwt6uokanpcu"]
 
 [ext_resource type="Script" path="res://scripts/systems/Fases/vila_catalisa.gd" id="1_v3pqk"]
 [ext_resource type="PackedScene" uid="uid://cke68p3p8y03n" path="res://cenas/Interactions/Puzzles/door.tscn" id="2_rxien"]
@@ -37,6 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://guwgfueljpno" path="res://cenas/npcs/cachorro.tscn" id="33_e26ft"]
 [ext_resource type="PackedScene" uid="uid://b5ho7tr04swmn" path="res://cenas/npcs/npc_inicial.tscn" id="34_736wn"]
 [ext_resource type="PackedScene" uid="uid://ctm02cab3tvpo" path="res://cenas/npcs/fazendeiro.tscn" id="36_1yjle"]
+[ext_resource type="AudioStream" uid="uid://brchrpe8qm30y" path="res://data/musics/Villalge music.mp3" id="38_kplb4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t28ki"]
 texture = ExtResource("5_mn6mt")
@@ -13110,3 +13111,8 @@ position = Vector2(1, -17)
 scale = Vector2(1.00098, 1.04913)
 texture = ExtResource("30_tb7mw")
 centered = false
+
+[node name="Village music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("38_kplb4")
+volume_db = -35.0
+autoplay = true

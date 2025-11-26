@@ -3,6 +3,7 @@ extends AnimatableBody2D
 @onready var anim := $anim as AnimationPlayer
 @onready var respawn_timer := $respawn_timer as Timer
 @onready var respawn_position := global_position
+@onready var sfx_caindo_madeira = $sfx_caindo_madeira as AudioStreamPlayer
 
 @export var reset_timer := 3.0
 
@@ -24,6 +25,7 @@ func has_collided_with(collision: KinematicCollision2D, collider: CharacterBody2
 	if !is_triggered: 
 		is_triggered = true
 		anim.play("shake")
+		sfx_caindo_madeira.play()
 		velocity = Vector2.ZERO
 
 

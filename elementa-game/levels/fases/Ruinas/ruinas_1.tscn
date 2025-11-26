@@ -1,4 +1,4 @@
-[gd_scene load_steps=147 format=4 uid="uid://b2ichpcqswyjl"]
+[gd_scene load_steps=148 format=4 uid="uid://b2ichpcqswyjl"]
 
 [ext_resource type="PackedScene" uid="uid://dspcerl0hf17k" path="res://actors.tscn" id="1_0br81"]
 [ext_resource type="PackedScene" uid="uid://cke68p3p8y03n" path="res://cenas/Interactions/Puzzles/door.tscn" id="1_aqbvx"]
@@ -73,6 +73,7 @@
 [ext_resource type="PackedScene" uid="uid://did2ih7uqou0" path="res://cenas/props/tochas/candelabro.tscn" id="51_cj8mu"]
 [ext_resource type="Texture2D" uid="uid://cuqg2pp8o876b" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack (1)/Medieval_Castle_Asset_Pack/Tiles/column_7.png" id="57_nwgnx"]
 [ext_resource type="Texture2D" uid="uid://bl0p3pqvo0xns" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack (1)/Medieval_Castle_Asset_Pack/Tiles/column_8.png" id="58_kynkx"]
+[ext_resource type="AudioStream" uid="uid://bra0uahwlg8yf" path="res://data/musics/Ruinassong.mp3" id="74_jlltc"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wdljo"]
 
@@ -9027,3 +9028,8 @@ position = Vector2(-2274, -52)
 
 [node name="Candelabro2" parent="animatedDecorations" instance=ExtResource("51_cj8mu")]
 position = Vector2(-2206, -51)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("74_jlltc")
+volume_db = -35.0
+autoplay = true

@@ -102,6 +102,23 @@ tracks/0/keys = {
 "values": [ExtResource("40_kwr3r"), ExtResource("41_4ork3"), ExtResource("42_w6e7n")]
 }
 
+[sub_resource type="Animation" id="Animation_1qgic"]
+resource_name = "death"
+length = 2.40001
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("35_eu1gf"), ExtResource("36_0o5hs"), ExtResource("37_1qvi0"), ExtResource("38_2ov2v"), ExtResource("39_tghxe"), ExtResource("40_4qyuq"), ExtResource("41_5gfct"), ExtResource("42_6drei"), ExtResource("43_b1fdx"), ExtResource("44_oxc6l"), ExtResource("45_g1h6p"), ExtResource("46_tu8of"), ExtResource("47_jqupn"), ExtResource("48_tq034"), ExtResource("49_ffgyg"), ExtResource("50_crcui"), ExtResource("51_xau5f"), ExtResource("52_c3a7u"), ExtResource("53_12jem"), ExtResource("54_h6q4r"), ExtResource("55_fxvn1"), ExtResource("56_dk5w7"), ExtResource("57_h461h"), ExtResource("58_mbuev")]
+}
+
 [sub_resource type="Animation" id="Animation_75pex"]
 resource_name = "fall"
 length = 0.20001
