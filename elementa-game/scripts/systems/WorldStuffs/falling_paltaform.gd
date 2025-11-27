@@ -20,6 +20,7 @@ func _physics_process(delta: float):
 	velocity.y += gravity * delta
 	position += velocity * delta
 
+@warning_ignore("unused_parameter")
 func has_collided_with(collision: KinematicCollision2D, collider: CharacterBody2D): 
 	if !is_triggered: 
 		is_triggered = true
@@ -27,6 +28,7 @@ func has_collided_with(collision: KinematicCollision2D, collider: CharacterBody2
 		velocity = Vector2.ZERO
 
 
+@warning_ignore("unused_parameter")
 func _on_anim_animation_finished(anim_name: StringName):
 	set_physics_process(true)
 	respawn_timer.start(reset_timer)

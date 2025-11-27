@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=3 uid="uid://b55l2o1np0x55"]
+
+[ext_resource type="Script" path="res://scripts/systems/NPCS/billi.gd" id="1_gu7b0"]
+[ext_resource type="Texture2D" uid="uid://ctqs3o4qe660u" path="res://assetsIncompletos/Assets-Erik/Legacy Collection/Assets/Characters/Hell-Beast-Files/Idle/Spritesheet.png" id="2_6t88m"]
+[ext_resource type="Texture2D" uid="uid://ctu6hu72w5bye" path="res://data/styles/portait/Portraits_v1/hud/Speech_Emotes (16 x 16).png" id="6_klfj2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q16ae"]
+atlas = ExtResource("2_6t88m")
+region = Rect2(0, 0, 80, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6p4t"]
+atlas = ExtResource("2_6t88m")
+region = Rect2(80, 0, 80, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3ucx"]
+atlas = ExtResource("2_6t88m")
+region = Rect2(160, 0, 80, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_foatm"]
+atlas = ExtResource("2_6t88m")
+region = Rect2(240, 0, 80, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdacp"]
+atlas = ExtResource("2_6t88m")
+region = Rect2(320, 0, 80, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4a73"]
+atlas = ExtResource("2_6t88m")
+region = Rect2(400, 0, 80, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wrfrr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q16ae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6p4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3ucx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_foatm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdacp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4a73")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6oge"]
+size = Vector2(92.5, 79)
+
+[node name="billi" type="Area2D"]
+script = ExtResource("1_gu7b0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -7)
+sprite_frames = SubResource("SpriteFrames_wrfrr")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.504822
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, 33)
+shape = SubResource("RectangleShape2D_c6oge")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(12, 5)
+texture = ExtResource("6_klfj2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

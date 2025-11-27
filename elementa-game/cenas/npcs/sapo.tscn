@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://cbtg3vuimrtwp"]
+
+[ext_resource type="Script" path="res://scripts/systems/NPCS/sapo.gd" id="1_3vd6d"]
+[ext_resource type="Texture2D" uid="uid://dv5o4qayuvjuc" path="res://assetsIncompletos/Assets-Erik/Legacy Collection/Assets/Characters/Battle Sprites/Living Pack 1/Frog/Frog-sheet.png" id="2_7gwu3"]
+[ext_resource type="Texture2D" uid="uid://ctu6hu72w5bye" path="res://data/styles/portait/Portraits_v1/hud/Speech_Emotes (16 x 16).png" id="3_wx3hy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsoqp"]
+atlas = ExtResource("2_7gwu3")
+region = Rect2(0, 0, 63, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cle07"]
+atlas = ExtResource("2_7gwu3")
+region = Rect2(63, 0, 63, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfcv8"]
+atlas = ExtResource("2_7gwu3")
+region = Rect2(126, 0, 63, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2nhe"]
+atlas = ExtResource("2_7gwu3")
+region = Rect2(189, 0, 63, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnd5k"]
+atlas = ExtResource("2_7gwu3")
+region = Rect2(252, 0, 63, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bl163"]
+atlas = ExtResource("2_7gwu3")
+region = Rect2(315, 0, 63, 68)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gdohy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsoqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cle07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfcv8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2nhe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnd5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bl163")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ckcy"]
+size = Vector2(126, 92)
+
+[node name="sapo" type="Area2D"]
+script = ExtResource("1_3vd6d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, 48)
+sprite_frames = SubResource("SpriteFrames_gdohy")
+autoplay = "default"
+frame_progress = 0.580072
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 36)
+shape = SubResource("RectangleShape2D_1ckcy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, 12)
+texture = ExtResource("3_wx3hy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

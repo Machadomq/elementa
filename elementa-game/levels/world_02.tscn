@@ -7558,3 +7558,4 @@ position = Vector2(1748, 1283)
 visible = false
 
 [node name="pause_menu" parent="." instance=ExtResource("130_xrivt")]
+visible = false

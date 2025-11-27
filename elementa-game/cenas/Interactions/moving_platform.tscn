@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxt0543a3csoy"]
+
+[ext_resource type="Script" path="res://scripts/systems/WorldStuffs/moving_platform.gd" id="1_8o80h"]
+[ext_resource type="Texture2D" uid="uid://desqg72p7y5a3" path="res://assetsIncompletos/Assets-Erik/Final/falling-platform-brown.png" id="2_vrid1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cjput"]
+size = Vector2(31, 15)
+
+[node name="moving_platform" type="AnimatableBody2D"]
+script = ExtResource("1_8o80h")
+
+[node name="sprite_platform" type="Sprite2D" parent="."]
+texture = ExtResource("2_vrid1")
+region_enabled = true
+region_rect = Rect2(96, 64, 32, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_cjput")

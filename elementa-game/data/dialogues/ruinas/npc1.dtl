@@ -1,0 +1,18 @@
+join marie (Marie-normal) left
+marie: Oi… por que você está preso aqui?
+leave marie
+join "O Monstro Alcalino Rebelde" right
+"O Monstro Alcalino Rebelde": — Tsc! Porque “reagi demais”, como sempre.
+"O Monstro Alcalino Rebelde": Esses guardas não entendem… É do meu grupo ser explosivo!
+leave "O Monstro Alcalino Rebelde"
+join marie (Preocupada) left
+marie: Grupo?
+leave marie
+join "O Monstro Alcalino Rebelde" right
+"O Monstro Alcalino Rebelde": Sim, os metais alcalinos! A gente reage com tudo!
+"O Monstro Alcalino Rebelde": Água, ar, sombra… se bobear até com o olhar dos outros!\
+Eu só… espirrei, e aquele caldeirão explodiu.
+leave "O Monstro Alcalino Rebelde"
+join marie (Marie-normal) left
+marie: Acho que agora entendi por que te colocaram aqui…
+leave marie

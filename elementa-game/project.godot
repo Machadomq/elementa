@@ -23,6 +23,10 @@ Global="*res://scripts/singleton/global.gd"
 [dialogic]
 
 directories/dch_directory={
+"O Monstro Alcalino Rebelde": "res://data/characters/O Monstro Alcalino Rebelde.dch",
+"O Monstro Halogênio Ciumento": "res://data/characters/O Monstro Halogênio Ciumento.dch",
+"O Monstro Metálico": "res://data/characters/O Monstro Metálico.dch",
+"O Nobre Gás Enjaulado": "res://data/characters/O Nobre Gás Enjaulado.dch",
 "characters/mendelev": "res://data/characters/mendelev.dch",
 "claudio-cn": "res://data/characters/claudio-cn.dch",
 "claudio-sn": "res://data/characters/claudio-sn.dch",
@@ -37,15 +41,29 @@ directories/dtl_directory={
 "intro-ruinas": "res://data/dialogues/intro-ruinas.dtl",
 "introducao": "res://data/dialogues/introducao.dtl",
 "npc-inicial": "res://data/dialogues/vila-catalis/npc-inicial.dtl",
+"npc1": "res://data/dialogues/ruinas/npc1.dtl",
+"npc3": "res://data/dialogues/ruinas/npc3.dtl",
+"npc4": "res://data/dialogues/ruinas/npc4.dtl",
+"npx2": "res://data/dialogues/ruinas/npx2.dtl",
 "placadupla": "res://data/dialogues/MapsInteractions/prólogo-vila/placadupla.dtl",
 "placasimples": "res://data/dialogues/MapsInteractions/ConectorHub/placasimples.dtl",
 "puzzle1": "res://data/dialogues/puzzle1.dtl",
 "ruinas/stone1": "res://data/dialogues/ruinas/stone1.dtl",
+"ruinas/stone2": "res://data/dialogues/ruinas/stone2.dtl",
+"ruinas/stone3": "res://data/dialogues/ruinas/stone3.dtl",
+"ruinas/stone4": "res://data/dialogues/ruinas/stone4.dtl",
+"ruinas/stone5": "res://data/dialogues/ruinas/stone5.dtl",
+"ruinas1": "res://data/dialogues/ruinas/ruinas1.dtl",
+"ruinas2": "res://data/dialogues/ruinas/ruinas2.dtl",
+"ruinas3": "res://data/dialogues/ruinas/ruinas3.dtl",
+"ruinas4": "res://data/dialogues/ruinas/ruinas4.dtl",
+"ruinas5": "res://data/dialogues/ruinas/ruinas5.dtl",
 "stone1": "res://data/dialogues/stone1.dtl",
 "stone2": "res://data/dialogues/stone2.dtl",
 "stone3": "res://data/dialogues/stone3.dtl",
 "stone4": "res://data/dialogues/stone4.dtl",
-"stone5": "res://data/dialogues/stone5.dtl"
+"stone5": "res://data/dialogues/stone5.dtl",
+"stone6": "res://data/dialogues/ruinas/stone6.dtl"
 }
 layout/style_list=["res://data/styles/defaultstyle.tres", "res://data/styles/simples.tres", "res://data/styles/novel.tres", "res://data/styles/npc-simples.tres"]
 layout/default_style="res://data/styles/simples.tres"

@@ -211,3 +211,11 @@ func _on_animation_finished(anim_name):
 
 func _on_cooldown_ataque_timeout():
 	pode_atacar = true
+
+
+func _on_dialogue_box_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_dialogue_box_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.

@@ -1,0 +1,61 @@
+[gd_scene load_steps=11 format=3 uid="uid://boq1m84b5a6ns"]
+
+[ext_resource type="Script" path="res://scripts/systems/NPCS/wizard.gd" id="1_hkl65"]
+[ext_resource type="Texture2D" uid="uid://codcg5yqiexhp" path="res://assetsIncompletos/Assets-Erik/Legacy Collection/Assets/Characters/Battle Sprites/Living Pack 1/Wizard/Sprites/wizard1.png" id="2_smhkn"]
+[ext_resource type="Texture2D" uid="uid://dj0bds2gp2ppa" path="res://assetsIncompletos/Assets-Erik/Legacy Collection/Assets/Characters/Battle Sprites/Living Pack 1/Wizard/Sprites/wizard2.png" id="3_e7563"]
+[ext_resource type="Texture2D" uid="uid://cohw7mft3q0x5" path="res://assetsIncompletos/Assets-Erik/Legacy Collection/Assets/Characters/Battle Sprites/Living Pack 1/Wizard/Sprites/wizard3.png" id="4_5x7nx"]
+[ext_resource type="Texture2D" uid="uid://50qd6qplfxbc" path="res://assetsIncompletos/Assets-Erik/Legacy Collection/Assets/Characters/Battle Sprites/Living Pack 1/Wizard/Sprites/wizard4.png" id="5_dhxb0"]
+[ext_resource type="Texture2D" uid="uid://do3xyhydh0rpy" path="res://assetsIncompletos/Assets-Erik/Legacy Collection/Assets/Characters/Battle Sprites/Living Pack 1/Wizard/Sprites/wizard5.png" id="6_6ks6i"]
+[ext_resource type="Texture2D" uid="uid://b40ykurvn3qli" path="res://assetsIncompletos/Assets-Erik/Legacy Collection/Assets/Characters/Battle Sprites/Living Pack 1/Wizard/Sprites/wizard6.png" id="7_ewpfw"]
+[ext_resource type="Texture2D" uid="uid://ctu6hu72w5bye" path="res://data/styles/portait/Portraits_v1/hud/Speech_Emotes (16 x 16).png" id="8_xpdqu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yskp8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_smhkn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_e7563")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5x7nx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dhxb0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6ks6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ewpfw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5lot"]
+size = Vector2(44, 50)
+
+[node name="wizard" type="Area2D"]
+script = ExtResource("1_hkl65")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, 35)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_yskp8")
+autoplay = "default"
+frame_progress = 0.684788
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 33)
+shape = SubResource("RectangleShape2D_b5lot")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6, -1)
+scale = Vector2(0.75, 0.625)
+texture = ExtResource("8_xpdqu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

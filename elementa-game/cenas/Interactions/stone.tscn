@@ -100,7 +100,7 @@ scale = Vector2(0.67, 0.67)
 script = ExtResource("1_0d1c1")
 
 [node name="eletri1" type="AnimatedSprite2D" parent="."]
-z_index = 7
+z_index = 3
 position = Vector2(3, -2.83331)
 scale = Vector2(0.75, 0.767361)
 sprite_frames = SubResource("SpriteFrames_n0qk0")
@@ -108,7 +108,7 @@ autoplay = "default"
 frame_progress = 0.50256
 
 [node name="eletri2" type="AnimatedSprite2D" parent="."]
-z_index = 7
+z_index = 3
 position = Vector2(116.418, -16.4179)
 scale = Vector2(0.927083, 0.854167)
 sprite_frames = SubResource("SpriteFrames_hi644")

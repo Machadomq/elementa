@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1p6tdk6mo38x"
-path="res://.godot/imported/background.png-6b133fe10f4985cecd63de44e92efddb.ctex"
+uid="uid://vhrcw4ltsg7j"
+path="res://.godot/imported/sc_haven_witch_crystal_ball.png-67a10352e4edacbf267c588f1ff8d80d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assetsIncompletos/Assets-Erik/Legacy Collection/Assets/Packs/underwater-diving-files/PNG/environment/background.png"
-dest_files=["res://.godot/imported/background.png-6b133fe10f4985cecd63de44e92efddb.ctex"]
+source_file="res://assetsIncompletos/Assets-Erik/sc_haven_witch_free/sc_haven_witch_crystal_ball.png"
+dest_files=["res://.godot/imported/sc_haven_witch_crystal_ball.png-67a10352e4edacbf267c588f1ff8d80d.ctex"]
 
 [params]
 

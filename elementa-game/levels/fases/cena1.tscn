@@ -10093,6 +10093,7 @@ position = Vector2(-57, -50)
 position = Vector2(68, -2)
 
 [node name="transition" parent="." instance=ExtResource("5_i535d")]
+visible = false
 
 [node name="Tiles" type="Node" parent="."]
 

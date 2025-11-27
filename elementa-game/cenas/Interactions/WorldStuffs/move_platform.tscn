@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://e8toaf10hpk"]
+
+[ext_resource type="Texture2D" uid="uid://dl45mrkrmmrrj" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Tiles/platform_4.png" id="1_bpa36"]
+[ext_resource type="Texture2D" uid="uid://bivr8qcv5hng0" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Tiles/platform_1.png" id="2_mf7m7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ylird"]
+size = Vector2(62, 15.5)
+
+[node name="move_platform" type="AnimatableBody2D"]
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5.75)
+shape = SubResource("RectangleShape2D_ylird")
+one_way_collision = true
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(16, 6)
+texture = ExtResource("1_bpa36")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-16, 6)
+texture = ExtResource("2_mf7m7")

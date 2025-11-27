@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ln2rv82gtpqa"]
+
+[ext_resource type="Script" path="res://scripts/systems/WorldStuffs/hidden_trigger.gd" id="1_8ji3o"]
+
+[node name="hidden_trigger" type="Area2D"]
+script = ExtResource("1_8ji3o")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
