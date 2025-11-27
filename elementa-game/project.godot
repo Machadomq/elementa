@@ -31,7 +31,6 @@ directories/dch_directory={
 "claudio-cn": "res://data/characters/claudio-cn.dch",
 "claudio-sn": "res://data/characters/claudio-sn.dch",
 "marie": "res://data/characters/marie.dch",
-"mendelev": "res://data/characters/mendelev.dch",
 "npc": "res://data/characters/npc.dch",
 "teste": "res://data/characters/teste.dch"
 }

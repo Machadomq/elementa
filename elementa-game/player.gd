@@ -7,6 +7,12 @@ const AIR_ATTACK_PUSH = 50.0
 const DASH_SPEED = 400.0
 const DASH_TIME = 0.2
 const DASH_COOLDOWN = 1.0
+const KNOCKBACK_X = 1200.0
+const KNOCKBACK_Y = -300.0
+const KNOCKBACK_DURATION = 0.5
+const KNOCKBACK_DAMP = 1400.0
+const INVINCIBILITY_TIME = 0.6
+const BASE_DAMAGE = 10
 
 # === Estado do Player ===
 var atacando = false
@@ -30,7 +36,25 @@ var tempo_cooldown_ataque = 0.5
 # === SFX ===
 
 
+# === Knockback ===
+var being_knocked_back: bool = false
+var knockback_timer: float = 0.0
+var knockback_velocity: Vector2 = Vector2.ZERO
+
+# === Invencibilidade (i-frames) ===
+var invincible: bool = false
+var inv_time_left: float = 0.0
+var death_anim_started: bool = false
+
+# === Consulta de estado ===
+func is_dead() -> bool:
+	return morto
+
 func _ready():
+	
+	set_collision_mask_value(2, false) # não colide com inimigos
+
+	
 	$CooldownAtaque.timeout.connect(_on_cooldown_ataque_timeout)
 	$AnimationPlayer.animation_finished.connect(_on_animation_finished)
 	
@@ -45,6 +69,21 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	if morto:
+		# Enquanto estiver no ar, continua caindo
+		if not is_on_floor():
+			velocity += get_gravity() * delta
+		else:
+			# Ao tocar o chão, inicia animação de morte (apenas uma vez)
+			if not death_anim_started:
+				if $AnimationPlayer.has_animation("death"):
+					$AnimationPlayer.play("death")
+				else:
+					print("⚠️ Animação 'morte' não encontrada no AnimationPlayer")
+				death_anim_started = true
+			# Desacelera horizontalmente para não deslizar
+			velocity.x = move_toward(velocity.x, 0, SPEED * delta)
+
+		move_and_slide()
 		return
 
 	# Atualiza dash e cooldown
@@ -64,9 +103,25 @@ func _physics_process(delta: float) -> void:
 	elif is_on_floor():
 		pulo_extra_disponivel = true  # reseta double jump
 
+	# Atualiza efeito do knockback (suavizado)
+	if being_knocked_back:
+		knockback_timer -= delta
+		# Suaviza a velocidade horizontal aproximando de 0
+		velocity.x = move_toward(velocity.x, 0.0, KNOCKBACK_DAMP * delta)
+		if knockback_timer <= 0.0 or abs(velocity.x) < 5.0:
+			being_knocked_back = false
+
+	# Atualiza invencibilidade (sem piscada)
+	if invincible:
+		inv_time_left -= delta
+		if inv_time_left <= 0.0:
+			invincible = false
+			# Garante restauro visual
+			$Sprite.visible = true
+
 	# Movimento horizontal
 	var direction := Input.get_axis("ui_left", "ui_right")
-	if not dashing:
+	if not dashing and not being_knocked_back:
 		if direction:
 			velocity.x = direction * SPEED
 			$Sprite.flip_h = direction < 0
@@ -91,7 +146,7 @@ func _physics_process(delta: float) -> void:
 			
 
 	# Ataque
-	if Input.is_action_just_pressed("ataque") and pode_atacar:
+	if Input.is_action_just_pressed("ataque") and pode_atacar and not being_knocked_back:
 		atacando = true
 		pode_atacar = false
 
@@ -113,7 +168,7 @@ func _physics_process(delta: float) -> void:
 		return
 
 	# Dash
-	if Input.is_action_just_pressed("dash") and not dashing and pode_dash and not atacando:
+	if Input.is_action_just_pressed("dash") and not dashing and pode_dash and not atacando and not being_knocked_back:
 		dashing = true
 		dash_timer = DASH_TIME
 		pode_dash = false
@@ -126,8 +181,8 @@ func _physics_process(delta: float) -> void:
 			velocity.x = DASH_SPEED
 		return
 
-	# Animações normais
-	if not atacando and not dashing:
+	# Animações normais (evita sobrescrever a animação de knockback)
+	if not atacando and not dashing and not being_knocked_back:
 		if not is_on_floor():
 			if direction != 0:
 				$Sprite.flip_h = direction < 0
@@ -157,20 +212,77 @@ func _physics_process(delta: float) -> void:
 
 
 # === Função de dano (só recebe dano, não causa) ===
-func receive_damage(amount: int):
+func receive_damage(amount: int, source: Node = null):
 	if morto:
 		return
 
+	# Ignora dano durante invencibilidade
+	if invincible:
+		print("Dano ignorado: invencibilidade ativa")
+		return
+
 	vida_atual -= amount
-	print("Player recebeu ", amount, " de dano. Vida: ", vida_atual)
+
+	# Aplica knockback afastando do inimigo (se conhecido)
+	var dir := 0.0
+	if source != null and source is Node2D:
+		# Se o inimigo está à esquerda, empurra para a direita (positivo)
+		dir = sign(global_position.x - (source as Node2D).global_position.x)
+	else:
+		# Fallback: usa direção oposta ao olhar atual
+		dir = 1.0 if olhando_para_esquerda else -1.0
+
+	# Cancela estados que conflitam
+	dashing = false
+	# Se foi interrompido durante um ataque, inicia cooldown para liberar novo ataque depois
+	if atacando:
+		$CooldownAtaque.start(tempo_cooldown_ataque)
+	atacando = false
+	$areaAtaqueChao.monitoring = false
+	$areaAtaqueAr.monitoring = false
+
+	# Inicia knockback suave: aplica impulso inicial e suaviza no _physics_process
+	being_knocked_back = true
+	knockback_timer = KNOCKBACK_DURATION
+	knockback_velocity = Vector2(dir * KNOCKBACK_X, KNOCKBACK_Y)
+	# Aplica impulso vertical uma vez (subida), mantendo gravidade em seguida
+	velocity.y = min(velocity.y, KNOCKBACK_Y)
+	# Aplica um impulso horizontal inicial sem pico brusco
+	velocity.x = lerp(velocity.x, knockback_velocity.x, 0.5)
+
+	# Toca a animação de knockback, se existir
+	if $AnimationPlayer.has_animation("knockback"):
+		$AnimationPlayer.play("knockback")
+
+	# Inicia i-frames com piscada
+	invincible = true
+	inv_time_left = INVINCIBILITY_TIME
+
+	print("Player recebeu ", amount, " de dano. Vida: ", vida_atual, " | Knockback dir=", dir, " | i-frames=", INVINCIBILITY_TIME)
 
 	if vida_atual <= 0:
 		morrer()
 
 
 func morrer():
+	if morto:
+		return
 	morto = true
-	$AnimationPlayer.play("morte")
+
+	# Limpa estados
+	atacando = false
+	dashing = false
+	being_knocked_back = false
+	invincible = false
+	death_anim_started = false
+
+	# Zera ataque/dash areas
+	$areaAtaqueChao.monitoring = false
+	$areaAtaqueAr.monitoring = false
+
+	# Mantém componente vertical (para cair) mas reduz horizontal progressivamente
+	velocity.x = velocity.x * 0.2
+
 	print("Player morreu!")
 
 
@@ -185,7 +297,7 @@ func _on_area_ataque_body_entered(body):
 
 	# Só causa dano em inimigos (quando existirem)
 	if body.has_method("take_damage"):
-		body.take_damage(25) # valor fixo de dano
+		body.take_damage(BASE_DAMAGE) # dano base do player
 
 
 # === Eventos ===
@@ -210,12 +322,4 @@ func _on_animation_finished(anim_name):
 
 
 func _on_cooldown_ataque_timeout():
-	pode_atacar = true
-
-
-func _on_dialogue_box_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
-
-
-func _on_dialogue_box_body_exited(body: Node2D) -> void:
-	pass # Replace with function body.
+	pode_atacar = true 
