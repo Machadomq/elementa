@@ -11,6 +11,7 @@ func _ready() -> void:
 	
 func _on_body_entered(body: Node2D): 
 	if body.name == "player":
+		print('entrou')
 		transition_animator.play("fade_in")
 		await transition_animator.animation_finished
 		Global.destination_level = get_parent().name

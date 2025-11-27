@@ -1,4 +1,4 @@
-[gd_scene load_steps=420 format=4 uid="uid://b40sgfmmoejqp"]
+[gd_scene load_steps=421 format=4 uid="uid://b40sgfmmoejqp"]
 
 [ext_resource type="PackedScene" uid="uid://da05vccxbs5gm" path="res://levels/fases/transition.tscn" id="1_ht66a"]
 [ext_resource type="PackedScene" uid="uid://dspcerl0hf17k" path="res://actors.tscn" id="2_6cvs1"]
@@ -191,6 +191,7 @@
 [ext_resource type="Script" path="res://scripts/systems/pedras/ruinas/stone4.gd" id="183_mjssv"]
 [ext_resource type="Script" path="res://scripts/systems/pedras/ruinas/stone5.gd" id="184_v201q"]
 [ext_resource type="Script" path="res://scripts/systems/pedras/stone6.gd" id="185_h7aqg"]
+[ext_resource type="PackedScene" uid="uid://c42bcs5mso6lf" path="res://cenas/Interactions/WorldStuffs/area_damage.tscn" id="187_p3qh5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gcd8i"]
 texture = ExtResource("4_m7kfc")
@@ -9280,6 +9281,7 @@ _data = {
 [node name="ruinas2" type="Node2D"]
 
 [node name="transition" parent="." instance=ExtResource("1_ht66a")]
+visible = false
 
 [node name="player" parent="." instance=ExtResource("2_6cvs1")]
 z_index = 8
@@ -9589,6 +9591,10 @@ visible = false
 z_index = 1
 position = Vector2(-1916, 654)
 scale = Vector2(2, 2)
+
+[node name="area_damage" parent="NPC" instance=ExtResource("187_p3qh5")]
+position = Vector2(-697, -189)
+scale = Vector2(0.2, 0.2)
 
 [node name="Pedras" type="Node" parent="."]
 

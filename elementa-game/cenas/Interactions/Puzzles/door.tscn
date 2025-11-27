@@ -18,3 +18,5 @@ stream = ExtResource("2_vhgt5")
 volume_db = 1.0
 max_distance = 50.0
 attenuation = 1.8025
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

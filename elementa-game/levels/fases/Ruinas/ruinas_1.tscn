@@ -1,4 +1,4 @@
-[gd_scene load_steps=220 format=4 uid="uid://b2ichpcqswyjl"]
+[gd_scene load_steps=222 format=4 uid="uid://b2ichpcqswyjl"]
 
 [ext_resource type="PackedScene" uid="uid://dspcerl0hf17k" path="res://actors.tscn" id="1_0br81"]
 [ext_resource type="PackedScene" uid="uid://cke68p3p8y03n" path="res://cenas/Interactions/Puzzles/door.tscn" id="1_aqbvx"]
@@ -103,6 +103,7 @@
 [ext_resource type="Texture2D" uid="uid://d3v8k6t2lrlsd" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack (1)/Medieval_Castle_Asset_Pack/Tiles/ceiling_2.png" id="62_d0qm7"]
 [ext_resource type="Script" path="res://scripts/systems/pedras/ruinas/stone2.gd" id="68_qnf51"]
 [ext_resource type="PackedScene" uid="uid://bw8ckhrbrjsoh" path="res://menus/inGame_pause_menu/pause_game.tscn" id="74_ieh3r"]
+[ext_resource type="PackedScene" uid="uid://c42bcs5mso6lf" path="res://cenas/Interactions/WorldStuffs/area_damage.tscn" id="104_elq1o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7of6h"]
 texture = ExtResource("4_ktnt0")
@@ -12277,6 +12278,9 @@ texture = ExtResource("44_y6rb0")
 [sub_resource type="TileSet" id="TileSet_y8pmp"]
 sources/0 = SubResource("TileSetAtlasSource_knqms")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kebro"]
+size = Vector2(57, 32)
+
 [node name="Ruinas-1" type="Node2D"]
 
 [node name="door" parent="." node_paths=PackedStringArray("transition_controller") instance=ExtResource("1_aqbvx")]
@@ -12533,3 +12537,10 @@ position = Vector2(-2206, -51)
 visible = false
 
 [node name="pedras" type="Node" parent="."]
+
+[node name="area_damage" parent="." instance=ExtResource("104_elq1o")]
+position = Vector2(-742, 187)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="area_damage"]
+position = Vector2(22, -138)
+shape = SubResource("RectangleShape2D_kebro")
