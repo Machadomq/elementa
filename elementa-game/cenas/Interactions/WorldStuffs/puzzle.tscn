@@ -1,0 +1,166 @@
+[gd_scene load_steps=24 format=3 uid="uid://xgu3ud653b88"]
+
+[ext_resource type="Script" path="res://scripts/systems/WorldStuffs/puzzle.gd" id="1_ff5vl"]
+[ext_resource type="Texture2D" uid="uid://chyg3qprhl5fk" path="res://assetsIncompletos/Assets-Erik/Foozle_2DTR0001_Pixel_Trap_Pack/Fire Trap/PNGs/Fire Trap - Level 3.png" id="2_jtlqp"]
+[ext_resource type="Texture2D" uid="uid://cc1kwwepgxbk7" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack (1)/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/lever_floor/lever_floor_1.png" id="3_y383q"]
+[ext_resource type="Texture2D" uid="uid://d3d745ntwpcwm" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack (1)/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/lever_floor/lever_floor_2.png" id="4_2safg"]
+[ext_resource type="Texture2D" uid="uid://cvffgm07dc68" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack (1)/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/lever_floor/lever_floor_3.png" id="5_jaw3p"]
+[ext_resource type="Texture2D" uid="uid://dq7gk2abm25u3" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack (1)/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/lever_floor/lever_floor_4.png" id="6_mlk7r"]
+[ext_resource type="Texture2D" uid="uid://cnereoefdapex" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack (1)/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/lever_floor/lever_floor_5.png" id="7_dpcdv"]
+[ext_resource type="Texture2D" uid="uid://2kh3fh7w6xff" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack (1)/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/lever_floor/lever_floor_6.png" id="8_edwvc"]
+[ext_resource type="Texture2D" uid="uid://cgxsglh3xhk27" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack (1)/Medieval_Castle_Asset_Pack/Decorations/Animated Decorations/lever_floor/lever_floor_7.png" id="9_xj4ih"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myaqy"]
+atlas = ExtResource("2_jtlqp")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kq2w"]
+atlas = ExtResource("2_jtlqp")
+region = Rect2(192, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_op81o"]
+atlas = ExtResource("2_jtlqp")
+region = Rect2(224, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pv7j0"]
+atlas = ExtResource("2_jtlqp")
+region = Rect2(256, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2wdv"]
+atlas = ExtResource("2_jtlqp")
+region = Rect2(288, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2axb"]
+atlas = ExtResource("2_jtlqp")
+region = Rect2(320, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bafeu"]
+atlas = ExtResource("2_jtlqp")
+region = Rect2(352, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnjdm"]
+atlas = ExtResource("2_jtlqp")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tc5j1"]
+atlas = ExtResource("2_jtlqp")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ig4p1"]
+atlas = ExtResource("2_jtlqp")
+region = Rect2(256, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3rmjl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myaqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7kq2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_op81o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pv7j0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2wdv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2axb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bafeu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnjdm")
+}],
+"loop": false,
+"name": &"closing",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tc5j1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ig4p1")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k5rfk"]
+size = Vector2(27.5, 69.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vxqqj"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"ativa",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_y383q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2safg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jaw3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mlk7r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dpcdv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_edwvc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xj4ih")
+}],
+"loop": false,
+"name": &"ativa2",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7b4t4"]
+size = Vector2(48.5, 68)
+
+[node name="Puzzle" type="Node2D"]
+script = ExtResource("1_ff5vl")
+
+[node name="Wall" type="StaticBody2D" parent="."]
+
+[node name="wall_animated" type="AnimatedSprite2D" parent="Wall"]
+sprite_frames = SubResource("SpriteFrames_3rmjl")
+animation = &"closing"
+autoplay = "fire"
+frame_progress = 0.902566
+
+[node name="wall_collision" type="CollisionShape2D" parent="Wall"]
+position = Vector2(1.25, 2.25)
+shape = SubResource("RectangleShape2D_k5rfk")
+
+[node name="alavanca" type="AnimatedSprite2D" parent="."]
+position = Vector2(36, 21)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_vxqqj")
+animation = &"ativa2"
+
+[node name="trigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trigger"]
+position = Vector2(39, 1)
+shape = SubResource("RectangleShape2D_7b4t4")
+
+[connection signal="animation_changed" from="Wall/wall_animated" to="." method="_on_wall_animated_animation_changed"]
+[connection signal="animation_finished" from="Wall/wall_animated" to="." method="_on_wall_animated_animation_finished"]
+[connection signal="body_entered" from="trigger" to="." method="_on_trigger_body_entered"]
+[connection signal="body_exited" from="trigger" to="." method="_on_trigger_body_exited"]

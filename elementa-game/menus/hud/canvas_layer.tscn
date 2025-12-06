@@ -1,0 +1,114 @@
+[gd_scene load_steps=6 format=3 uid="uid://btpwmbuuv8mrg"]
+
+[ext_resource type="Script" path="res://scripts/systems/HUD/hud.manager.gd" id="1_3ra2f"]
+[ext_resource type="Texture2D" uid="uid://dca0miua3fv45" path="res://assetsIncompletos/Assets-Erik/Pixel Art Platformer - Village Props v2.3.0/Texture/MediavelFree.png" id="1_pwel7"]
+[ext_resource type="Texture2D" uid="uid://dajj3dmstibfp" path="res://data/styles/portait/Portraits_v1/Portraits/Joanna/JoannaPortrait1(NOBG)4.png" id="2_jcb7u"]
+[ext_resource type="Texture2D" uid="uid://drum6q8n05qmh" path="res://assetsIncompletos/Assets-Erik/Pixel Art Platformer - Village Props v2.3.0/Texture/LabIcons2.png" id="3_mwbud"]
+[ext_resource type="FontFile" uid="uid://3qlvdkxa4tb6" path="res://data/styles/Nova pasta/Jersey_25/Jersey25-Regular.ttf" id="4_155kl"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3ra2f")
+
+[node name="container" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_right = 75
+theme_override_constants/margin_bottom = 75
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="Control/container/HBoxContainer"]
+custom_minimum_size = Vector2(154, 194)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("1_pwel7")
+
+[node name="TextureRect" type="TextureRect" parent="Control/container/HBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.548
+anchor_right = 0.5
+anchor_bottom = 0.548
+offset_left = -64.0
+offset_top = -60.312
+offset_right = 64.0
+offset_bottom = 67.688
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jcb7u")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/container/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_mwbud")
+
+[node name="TextureRect3" type="TextureRect" parent="Control/container/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_mwbud")
+
+[node name="TextureRect4" type="TextureRect" parent="Control/container/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_mwbud")
+
+[node name="TextureRect5" type="TextureRect" parent="Control/container/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_mwbud")
+
+[node name="TextureRect6" type="TextureRect" parent="Control/container/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_mwbud")
+
+[node name="TextureRect7" type="TextureRect" parent="Control/container/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_mwbud")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/container"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="Control/container/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_155kl")
+theme_override_font_sizes/font_size = 40
+text = "H - 1"

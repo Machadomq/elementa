@@ -1,4 +1,4 @@
-[gd_scene load_steps=421 format=4 uid="uid://b40sgfmmoejqp"]
+[gd_scene load_steps=422 format=4 uid="uid://b40sgfmmoejqp"]
 
 [ext_resource type="PackedScene" uid="uid://da05vccxbs5gm" path="res://levels/fases/transition.tscn" id="1_ht66a"]
 [ext_resource type="PackedScene" uid="uid://dspcerl0hf17k" path="res://actors.tscn" id="2_6cvs1"]
@@ -9278,6 +9278,9 @@ _data = {
 "new_animation": SubResource("Animation_j4rur")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_402a5"]
+size = Vector2(742.5, 36)
+
 [node name="ruinas2" type="Node2D"]
 
 [node name="transition" parent="." instance=ExtResource("1_ht66a")]
@@ -9405,6 +9408,13 @@ position = Vector2(-264, 644)
 scale = Vector2(0.666667, 0.658537)
 texture = ExtResource("175_ov3ru")
 flip_h = true
+
+[node name="area_damage" parent="interactions" instance=ExtResource("187_p3qh5")]
+position = Vector2(924, 1305)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactions/area_damage"]
+position = Vector2(265, -318)
+shape = SubResource("RectangleShape2D_402a5")
 
 [node name="animated-dec" type="Node" parent="."]
 
@@ -9591,10 +9601,6 @@ visible = false
 z_index = 1
 position = Vector2(-1916, 654)
 scale = Vector2(2, 2)
-
-[node name="area_damage" parent="NPC" instance=ExtResource("187_p3qh5")]
-position = Vector2(-697, -189)
-scale = Vector2(0.2, 0.2)
 
 [node name="Pedras" type="Node" parent="."]
 

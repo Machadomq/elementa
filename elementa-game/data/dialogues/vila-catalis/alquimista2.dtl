@@ -1,0 +1,132 @@
+- Como voltar para casa
+	join marie left
+	marie: Giovanni… eu preciso entender.\
+Desde que acordei aqui, tudo parece uma mistura de sonho e experimento maluco.\
+Há uma forma de voltar para o meu mundo?
+	leave marie
+	Giovanni: Voltar? Hm… veja bem, jovem Curie…
+	Giovanni: Nem sempre o “voltar” é o mesmo que “reverter”.
+	Giovanni: A matéria, quando transformada, pode mudar de estado — mas não deixa de existir.\
+E o mesmo vale para você.
+	join marie (Preocupada) left
+	marie: Está dizendo que não há saída? Que estou presa aqui?
+	leave marie
+	Giovanni: Não presa… reagindo.
+	Giovanni: Este mundo é como um grande experimento interrompido.\
+As leis da química que você conhece foram distorcidas —\
+e as Pedras do Conhecimento são a chave para restabelecer o equilíbrio.
+	join marie (Preocupada) left
+	marie: Então se eu reunir todas as pedras… eu posso restaurar tudo?
+	leave marie
+	Giovanni: Talvez.
+	Giovanni: Ou talvez descubra que o “tudo” nunca existiu do jeito que você lembrava.
+	Giovanni: as Ruínas da Tabela Periódica, o Cemitério Atômico e o Laboratório Abandonado.\
+Cada uma guarda ecos das antigas Famílias e das forças que as destruíram.
+	join marie (Preocupada) left
+	marie: Três regiões… três partes de um mesmo colapso.
+	leave marie
+	Giovanni: Exato.
+	Giovanni: Nas ruínas, o conhecimento se fragmentou.\
+No cemitério, o que restou foi apenas forma sem alma.\
+E no laboratório... bom, lá a própria ciência perdeu o controle.
+	join marie (Preocupada) left
+	marie: Parece perigoso.
+	leave marie
+	Giovanni: O perigo é só o catalisador das descobertas mais puras, Marie.\
+Mas cuidado\: quanto mais você aprender, mais o mundo vai reagir a você.\
+Conhecimento e poder... são compostos instáveis.
+	join marie (Marie-normal) left
+	marie: Então eu preciso entender este lugar para poder sair dele.
+	leave marie
+	Giovanni: Isso mesmo.\
+Conheça. Questione. Observe as reações.\
+O caminho de volta talvez não seja um portal,\
+mas sim a compreensão do que realmente é o seu lar.
+	join marie (Preocupada) left
+	marie: ...Você fala como se já tivesse tentado o mesmo.
+	leave marie
+	Giovanni: Já tentei, sim.
+	Giovanni: E descobri que, às vezes, o lar não é onde você nasceu...\
+mas o que você decide reconstruir.
+- Regiões
+	- Ruinas da tabela periódica
+		join marie (Marie-normal) left
+		marie: Essas… Ruínas da Tabela Periódica… o que são exatamente?
+		leave marie
+		<Empty Text Event>
+		<Empty Text Event>
+		Giovanni: Um antigo reino do conhecimento, onde nove famílias elementares viviam em harmonia.
+		join marie (Marie-normal) left
+		marie: Famílias elementares?
+		leave marie
+		Giovanni: Sim. Cada uma com suas próprias forças e fraquezas — os metais brilhavam pela força e estabilidade, enquanto os halogênios buscavam completar o que lhes faltava.
+		join marie (Marie-normal) left
+		marie: E os gases nobres?
+		leave marie
+		Giovanni: Ah, esses viviam isolados… tão estáveis que não precisavam de ninguém. Eram respeitados, mas solitários.
+		join marie (Marie-normal) left
+		marie: Então… foi essa divisão que destruiu o reino?
+		leave marie
+		Giovanni: De certa forma. Quando a compreensão entre as famílias se perdeu, a ordem da Tabela também se fragmentou.
+	- Cemitério Atômico
+		join marie (Marie-normal) left
+		marie: E o Cemitério Atômico? O nome não soa muito convidativo…
+		leave marie
+		Giovanni: É o local onde repousam os modelos antigos — ideias que um dia explicaram o mundo, mas foram substituídas.
+		join marie (Marie-normal) left
+		marie: Modelos antigos… como assim?
+		leave marie
+		Giovanni: Lá, os espíritos de Dalton, Thomson, Rutherford e Bohr ecoam nas ruínas de seus pensamentos. Cada um deixou sua marca, mas também seus erros.
+		join marie (Marie-normal) left
+		marie: Parece um lugar de respeito e aprendizado.
+		leave marie
+		Giovanni: Exatamente. Só quem entende o passado pode compreender a verdadeira forma da matéria.
+		join  center
+- Familias Elementares
+	join marie left
+	marie: Você falou sobre as famílias elementares… pode me contar mais sobre elas?
+	leave marie
+	Giovanni: Claro.
+	Giovanni: Os metais alcalinos são impetuosos e reagem com tudo — fortes, mas instáveis.
+	Giovanni: Os metais alcalino-terrosos são mais equilibrados, porém ainda inflamáveis.
+	Giovanni: Os metais de transição são os artesãos do reino, moldando ferramentas e armas.
+	Giovanni: Os halogênios são caçadores, sempre buscando se unir a outros.
+	Giovanni: Os gases nobres vivem isolados, completos e estáveis.
+	Giovanni: Já os ametais e semimetais transitam entre mundos — versáteis e imprevisíveis.
+	join marie (Marie-normal) left
+	marie: Então… cada família tem seu papel e natureza, como numa sociedade.
+	leave 
+	Giovanni: Exatamente. Entender essas relações é compreender a própria essência da química.
+- Qual sua origem
+	join marie (Marie-normal) left
+	marie: Giovanni… você me contou sobre tudo — as famílias, as ruínas, o laboratório…
+	Giovanni: Mas e você? De onde veio?
+	leave marie
+	Giovanni: De onde eu vim… é uma pergunta que poucos me fazem, pequena curiosa.
+	Giovanni: Alguns dizem que eu fui o primeiro a testemunhar o nascimento da Tabela.
+	Giovanni: Outros… que eu apenas sobrevivi quando ela caiu.
+	join marie (Marie-normal) left
+	marie: Então… você estava aqui desde o começo?
+	leave marie
+	Giovanni: Talvez.
+	Giovanni: Eu vi o tempo se transformar, vi os elementos dançarem e colidirem.\
+Vi a ordem surgir do caos — e o caos voltar quando a ganância cresceu.
+	Giovanni: Tudo começou com uma centelha.\
+Pequena, invisível, mas capaz de mudar o mundo.\
+E é por isso que você está aqui, Marie.
+	join marie (Preocupada) left
+	marie: Eu?
+	marie: Mas eu nem sei como vim parar neste lugar…
+	leave marie
+	Giovanni: Ninguém chega a Catalis por acaso.
+	Giovanni: Os que vêm são atraídos pela mesma centelha — o desejo de compreender.\
+Você tem algo dentro de si que busca equilíbrio.\
+Talvez o mesmo que os antigos alquimistas chamavam de fogo da descoberta.
+	join marie (Marie-normal) left
+	marie: Então… o senhor é um dos antigos?
+	leave 
+	Giovanni: Sou apenas o que restou deles.\
+Um fragmento de conhecimento preso entre reações inacabadas.\
+Meu tempo está no crepúsculo, Marie… o seu está apenas começando.
+	join marie left
+	marie: Prometo… eu não vou deixar o fogo se apagar.

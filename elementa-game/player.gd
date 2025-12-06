@@ -25,6 +25,7 @@ var pulo_extra_disponivel = true
 var vida_maxima = 100
 var vida_atual = 100
 var morto = false
+var elemento = ''
 
 # === Timers internos ===
 var dash_timer = 0.0
@@ -221,7 +222,7 @@ func receive_damage(amount: int, source: Node = null):
 		print("Dano ignorado: invencibilidade ativa")
 		return
 
-	vida_atual -= amount
+	Global.current_health -= amount
 
 	# Aplica knockback afastando do inimigo (se conhecido)
 	var dir := 0.0
@@ -260,7 +261,7 @@ func receive_damage(amount: int, source: Node = null):
 
 	print("Player recebeu ", amount, " de dano. Vida: ", vida_atual, " | Knockback dir=", dir, " | i-frames=", INVINCIBILITY_TIME)
 
-	if vida_atual <= 0:
+	if Global.current_health <= 0:
 		morrer()
 
 
@@ -297,7 +298,7 @@ func _on_area_ataque_body_entered(body):
 
 	# Só causa dano em inimigos (quando existirem)
 	if body.has_method("take_damage"):
-		body.take_damage(BASE_DAMAGE) # dano base do player
+		body.take_damage(Global.max_power) # dano base do player
 
 
 # === Eventos ===
@@ -323,3 +324,24 @@ func _on_animation_finished(anim_name):
 
 func _on_cooldown_ataque_timeout():
 	pode_atacar = true 
+	
+func _playerUpgrade() -> void: 
+	var current_coin = Global.coins
+	if current_coin == 2 or current_coin == 10 or current_coin == 18 or current_coin == 24: 
+		Global.max_health = Global.max_health + 10
+		Global.current_health = Global.max_health
+		print("A vida aumentou")
+		print(Global.max_health)
+	else: 
+		pass
+
+func _updateElement() -> void: 
+	var atomic_number = Global.coins
+	var new_element = Global.ELEMENTOS[atomic_number]
+	self.elemento = new_element
+	print(elemento)
+	
+func _upgradePower() -> void:
+	Dialogic.start('ferreiroUp')
+	Global.max_power = Global.max_power + 10
+	

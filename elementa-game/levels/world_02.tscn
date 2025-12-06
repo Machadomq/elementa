@@ -1,4 +1,4 @@
-[gd_scene load_steps=238 format=3 uid="uid://d27cpf6ieogg3"]
+[gd_scene load_steps=241 format=3 uid="uid://d27cpf6ieogg3"]
 
 [ext_resource type="Script" path="res://levels/fases/cena_1.gd" id="1_8yk2m"]
 [ext_resource type="Texture2D" uid="uid://cqnehlx22o1ox" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Tiles/lion_column_9.png" id="1_ejdk5"]
@@ -130,6 +130,8 @@
 [ext_resource type="PackedScene" uid="uid://da05vccxbs5gm" path="res://levels/fases/transition.tscn" id="124_io5fc"]
 [ext_resource type="Script" path="res://scripts/systems/pedras/stone5.gd" id="124_vv2r6"]
 [ext_resource type="PackedScene" uid="uid://bw8ckhrbrjsoh" path="res://menus/inGame_pause_menu/pause_game.tscn" id="130_xrivt"]
+[ext_resource type="PackedScene" uid="uid://btpwmbuuv8mrg" path="res://menus/hud/canvas_layer.tscn" id="131_ly7ej"]
+[ext_resource type="PackedScene" uid="uid://t75s5oudsisk" path="res://cenas/Interactions/WorldStuffs/health_area.tscn" id="132_1dt8o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_02ick"]
 texture = ExtResource("1_ejdk5")
@@ -7361,6 +7363,8 @@ sources/64 = SubResource("TileSetAtlasSource_x04sq")
 sources/65 = SubResource("TileSetAtlasSource_aoivo")
 sources/91 = SubResource("TileSetAtlasSource_lwolb")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfu16"]
+
 [node name="World-02" type="Node2D"]
 position = Vector2(59, -73)
 script = ExtResource("1_8yk2m")
@@ -7389,7 +7393,7 @@ position = Vector2(1342, 391)
 
 [node name="player" parent="." instance=ExtResource("2_upl2b")]
 z_index = 8
-position = Vector2(401, 327)
+position = Vector2(1899, 691)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(1178.75, 405.039)
@@ -7480,13 +7484,8 @@ position = Vector2(1745, 479)
 z_index = 6
 position = Vector2(976, 410)
 
-[node name="Coin" parent="." instance=ExtResource("114_53m81")]
-z_index = 6
-position = Vector2(1652, 488)
-scale = Vector2(2, 2)
-
 [node name="Fogo" parent="." instance=ExtResource("117_upf7f")]
-position = Vector2(431, 403)
+position = Vector2(434, 409)
 
 [node name="sfx_bonfire" type="AudioStreamPlayer2D" parent="Fogo"]
 volume_db = -15.0
@@ -7564,3 +7563,43 @@ visible = false
 
 [node name="pause_menu" parent="." instance=ExtResource("130_xrivt")]
 visible = false
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Coin" parent="Node" instance=ExtResource("114_53m81")]
+position = Vector2(2039, 836)
+
+[node name="Coin2" parent="Node" instance=ExtResource("114_53m81")]
+position = Vector2(1954, 831)
+
+[node name="Coin10" parent="Node" instance=ExtResource("114_53m81")]
+position = Vector2(1867, 845)
+
+[node name="Coin3" parent="Node" instance=ExtResource("114_53m81")]
+position = Vector2(2153, 843)
+
+[node name="Coin4" parent="Node" instance=ExtResource("114_53m81")]
+position = Vector2(2227, 803)
+
+[node name="Coin5" parent="Node" instance=ExtResource("114_53m81")]
+position = Vector2(2244, 705)
+
+[node name="Coin6" parent="Node" instance=ExtResource("114_53m81")]
+position = Vector2(2320, 753)
+
+[node name="Coin7" parent="Node" instance=ExtResource("114_53m81")]
+position = Vector2(2190, 659)
+
+[node name="Coin8" parent="Node" instance=ExtResource("114_53m81")]
+position = Vector2(2249, 613)
+
+[node name="Coin9" parent="Node" instance=ExtResource("114_53m81")]
+position = Vector2(2318, 567)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("131_ly7ej")]
+
+[node name="health_area" parent="." instance=ExtResource("132_1dt8o")]
+position = Vector2(1465, 1001)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="health_area"]
+shape = SubResource("RectangleShape2D_gfu16")

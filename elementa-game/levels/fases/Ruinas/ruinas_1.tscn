@@ -12279,7 +12279,7 @@ texture = ExtResource("44_y6rb0")
 sources/0 = SubResource("TileSetAtlasSource_knqms")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kebro"]
-size = Vector2(57, 32)
+size = Vector2(791, 31)
 
 [node name="Ruinas-1" type="Node2D"]
 
@@ -12542,5 +12542,5 @@ visible = false
 position = Vector2(-742, 187)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="area_damage"]
-position = Vector2(22, -138)
+position = Vector2(-335.5, -137.5)
 shape = SubResource("RectangleShape2D_kebro")

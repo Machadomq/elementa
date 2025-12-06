@@ -1,0 +1,25 @@
+— Ah, veja só quem chegou… Você deve ser a forasteira que todo mundo anda comentando.\
+Sou Ferrus, o ferreiro da vila! Se algo precisa ganhar forma ou força, é comigo.
+join marie (Preocupada) left
+marie: Prazer, sou Marie. Ainda estou tentando entender este lugar… e a mim mesma.
+leave 
+Pois então escute bem\: aqui, sua energia muda conforme os elétrons que coleta.\
+Em certos momentos, você assume a “natureza” de elementos distintos… e alguns deles são do meu interesse.
+join marie (Marie-normal) left
+marie: Como assim?
+leave marie
+Quando seu estado atômico chegar a Alumínio, Ferro ou Prata…\
+volte até mim.
+Cada um desses elementos carrega propriedades únicas —\
+e eu posso reforjar parte da sua força usando essas características.
+join marie (Marie-normal) left
+Então… eu fico mais forte dependendo do elemento que me torno?
+leave marie
+Exatamente!\
+O Alumínio é leve e resistente… O Ferro é força pura… E a Prata conduz energia como ninguém.\
+Cada um me permite aprimorar você de um jeito diferente.
+join marie (Marie-normal) left
+marie: Entendi. Assim que atingir um desses estados, venho te procurar.
+leave marie
+Estarei aqui, martelo em mãos.
+E lembre-se\: no calor da forja, até a instabilidade encontra forma.

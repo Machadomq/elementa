@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2afrfioxjkba"]
+[gd_scene load_steps=9 format=3 uid="uid://c2afrfioxjkba"]
 
 [ext_resource type="Texture2D" uid="uid://bssc4ui335pn4" path="res://sprites-cenário-teste/Mini FX, Items & UI/Common Pick-ups/Small_Coin (16 x 16).png" id="1_4tigv"]
+[ext_resource type="Script" path="res://scripts/systems/WorldStuffs/coin.gd" id="1_iir5m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_48cns"]
 atlas = ExtResource("1_4tigv")
@@ -38,9 +39,19 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Coin" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_mq166"]
+radius = 4.12311
+
+[node name="Coin" type="Area2D"]
+script = ExtResource("1_iir5m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_triiy")
 autoplay = "default"
-frame_progress = 0.368494
+frame_progress = 0.399717
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_mq166")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,10 @@
+- Teste 1
+	set {acertou} = true
+	[signal arg="teste1"]
+- Teste 2
+	[signal arg="teste2"]
+	set {errou} = false
+if {acertou} == true:
+	boa
+else:
+	ruim

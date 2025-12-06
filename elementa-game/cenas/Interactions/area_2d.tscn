@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bij63j8ft5gcm"]
 
-[ext_resource type="Script" path="res://scripts/systems/dialogues-map/area_2d.gd" id="1_3ssa1"]
-[ext_resource type="FontFile" uid="uid://3qlvdkxa4tb6" path="res://data/styles/Jersey_25/Jersey25-Regular.ttf" id="2_oxglk"]
+[ext_resource type="Script" path="res://scripts/systems/area_2d.gd" id="1_3ssa1"]
+[ext_resource type="FontFile" uid="uid://3qlvdkxa4tb6" path="res://data/styles/Nova pasta/Jersey_25/Jersey25-Regular.ttf" id="2_oxglk"]
 [ext_resource type="Script" path="res://scripts/systems/dialogues-map/label.gd" id="3_b521g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oysni"]

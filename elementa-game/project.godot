@@ -23,6 +23,7 @@ Global="*res://scripts/singleton/global.gd"
 [dialogic]
 
 directories/dch_directory={
+"Giovanni": "res://data/characters/Giovanni.dch",
 "O Monstro Alcalino Rebelde": "res://data/characters/O Monstro Alcalino Rebelde.dch",
 "O Monstro Halogênio Ciumento": "res://data/characters/O Monstro Halogênio Ciumento.dch",
 "O Monstro Metálico": "res://data/characters/O Monstro Metálico.dch",
@@ -35,7 +36,12 @@ directories/dch_directory={
 "teste": "res://data/characters/teste.dch"
 }
 directories/dtl_directory={
+"alquimista": "res://data/dialogues/vila-catalis/alquimista.dtl",
+"alquimista2": "res://data/dialogues/vila-catalis/alquimista2.dtl",
+"alquimista_no_upgrade": "res://data/dialogues/vila-catalis/alquimista_no_upgrade.dtl",
 "dog": "res://data/dialogues/vila-catalis/dog.dtl",
+"ferreiro": "res://data/dialogues/vila-catalis/ferreiro.dtl",
+"ferreiroUp": "res://data/dialogues/vila-catalis/ferreiroUp.dtl",
 "intro": "res://data/dialogues/intro.dtl",
 "intro-ruinas": "res://data/dialogues/intro-ruinas.dtl",
 "introducao": "res://data/dialogues/introducao.dtl",
@@ -62,7 +68,8 @@ directories/dtl_directory={
 "stone3": "res://data/dialogues/stone3.dtl",
 "stone4": "res://data/dialogues/stone4.dtl",
 "stone5": "res://data/dialogues/stone5.dtl",
-"stone6": "res://data/dialogues/ruinas/stone6.dtl"
+"stone6": "res://data/dialogues/ruinas/stone6.dtl",
+"teste1": "res://data/dialogues/Puzzle/teste1.dtl"
 }
 layout/style_list=["res://data/styles/defaultstyle.tres", "res://data/styles/simples.tres", "res://data/styles/novel.tres", "res://data/styles/npc-simples.tres"]
 layout/default_style="res://data/styles/simples.tres"
