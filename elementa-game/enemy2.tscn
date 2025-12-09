@@ -1,7 +1,43 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvg4smmcmitkx"]
+[gd_scene load_steps=10 format=3 uid="uid://cvg4smmcmitkx"]
 
 [ext_resource type="Script" path="res://levels/enemy.gd" id="1_xuy41"]
-[ext_resource type="Texture2D" uid="uid://dcns554ibmkl6" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Attacks/AirHeavyAtk/Pose1/Full/AirHeavyAtk1.png" id="2_g7gdo"]
+[ext_resource type="Texture2D" uid="uid://dwsvjler6kc0x" path="res://FLYING.png" id="2_konac"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bjc2"]
+atlas = ExtResource("2_konac")
+region = Rect2(0, 0, 81, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8yx4"]
+atlas = ExtResource("2_konac")
+region = Rect2(81, 0, 81, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjgng"]
+atlas = ExtResource("2_konac")
+region = Rect2(162, 0, 81, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gj8g"]
+atlas = ExtResource("2_konac")
+region = Rect2(243, 0, 81, 71)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m2rcx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bjc2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8yx4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjgng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gj8g")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 8.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mp1gp"]
 radius = 5.88068
@@ -13,10 +49,12 @@ radius = 13.0384
 collision_layer = 2
 script = ExtResource("1_xuy41")
 
-[node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(2, 27)
-scale = Vector2(0.871094, 0.8125)
-texture = ExtResource("2_g7gdo")
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, 30)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_m2rcx")
+animation = &"fly"
+frame_progress = 0.995089
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0.0420328, 31)
