@@ -131,7 +131,7 @@
 [ext_resource type="Script" path="res://scripts/systems/pedras/stone5.gd" id="124_vv2r6"]
 [ext_resource type="PackedScene" uid="uid://bw8ckhrbrjsoh" path="res://menus/inGame_pause_menu/pause_game.tscn" id="130_xrivt"]
 [ext_resource type="PackedScene" uid="uid://btpwmbuuv8mrg" path="res://menus/hud/canvas_layer.tscn" id="131_ly7ej"]
-[ext_resource type="PackedScene" uid="uid://t75s5oudsisk" path="res://cenas/Interactions/WorldStuffs/health_area.tscn" id="132_1dt8o"]
+[ext_resource type="PackedScene" path="res://cenas/Interactions/WorldStuffs/health_area.tscn" id="132_1dt8o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_02ick"]
 texture = ExtResource("1_ejdk5")

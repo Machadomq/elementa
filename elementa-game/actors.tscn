@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://dspcerl0hf17k"]
+[gd_scene load_steps=108 format=3 uid="uid://dspcerl0hf17k"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_55317"]
 [ext_resource type="Texture2D" uid="uid://eapw14sydydj" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Run/Running/Running1.png" id="2_pm3ru"]
@@ -58,6 +58,40 @@
 [ext_resource type="Texture2D" uid="uid://b774cfhsq53it" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Death/Death24.png" id="56_dk5w7"]
 [ext_resource type="Texture2D" uid="uid://drgqk4bs2xe2w" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Death/Death25.png" id="57_h461h"]
 [ext_resource type="Texture2D" uid="uid://ktvvu7ao4bve" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Death/Death26.png" id="58_mbuev"]
+[ext_resource type="Texture2D" uid="uid://uxq780be1oex" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal2.png" id="59_5nw4s"]
+[ext_resource type="Texture2D" uid="uid://boqvql0bidcyy" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal3.png" id="60_dx3o2"]
+[ext_resource type="Texture2D" uid="uid://bexhra55wir4d" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal4.png" id="61_xljkm"]
+[ext_resource type="Texture2D" uid="uid://doxawoj7sk5dl" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal5.png" id="62_p7m02"]
+[ext_resource type="Texture2D" uid="uid://dy7i6o1jgbef1" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal6.png" id="63_n7k7m"]
+[ext_resource type="Texture2D" uid="uid://3uilccskem8v" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal7.png" id="64_8rp4h"]
+[ext_resource type="Texture2D" uid="uid://csv6oodqfng8i" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal8.png" id="65_20o0u"]
+[ext_resource type="Texture2D" uid="uid://0ad574vo4ewl" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal9.png" id="66_vd3h2"]
+[ext_resource type="Texture2D" uid="uid://dhvbeqm3w46jp" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal10.png" id="67_uj2q8"]
+[ext_resource type="Texture2D" uid="uid://dj008bsuhf21n" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal11.png" id="68_sktht"]
+[ext_resource type="Texture2D" uid="uid://deseonghxicmx" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal12.png" id="69_8y46b"]
+[ext_resource type="Texture2D" uid="uid://dcy2tp4iqfte8" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal13.png" id="70_d3lfs"]
+[ext_resource type="Texture2D" uid="uid://bkgafltauaot0" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal14.png" id="71_dya6a"]
+[ext_resource type="Texture2D" uid="uid://cgyiylqh3xpsb" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal15.png" id="72_6avfg"]
+[ext_resource type="Texture2D" uid="uid://bumxoem0qi01s" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal16.png" id="73_5revq"]
+[ext_resource type="Texture2D" uid="uid://c33j8wofnn0ia" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal17.png" id="74_tec3e"]
+[ext_resource type="Texture2D" uid="uid://cp6yl8imcnbxc" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal18.png" id="75_i3va5"]
+[ext_resource type="Texture2D" uid="uid://bdnprfyljscii" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal19.png" id="76_1l5uj"]
+[ext_resource type="Texture2D" uid="uid://btcobojet108e" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal20.png" id="77_cpn2l"]
+[ext_resource type="Texture2D" uid="uid://cpb483rwgag10" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal21.png" id="78_7rcib"]
+[ext_resource type="Texture2D" uid="uid://btqbc1o1cgm41" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal22.png" id="79_f0oyf"]
+[ext_resource type="Texture2D" uid="uid://doa3bnjk6ak0b" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal23.png" id="80_eifd8"]
+[ext_resource type="Texture2D" uid="uid://d2w77f65gio8o" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal24.png" id="81_3hxtl"]
+[ext_resource type="Texture2D" uid="uid://lgubwmqpu1bt" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal25.png" id="82_gbavm"]
+[ext_resource type="Texture2D" uid="uid://bd5cc8v5x0gj1" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal26.png" id="83_7ws3w"]
+[ext_resource type="Texture2D" uid="uid://cxy70au4qavtq" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal27.png" id="84_8xj5l"]
+[ext_resource type="Texture2D" uid="uid://nyxo6in7kix7" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal28.png" id="85_ndewq"]
+[ext_resource type="Texture2D" uid="uid://csbji45gujlak" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal29.png" id="86_wk0es"]
+[ext_resource type="Texture2D" uid="uid://cuotko0isuk6i" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal30.png" id="87_hj8ve"]
+[ext_resource type="Texture2D" uid="uid://5qn41k26vl2f" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal31.png" id="88_u2471"]
+[ext_resource type="Texture2D" uid="uid://de24fqtmqgpce" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal32.png" id="89_fkb76"]
+[ext_resource type="Texture2D" uid="uid://bxsf81nrifif1" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal33.png" id="90_eygln"]
+[ext_resource type="Texture2D" uid="uid://d4behslys431e" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal34.png" id="91_up35l"]
+[ext_resource type="Texture2D" uid="uid://ci8qwtk343a8j" path="res://joana/JoannaD'ArcIII_v1.9.2/Sprites/Casts/SaintHeal/Full/Glow/SaintHeal35.png" id="92_l6blh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ifpro"]
 size = Vector2(11.9035, 24.2256)
@@ -236,6 +270,23 @@ tracks/0/keys = {
 "values": [ExtResource("2_pm3ru"), ExtResource("3_hux64"), ExtResource("4_jybw0"), ExtResource("5_jxsxa"), ExtResource("6_hmxkq"), ExtResource("7_v4tqb"), ExtResource("8_djwvq"), ExtResource("9_4qlsw"), ExtResource("2_pm3ru"), ExtResource("3_hux64"), ExtResource("4_jybw0"), ExtResource("5_jxsxa"), ExtResource("6_hmxkq"), ExtResource("7_v4tqb"), ExtResource("8_djwvq"), ExtResource("9_4qlsw")]
 }
 
+[sub_resource type="Animation" id="Animation_ovbus"]
+resource_name = "levelUP"
+length = 3.30001
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("59_5nw4s"), ExtResource("60_dx3o2"), ExtResource("61_xljkm"), ExtResource("62_p7m02"), ExtResource("63_n7k7m"), ExtResource("64_8rp4h"), ExtResource("65_20o0u"), ExtResource("66_vd3h2"), ExtResource("67_uj2q8"), ExtResource("68_sktht"), ExtResource("69_8y46b"), ExtResource("70_d3lfs"), ExtResource("71_dya6a"), ExtResource("72_6avfg"), ExtResource("73_5revq"), ExtResource("74_tec3e"), ExtResource("75_i3va5"), ExtResource("76_1l5uj"), ExtResource("77_cpn2l"), ExtResource("78_7rcib"), ExtResource("79_f0oyf"), ExtResource("80_eifd8"), ExtResource("81_3hxtl"), ExtResource("82_gbavm"), ExtResource("83_7ws3w"), ExtResource("84_8xj5l"), ExtResource("85_ndewq"), ExtResource("86_wk0es"), ExtResource("87_hj8ve"), ExtResource("88_u2471"), ExtResource("89_fkb76"), ExtResource("90_eygln"), ExtResource("91_up35l"), ExtResource("92_l6blh")]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5df16"]
 _data = {
 "RESET": SubResource("Animation_8nnog"),
@@ -247,6 +298,7 @@ _data = {
 "idle": SubResource("Animation_uljec"),
 "jump": SubResource("Animation_n6s7x"),
 "knockback": SubResource("Animation_68qqu"),
+"levelUP": SubResource("Animation_ovbus"),
 "run": SubResource("Animation_t4ms7")
 }
 
@@ -277,8 +329,8 @@ scale = Vector2(6.70373, 1.90072)
 zoom = Vector2(5, 5)
 
 [node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(1, 31)
-scale = Vector2(0.871094, 0.8125)
+position = Vector2(3.55271e-15, 30.8339)
+scale = Vector2(0.871094, 0.777965)
 texture = ExtResource("34_oywwj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
