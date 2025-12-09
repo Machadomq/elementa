@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=4 uid="uid://36dxswp0or83"]
+[gd_scene load_steps=108 format=4 uid="uid://36dxswp0or83"]
 
 [ext_resource type="Texture2D" uid="uid://bsjv7aggrvam4" path="res://assetsIncompletos/Assets-Erik/oak_woods_v1.0/oak_woods_v1.0/oak_woods_tileset.png" id="1_pbmb2"]
 [ext_resource type="Script" path="res://levels/fases/cena_1.gd" id="1_pm8dq"]
@@ -47,6 +47,8 @@
 [ext_resource type="Texture2D" uid="uid://c4ap60bjlruxe" path="res://assetsIncompletos/Assets-Erik/GandalfHardcore FREE Platformer Assets/Weeping Willow2.png" id="41_qcgbv"]
 [ext_resource type="PackedScene" uid="uid://c8mcbf44osdhn" path="res://cenas/Interactions/WorldStuffs/placa_dupla.tscn" id="42_l2jq3"]
 [ext_resource type="PackedScene" uid="uid://drldipgcjdral" path="res://cenas/Interactions/titulo.tscn" id="47_1qdmn"]
+[ext_resource type="PackedScene" path="res://menus/hud/canvas_layer.tscn" id="48_5cgrn"]
+[ext_resource type="PackedScene" uid="uid://bw8ckhrbrjsoh" path="res://menus/inGame_pause_menu/pause_game.tscn" id="49_d8wv3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_w6bfh"]
 
@@ -10093,6 +10095,7 @@ position = Vector2(-57, -50)
 position = Vector2(68, -2)
 
 [node name="transition" parent="." instance=ExtResource("5_i535d")]
+visible = false
 
 [node name="Tiles" type="Node" parent="."]
 
@@ -10149,3 +10152,7 @@ centered = false
 
 [node name="Placa-Dupla" parent="Interactions" instance=ExtResource("42_l2jq3")]
 position = Vector2(474, 227)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("48_5cgrn")]
+
+[node name="pause_menu" parent="." instance=ExtResource("49_d8wv3")]

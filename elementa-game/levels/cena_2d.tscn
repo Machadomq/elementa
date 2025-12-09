@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dspcerl0hf17k" path="res://actors.tscn" id="7_im7f5"]
 [ext_resource type="Texture2D" uid="uid://cuy62c1mbu7w7" path="res://sprites-cenário-teste/Seasonal Tilesets/3 - Tropics/Background parts/_Complete_static_BG_(288 x 208).png" id="7_s5kh0"]
 [ext_resource type="Texture2D" uid="uid://kylmjjhnw8tv" path="res://assetsIncompletos/Assets-Erik/oak_woods_v1.0/oak_woods_v1.0/background/background_layer_1.png" id="9_mj8l5"]
-[ext_resource type="Texture2D" uid="uid://c63q0lrktyca4" path="res://assetsIncompletos/Assets-Erik/oak_woods_v1.0/oak_woods_v1.0/background/background_layer_2.png" id="10_xhrps"]
+[ext_resource type="Texture2D" path="res://assetsIncompletos/Assets-Erik/GothicVania-town-files/GothicVania-town-files/code/phaser-code/assets/sounds/background_layer_2.png" id="10_xhrps"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_i274f"]
 tile_data = PackedInt32Array(0, 65539, 1, 65536, 65539, 2, 131072, 65539, 3, 1, 131075, 1, 65537, 131075, 2, 131073, 131075, 3, 2, 196611, 1, 65538, 196611, 2, 131074, 196611, 3)
