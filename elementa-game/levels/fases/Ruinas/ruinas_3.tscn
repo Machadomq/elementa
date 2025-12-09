@@ -1,4 +1,4 @@
-[gd_scene load_steps=356 format=4 uid="uid://cosfx1vq8l4xj"]
+[gd_scene load_steps=358 format=4 uid="uid://cosfx1vq8l4xj"]
 
 [ext_resource type="PackedScene" uid="uid://dspcerl0hf17k" path="res://actors.tscn" id="1_rkj3q"]
 [ext_resource type="PackedScene" uid="uid://cke68p3p8y03n" path="res://cenas/Interactions/Puzzles/door.tscn" id="2_c2smf"]
@@ -161,6 +161,8 @@
 [ext_resource type="Texture2D" uid="uid://c20euw25o0m5v" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack (1)/Medieval_Castle_Asset_Pack/Decorations/table_shadow.png" id="159_hml8x"]
 [ext_resource type="PackedScene" uid="uid://did2ih7uqou0" path="res://cenas/props/tochas/candelabro.tscn" id="160_60pu5"]
 [ext_resource type="PackedScene" uid="uid://1jcrkth8kht2" path="res://cenas/npcs/mendelev2.tscn" id="161_3374e"]
+[ext_resource type="PackedScene" uid="uid://btpwmbuuv8mrg" path="res://menus/hud/canvas_layer.tscn" id="162_x3ns7"]
+[ext_resource type="PackedScene" uid="uid://bw8ckhrbrjsoh" path="res://menus/inGame_pause_menu/pause_game.tscn" id="163_t4vpl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ly7kw"]
 texture = ExtResource("4_df3xw")
@@ -10453,3 +10455,7 @@ position = Vector2(-961, 161)
 
 [node name="Mendelev2" parent="animaDecor" instance=ExtResource("161_3374e")]
 position = Vector2(-908, 180)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("162_x3ns7")]
+
+[node name="pause_menu" parent="." instance=ExtResource("163_t4vpl")]

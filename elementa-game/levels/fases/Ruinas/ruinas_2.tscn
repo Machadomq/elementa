@@ -1,4 +1,4 @@
-[gd_scene load_steps=422 format=4 uid="uid://b40sgfmmoejqp"]
+[gd_scene load_steps=424 format=4 uid="uid://b40sgfmmoejqp"]
 
 [ext_resource type="PackedScene" uid="uid://da05vccxbs5gm" path="res://levels/fases/transition.tscn" id="1_ht66a"]
 [ext_resource type="PackedScene" uid="uid://dspcerl0hf17k" path="res://actors.tscn" id="2_6cvs1"]
@@ -192,6 +192,8 @@
 [ext_resource type="Script" path="res://scripts/systems/pedras/ruinas/stone5.gd" id="184_v201q"]
 [ext_resource type="Script" path="res://scripts/systems/pedras/stone6.gd" id="185_h7aqg"]
 [ext_resource type="PackedScene" uid="uid://c42bcs5mso6lf" path="res://cenas/Interactions/WorldStuffs/area_damage.tscn" id="187_p3qh5"]
+[ext_resource type="PackedScene" uid="uid://btpwmbuuv8mrg" path="res://menus/hud/canvas_layer.tscn" id="193_ll5u4"]
+[ext_resource type="PackedScene" uid="uid://bw8ckhrbrjsoh" path="res://menus/inGame_pause_menu/pause_game.tscn" id="194_yxtpd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gcd8i"]
 texture = ExtResource("4_m7kfc")
@@ -9627,6 +9629,10 @@ z_index = 3
 position = Vector2(-1276, 249)
 scale = Vector2(0.27, 0.27)
 script = ExtResource("185_h7aqg")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("193_ll5u4")]
+
+[node name="pause_menu" parent="." instance=ExtResource("194_yxtpd")]
 
 [connection signal="body_entered" from="interactions/Dialogue_box" to="player" method="_on_dialogue_box_body_entered"]
 [connection signal="body_exited" from="interactions/Dialogue_box" to="player" method="_on_dialogue_box_body_exited"]

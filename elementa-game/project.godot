@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="elementa"
-run/main_scene="res://levels/world_02.tscn"
+run/main_scene="res://menus/main_menu/main.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -39,12 +39,29 @@ directories/dtl_directory={
 "alquimista": "res://data/dialogues/vila-catalis/alquimista.dtl",
 "alquimista2": "res://data/dialogues/vila-catalis/alquimista2.dtl",
 "alquimista_no_upgrade": "res://data/dialogues/vila-catalis/alquimista_no_upgrade.dtl",
+"cemitério/stone1": "res://data/dialogues/cemitério/stone1.dtl",
+"cemitério/stone2": "res://data/dialogues/cemitério/stone2.dtl",
+"cemitério/stone3": "res://data/dialogues/cemitério/stone3.dtl",
+"cemitério/stone4": "res://data/dialogues/cemitério/stone4.dtl",
+"cemitério/stone5": "res://data/dialogues/cemitério/stone5.dtl",
+"cemitério/stone6": "res://data/dialogues/cemitério/stone6.dtl",
 "dog": "res://data/dialogues/vila-catalis/dog.dtl",
 "ferreiro": "res://data/dialogues/vila-catalis/ferreiro.dtl",
 "ferreiroUp": "res://data/dialogues/vila-catalis/ferreiroUp.dtl",
 "intro": "res://data/dialogues/intro.dtl",
+"intro-cemiterio": "res://data/dialogues/cemitério/intro-cemiterio.dtl",
 "intro-ruinas": "res://data/dialogues/intro-ruinas.dtl",
 "introducao": "res://data/dialogues/introducao.dtl",
+"lapaide8": "res://data/dialogues/cemitério/lapaide8.dtl",
+"lapide1": "res://data/dialogues/cemitério/lapide1.dtl",
+"lapide10": "res://data/dialogues/cemitério/lapide10.dtl",
+"lapide2": "res://data/dialogues/cemitério/lapide2.dtl",
+"lapide3": "res://data/dialogues/cemitério/lapide3.dtl",
+"lapide4": "res://data/dialogues/cemitério/lapide4.dtl",
+"lapide5": "res://data/dialogues/cemitério/lapide5.dtl",
+"lapide6": "res://data/dialogues/cemitério/lapide6.dtl",
+"lapide7": "res://data/dialogues/cemitério/lapide7.dtl",
+"lapide9": "res://data/dialogues/cemitério/lapide9.dtl",
 "npc-inicial": "res://data/dialogues/vila-catalis/npc-inicial.dtl",
 "npc1": "res://data/dialogues/ruinas/npc1.dtl",
 "npc3": "res://data/dialogues/ruinas/npc3.dtl",
@@ -63,12 +80,15 @@ directories/dtl_directory={
 "ruinas3": "res://data/dialogues/ruinas/ruinas3.dtl",
 "ruinas4": "res://data/dialogues/ruinas/ruinas4.dtl",
 "ruinas5": "res://data/dialogues/ruinas/ruinas5.dtl",
+"ston7": "res://data/dialogues/cemitério/ston7.dtl",
 "stone1": "res://data/dialogues/stone1.dtl",
 "stone2": "res://data/dialogues/stone2.dtl",
 "stone3": "res://data/dialogues/stone3.dtl",
 "stone4": "res://data/dialogues/stone4.dtl",
 "stone5": "res://data/dialogues/stone5.dtl",
 "stone6": "res://data/dialogues/ruinas/stone6.dtl",
+"stone8": "res://data/dialogues/cemitério/stone8.dtl",
+"stone9": "res://data/dialogues/cemitério/stone9.dtl",
 "teste1": "res://data/dialogues/Puzzle/teste1.dtl"
 }
 layout/style_list=["res://data/styles/defaultstyle.tres", "res://data/styles/simples.tres", "res://data/styles/novel.tres", "res://data/styles/npc-simples.tres"]
@@ -190,5 +210,6 @@ pause={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
 2d/snap/snap_2d_transforms_to_pixel=true
 2d/snap/snap_2d_vertices_to_pixel=true

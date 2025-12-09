@@ -3,7 +3,7 @@ extends Node
 ## script menu principal
 
 func _on_play_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://levels/world_02.tscn")
+	get_tree().change_scene_to_file("res://cenas/Interactions/intro.tscn")
 
 
 func _on_credit_button_pressed() -> void:

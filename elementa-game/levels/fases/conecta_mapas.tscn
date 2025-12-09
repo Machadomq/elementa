@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=4 uid="uid://bj3tn6d0p6ylp"]
+[gd_scene load_steps=117 format=4 uid="uid://bj3tn6d0p6ylp"]
 
 [ext_resource type="PackedScene" uid="uid://cke68p3p8y03n" path="res://cenas/Interactions/Puzzles/door.tscn" id="1_uybhq"]
 [ext_resource type="PackedScene" uid="uid://da05vccxbs5gm" path="res://levels/fases/transition.tscn" id="2_v2dj8"]
@@ -54,6 +54,7 @@
 [ext_resource type="Texture2D" uid="uid://dmjfm63fnebkv" path="res://assetsIncompletos/Assets-Erik/parallax/awesomeCavePixelArt.png" id="47_s5et7"]
 [ext_resource type="Script" path="res://scripts/systems/WorldStuffs/placa_simples2.gd" id="50_vsdus"]
 [ext_resource type="PackedScene" uid="uid://bw8ckhrbrjsoh" path="res://menus/inGame_pause_menu/pause_game.tscn" id="53_cnpc7"]
+[ext_resource type="PackedScene" uid="uid://btpwmbuuv8mrg" path="res://menus/hud/canvas_layer.tscn" id="55_jne1x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kxp6n"]
 texture = ExtResource("4_7ldng")
@@ -9431,3 +9432,5 @@ script = ExtResource("50_vsdus")
 
 [node name="pause_menu" parent="." instance=ExtResource("53_cnpc7")]
 visible = false
+
+[node name="CanvasLayer" parent="." instance=ExtResource("55_jne1x")]

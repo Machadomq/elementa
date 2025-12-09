@@ -1,4 +1,4 @@
-[gd_scene load_steps=222 format=4 uid="uid://b2ichpcqswyjl"]
+[gd_scene load_steps=223 format=4 uid="uid://b2ichpcqswyjl"]
 
 [ext_resource type="PackedScene" uid="uid://dspcerl0hf17k" path="res://actors.tscn" id="1_0br81"]
 [ext_resource type="PackedScene" uid="uid://cke68p3p8y03n" path="res://cenas/Interactions/Puzzles/door.tscn" id="1_aqbvx"]
@@ -103,6 +103,7 @@
 [ext_resource type="Texture2D" uid="uid://d3v8k6t2lrlsd" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack (1)/Medieval_Castle_Asset_Pack/Tiles/ceiling_2.png" id="62_d0qm7"]
 [ext_resource type="Script" path="res://scripts/systems/pedras/ruinas/stone2.gd" id="68_qnf51"]
 [ext_resource type="PackedScene" uid="uid://bw8ckhrbrjsoh" path="res://menus/inGame_pause_menu/pause_game.tscn" id="74_ieh3r"]
+[ext_resource type="PackedScene" uid="uid://btpwmbuuv8mrg" path="res://menus/hud/canvas_layer.tscn" id="97_4y64k"]
 [ext_resource type="PackedScene" uid="uid://c42bcs5mso6lf" path="res://cenas/Interactions/WorldStuffs/area_damage.tscn" id="104_elq1o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7of6h"]
@@ -12412,6 +12413,15 @@ position = Vector2(-3215, -484)
 scale = Vector2(0.3, 0.3)
 script = ExtResource("68_qnf51")
 
+[node name="area_damage" parent="interactions" instance=ExtResource("104_elq1o")]
+position = Vector2(-742, 187)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="interactions/area_damage"]
+position = Vector2(-335.5, -137.5)
+shape = SubResource("RectangleShape2D_kebro")
+
+[node name="CanvasLayer" parent="interactions" instance=ExtResource("97_4y64k")]
+
 [node name="background" type="Node" parent="."]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="background"]
@@ -12537,10 +12547,3 @@ position = Vector2(-2206, -51)
 visible = false
 
 [node name="pedras" type="Node" parent="."]
-
-[node name="area_damage" parent="." instance=ExtResource("104_elq1o")]
-position = Vector2(-742, 187)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="area_damage"]
-position = Vector2(-335.5, -137.5)
-shape = SubResource("RectangleShape2D_kebro")

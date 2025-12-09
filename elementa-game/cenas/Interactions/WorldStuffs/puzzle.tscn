@@ -90,7 +90,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"fire",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k5rfk"]
@@ -140,9 +140,8 @@ script = ExtResource("1_ff5vl")
 
 [node name="wall_animated" type="AnimatedSprite2D" parent="Wall"]
 sprite_frames = SubResource("SpriteFrames_3rmjl")
-animation = &"closing"
+animation = &"fire"
 autoplay = "fire"
-frame_progress = 0.902566
 
 [node name="wall_collision" type="CollisionShape2D" parent="Wall"]
 position = Vector2(1.25, 2.25)
