@@ -34,60 +34,67 @@ var pode_dash = true
 var pode_atacar = true
 var tempo_cooldown_ataque = 0.5
 
-# === SFX ===
-
-
 # === Knockback ===
 var being_knocked_back: bool = false
 var knockback_timer: float = 0.0
 var knockback_velocity: Vector2 = Vector2.ZERO
 
-# === Invencibilidade (i-frames) ===
+# === Invencibilidade ===
 var invincible: bool = false
 var inv_time_left: float = 0.0
 var death_anim_started: bool = false
 
-# === Consulta de estado ===
+# === LEVEL UP ===
+var levelup_pending = false
+var levelup_playing = false
+
+
 func is_dead() -> bool:
 	return morto
 
-func _ready():
-	
-	set_collision_mask_value(2, false) # não colide com inimigos
 
-	
+func _ready():
+	set_collision_mask_value(2, false)
+
 	$CooldownAtaque.timeout.connect(_on_cooldown_ataque_timeout)
 	$AnimationPlayer.animation_finished.connect(_on_animation_finished)
 	
-	# Conecta sinais das áreas de ataque
 	$areaAtaqueChao.body_entered.connect(_on_area_ataque_body_entered)
 	$areaAtaqueAr.body_entered.connect(_on_area_ataque_body_entered)
 
-	# Desativa as áreas de ataque no início
 	$areaAtaqueChao.monitoring = false
 	$areaAtaqueAr.monitoring = false
 
 
 func _physics_process(delta: float) -> void:
+
+	# Se a animação já está tocando: bloqueia tudo e retorna (prioridade máxima)
+	if levelup_playing:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+
+	# Se conseguiu iniciar a animação de levelup neste frame, retorna imediatamente
+	if _try_play_levelup():
+		# garantimos que o player pare neste frame e não execute lógica adicional
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+
 	if morto:
-		# Enquanto estiver no ar, continua caindo
 		if not is_on_floor():
 			velocity += get_gravity() * delta
 		else:
-			# Ao tocar o chão, inicia animação de morte (apenas uma vez)
 			if not death_anim_started:
 				if $AnimationPlayer.has_animation("death"):
 					$AnimationPlayer.play("death")
-				else:
-					print("⚠️ Animação 'morte' não encontrada no AnimationPlayer")
 				death_anim_started = true
-			# Desacelera horizontalmente para não deslizar
 			velocity.x = move_toward(velocity.x, 0, SPEED * delta)
 
 		move_and_slide()
 		return
 
-	# Atualiza dash e cooldown
+	# Dash timers
 	if dashing:
 		dash_timer -= delta
 		if dash_timer <= 0:
@@ -98,26 +105,24 @@ func _physics_process(delta: float) -> void:
 		if dash_cooldown_timer <= 0:
 			pode_dash = true
 
-	# Gravidade (não aplica durante dash)
+	# Gravidade
 	if not is_on_floor() and not dashing:
 		velocity += get_gravity() * delta
 	elif is_on_floor():
-		pulo_extra_disponivel = true  # reseta double jump
+		pulo_extra_disponivel = true
 
-	# Atualiza efeito do knockback (suavizado)
+	# Knockback suavizado
 	if being_knocked_back:
 		knockback_timer -= delta
-		# Suaviza a velocidade horizontal aproximando de 0
 		velocity.x = move_toward(velocity.x, 0.0, KNOCKBACK_DAMP * delta)
 		if knockback_timer <= 0.0 or abs(velocity.x) < 5.0:
 			being_knocked_back = false
 
-	# Atualiza invencibilidade (sem piscada)
+	# Invencibilidade
 	if invincible:
 		inv_time_left -= delta
 		if inv_time_left <= 0.0:
 			invincible = false
-			# Garante restauro visual
 			$Sprite.visible = true
 
 	# Movimento horizontal
@@ -129,22 +134,18 @@ func _physics_process(delta: float) -> void:
 			olhando_para_esquerda = direction < 0
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
-			
-			
 
 	move_and_slide()
 
-	# Pulo / double jump
+	# Pulo
 	if Input.is_action_just_pressed("ui_accept"):
 		if is_on_floor():
 			velocity.y = JUMP_VELOCITY
 			$AnimationPlayer.play("jump")
-			
 		elif pulo_extra_disponivel:
 			velocity.y = JUMP_VELOCITY
 			$AnimationPlayer.play("jump")
 			pulo_extra_disponivel = false
-			
 
 	# Ataque
 	if Input.is_action_just_pressed("ataque") and pode_atacar and not being_knocked_back:
@@ -175,14 +176,10 @@ func _physics_process(delta: float) -> void:
 		pode_dash = false
 		dash_cooldown_timer = DASH_COOLDOWN
 		$AnimationPlayer.play("dash")
-		
-		if olhando_para_esquerda:
-			velocity.x = -DASH_SPEED
-		else:
-			velocity.x = DASH_SPEED
+		velocity.x = -DASH_SPEED if olhando_para_esquerda else DASH_SPEED
 		return
 
-	# Animações normais (evita sobrescrever a animação de knockback)
+	# Animações normais
 	if not atacando and not dashing and not being_knocked_back:
 		if not is_on_floor():
 			if direction != 0:
@@ -198,116 +195,83 @@ func _physics_process(delta: float) -> void:
 				$AnimationPlayer.play("run")
 			else:
 				$AnimationPlayer.play("idle")
-	
+
+	# Arredondamento de posição
 	if velocity.x >= 0:
 		position.x = floor(position.x + 0.5)
 	else:
 		position.x = ceil(position.x - 0.5)
-
 	position.y = round(position.y)
 
-	for platforms in get_slide_collision_count(): 
+	for platforms in get_slide_collision_count():
 		var collision = get_slide_collision(platforms)
 		if collision.get_collider().has_method("has_collided_with"):
 			collision.get_collider().has_collided_with(collision,self)
 
 
-# === Função de dano (só recebe dano, não causa) ===
-func receive_damage(amount: int, source: Node = null):
-	if morto:
-		return
 
-	# Ignora dano durante invencibilidade
-	if invincible:
-		print("Dano ignorado: invencibilidade ativa")
-		return
+func receive_damage(amount: int, source: Node = null):
+	if morto: return
+	if invincible: return
 
 	Global.current_health -= amount
 
-	# Aplica knockback afastando do inimigo (se conhecido)
 	var dir := 0.0
 	if source != null and source is Node2D:
-		# Se o inimigo está à esquerda, empurra para a direita (positivo)
 		dir = sign(global_position.x - (source as Node2D).global_position.x)
 	else:
-		# Fallback: usa direção oposta ao olhar atual
 		dir = 1.0 if olhando_para_esquerda else -1.0
 
-	# Cancela estados que conflitam
 	dashing = false
-	# Se foi interrompido durante um ataque, inicia cooldown para liberar novo ataque depois
-	if atacando:
-		$CooldownAtaque.start(tempo_cooldown_ataque)
+	if atacando: $CooldownAtaque.start(tempo_cooldown_ataque)
 	atacando = false
 	$areaAtaqueChao.monitoring = false
 	$areaAtaqueAr.monitoring = false
 
-	# Inicia knockback suave: aplica impulso inicial e suaviza no _physics_process
 	being_knocked_back = true
 	knockback_timer = KNOCKBACK_DURATION
 	knockback_velocity = Vector2(dir * KNOCKBACK_X, KNOCKBACK_Y)
-	# Aplica impulso vertical uma vez (subida), mantendo gravidade em seguida
 	velocity.y = min(velocity.y, KNOCKBACK_Y)
-	# Aplica um impulso horizontal inicial sem pico brusco
 	velocity.x = lerp(velocity.x, knockback_velocity.x, 0.5)
 
-	# Toca a animação de knockback, se existir
 	if $AnimationPlayer.has_animation("knockback"):
 		$AnimationPlayer.play("knockback")
 
-	# Inicia i-frames com piscada
 	invincible = true
 	inv_time_left = INVINCIBILITY_TIME
-
-	print("Player recebeu ", amount, " de dano. Vida: ", vida_atual, " | Knockback dir=", dir, " | i-frames=", INVINCIBILITY_TIME)
 
 	if Global.current_health <= 0:
 		morrer()
 
 
 func morrer():
-	if morto:
-		return
+	if morto: return
 	morto = true
 
-	# Limpa estados
 	atacando = false
 	dashing = false
 	being_knocked_back = false
 	invincible = false
 	death_anim_started = false
 
-	# Zera ataque/dash areas
 	$areaAtaqueChao.monitoring = false
 	$areaAtaqueAr.monitoring = false
 
-	# Mantém componente vertical (para cair) mas reduz horizontal progressivamente
-	velocity.x = velocity.x * 0.2
-
-	print("Player morreu!")
+	velocity.x *= 0.2
 
 
-# === Área de ataque detectando inimigos ===
 func _on_area_ataque_body_entered(body):
-	if morto:
-		return
+	if morto: return
+	if body == self: return
 
-	# Garante que não atinge o próprio player
-	if body == self:
-		return
-
-	# Só causa dano em inimigos (quando existirem)
 	if body.has_method("take_damage"):
-		body.take_damage(Global.max_power) # dano base do player
+		body.take_damage(Global.max_power)
 
 
-# === Eventos ===
 func _on_animation_finished(anim_name):
 	if anim_name in ["ataque", "ataque_ar"]:
 		atacando = false
 		$CooldownAtaque.start(tempo_cooldown_ataque)
-
-		# Desativa as áreas após o ataque
 		$areaAtaqueChao.monitoring = false
 		$areaAtaqueAr.monitoring = false
 
@@ -321,27 +285,65 @@ func _on_animation_finished(anim_name):
 		else:
 			$AnimationPlayer.play("idle")
 
+	if anim_name == "levelUP":
+		# quando a animação termina, libera controle normal
+		levelup_playing = false
+
+
 
 func _on_cooldown_ataque_timeout():
 	pode_atacar = true 
-	
-func _playerUpgrade() -> void: 
+
+
+# ===================================================
+#                SISTEMA DE LEVEL UP
+# ===================================================
+func _playerUpgrade() -> void:
 	var current_coin = Global.coins
-	if current_coin == 2 or current_coin == 10 or current_coin == 18 or current_coin == 24: 
-		Global.max_health = Global.max_health + 10
+
+	if current_coin == 2 or current_coin == 10 or current_coin == 18 or current_coin == 24:
+		Global.max_health += 10
 		Global.current_health = Global.max_health
 		print("A vida aumentou")
-		print(Global.max_health)
-	else: 
-		pass
 
-func _updateElement() -> void: 
+		# Marca para tocar animação (se no ar, espera; se no chão, toca imediamente)
+		levelup_pending = true
+		# levelup_playing deixamos falso; será true quando realmente começar a animação
+
+
+# _try_play_levelup tenta iniciar a animação.
+# Retorna true se a animação foi iniciada neste frame (para fazermos return imediato).
+func _try_play_levelup() -> bool:
+	if levelup_pending and not levelup_playing:
+		# só toca se estiver no chão
+		if is_on_floor():
+			if not $AnimationPlayer.has_animation("levelUP"):
+				push_warning("Animação 'levelUP' não encontrada no AnimationPlayer.")
+				# limpa o pending para não ficar tentando infinitamente
+				levelup_pending = false
+				return false
+
+			# inicia levelup e bloqueia input/ânim neste frame
+			levelup_playing = true
+			levelup_pending = false
+			velocity = Vector2.ZERO
+			$AnimationPlayer.stop()
+			$AnimationPlayer.play("levelUP")
+			print("▶ Iniciando levelUP")
+			return true
+	return false
+
+
+func _updateElement() -> void:
 	var atomic_number = Global.coins
 	var new_element = Global.ELEMENTOS[atomic_number]
 	self.elemento = new_element
 	print(elemento)
-	
+
+
 func _upgradePower() -> void:
 	Dialogic.start('ferreiroUp')
-	Global.max_power = Global.max_power + 10
+	Global.max_power += 10
 	
+	# Também marca pending para levelup (comportamento igual ao _playerUpgrade)
+	levelup_pending = true
