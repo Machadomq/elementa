@@ -10,6 +10,7 @@ extends CharacterBody2D
 @export var knockback_up: float = -200.0        # Impulso vertical ao receber dano
 @export var knockback_duration: float = 0.5    # Duração do efeito de knockback
 @export var knockback_damp: float = 1200.0      # Fator de amortecimento horizontal
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite
 
 var player: Node2D
 var following := false
@@ -20,6 +21,8 @@ var being_knocked_back: bool = false
 var knockback_timer: float = 0.0
 
 func _ready():
+	
+	animated_sprite.play("fly")
 	
 	set_collision_mask_value(3, false) # não colide com layer 3 (player)
 	
@@ -85,6 +88,21 @@ func _physics_process(delta):
 		return
 
 	var distance_to_player = global_position.distance_to(player.global_position)
+	
+	# --- Lógica de Animação e Virar o Sprite ---
+	
+	# 1. Verifica se está se movendo para virar o sprite
+	if velocity.x > 0:
+		# Movendo para a esquerda: espelha horizontalmente
+		animated_sprite.flip_h = true
+	elif velocity.x < 0:
+		# Movendo para a direita: não espelha
+		animated_sprite.flip_h = false
+	
+	# 2. Garante que a animação de voo esteja sempre rodando.
+	#    (Isso é importante se você planeja ter outras animações no futuro)
+	if animated_sprite.animation != "fly":
+		animated_sprite.play("fly")
 	
 	# Verifica se deve seguir ou desistir
 	if distance_to_player < detection_radius:
