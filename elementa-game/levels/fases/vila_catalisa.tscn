@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=4 uid="uid://brwt6uokanpcu"]
+[gd_scene load_steps=80 format=4 uid="uid://brwt6uokanpcu"]
 
 [ext_resource type="Script" path="res://scripts/systems/Fases/vila_catalisa.gd" id="1_v3pqk"]
 [ext_resource type="PackedScene" uid="uid://cke68p3p8y03n" path="res://cenas/Interactions/Puzzles/door.tscn" id="2_rxien"]
@@ -37,7 +37,6 @@
 [ext_resource type="PackedScene" uid="uid://guwgfueljpno" path="res://cenas/npcs/cachorro.tscn" id="33_e26ft"]
 [ext_resource type="PackedScene" uid="uid://b5ho7tr04swmn" path="res://cenas/npcs/npc_inicial.tscn" id="34_736wn"]
 [ext_resource type="PackedScene" uid="uid://ctm02cab3tvpo" path="res://cenas/npcs/fazendeiro.tscn" id="36_1yjle"]
-[ext_resource type="PackedScene" uid="uid://c2afrfioxjkba" path="res://cenas/Coletáveis/coin.tscn" id="38_8ym7l"]
 [ext_resource type="PackedScene" uid="uid://btpwmbuuv8mrg" path="res://menus/hud/canvas_layer.tscn" id="39_qwlsk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t28ki"]
@@ -12990,7 +12989,6 @@ next_level = "res://levels/fases/conecta_mapas.tscn"
 transition_controller = NodePath("../transition")
 
 [node name="transition" parent="." instance=ExtResource("3_ycuev")]
-visible = false
 
 [node name="player" parent="." instance=ExtResource("4_qleje")]
 z_index = 8
@@ -13114,36 +13112,5 @@ scale = Vector2(1.00098, 1.04913)
 texture = ExtResource("30_tb7mw")
 centered = false
 
-[node name="coins" type="Node" parent="."]
-
-[node name="Coin2" parent="coins" instance=ExtResource("38_8ym7l")]
-
-[node name="Coin3" parent="coins" instance=ExtResource("38_8ym7l")]
-
-[node name="Coin4" parent="coins" instance=ExtResource("38_8ym7l")]
-
-[node name="Coin5" parent="coins" instance=ExtResource("38_8ym7l")]
-
-[node name="Coin6" parent="coins" instance=ExtResource("38_8ym7l")]
-
-[node name="Coin7" parent="coins" instance=ExtResource("38_8ym7l")]
-
-[node name="Coin8" parent="coins" instance=ExtResource("38_8ym7l")]
-
-[node name="Coin9" parent="coins" instance=ExtResource("38_8ym7l")]
-
-[node name="Coin10" parent="coins" instance=ExtResource("38_8ym7l")]
-
-[node name="Coin11" parent="coins" instance=ExtResource("38_8ym7l")]
-
-[node name="Coin12" parent="coins" instance=ExtResource("38_8ym7l")]
-
-[node name="Coin13" parent="coins" instance=ExtResource("38_8ym7l")]
-
-[node name="Coin14" parent="coins" instance=ExtResource("38_8ym7l")]
-
-[node name="Coin15" parent="coins" instance=ExtResource("38_8ym7l")]
-
-[node name="Coin" parent="coins" instance=ExtResource("38_8ym7l")]
-
 [node name="CanvasLayer" parent="." instance=ExtResource("39_qwlsk")]
+visible = false

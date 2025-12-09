@@ -102,7 +102,7 @@ func _process(delta) -> void:
 	and Input.is_action_just_pressed("INTERACT"):
 
 		dialog_active = true
-		Dialogic.start("npc4") 
+		Dialogic.start("mendeleev") 
 		animated.play("talking") # Inicia a animação de diálogo
 
 

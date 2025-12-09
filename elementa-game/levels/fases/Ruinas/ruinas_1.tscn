@@ -1,4 +1,4 @@
-[gd_scene load_steps=223 format=4 uid="uid://b2ichpcqswyjl"]
+[gd_scene load_steps=224 format=4 uid="uid://b2ichpcqswyjl"]
 
 [ext_resource type="PackedScene" uid="uid://dspcerl0hf17k" path="res://actors.tscn" id="1_0br81"]
 [ext_resource type="PackedScene" uid="uid://cke68p3p8y03n" path="res://cenas/Interactions/Puzzles/door.tscn" id="1_aqbvx"]
@@ -105,6 +105,7 @@
 [ext_resource type="PackedScene" uid="uid://bw8ckhrbrjsoh" path="res://menus/inGame_pause_menu/pause_game.tscn" id="74_ieh3r"]
 [ext_resource type="PackedScene" uid="uid://btpwmbuuv8mrg" path="res://menus/hud/canvas_layer.tscn" id="97_4y64k"]
 [ext_resource type="PackedScene" uid="uid://c42bcs5mso6lf" path="res://cenas/Interactions/WorldStuffs/area_damage.tscn" id="104_elq1o"]
+[ext_resource type="PackedScene" uid="uid://c2afrfioxjkba" path="res://cenas/Coletáveis/coin.tscn" id="106_n2a15"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7of6h"]
 texture = ExtResource("4_ktnt0")
@@ -12544,6 +12545,19 @@ position = Vector2(-2274, -52)
 position = Vector2(-2206, -51)
 
 [node name="pause_menu" parent="." instance=ExtResource("74_ieh3r")]
-visible = false
 
 [node name="pedras" type="Node" parent="."]
+
+[node name="coins" type="Node" parent="."]
+
+[node name="Coin" parent="coins" instance=ExtResource("106_n2a15")]
+position = Vector2(-1183, -32)
+scale = Vector2(2, 2)
+
+[node name="Coin2" parent="coins" instance=ExtResource("106_n2a15")]
+position = Vector2(-2894, -248)
+scale = Vector2(2, 2)
+
+[node name="Coin3" parent="coins" instance=ExtResource("106_n2a15")]
+position = Vector2(-2871, -479)
+scale = Vector2(2, 2)

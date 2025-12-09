@@ -1,0 +1,20 @@
+Aqui jazem três irmãos — parecidos, mas não iguais.\
+Diga-me, viajante\: como chamamos átomos do mesmo elemento, mas com massas diferentes?
+- Isóbaros
+	set {errou} = false
+- Isótopos
+	set {acertou} = true
+	[signal arg="teste1"]
+- Isótonos
+	[signal arg="teste2"]
+	set {errou} = false
+if {acertou} == true:
+	Correto.\
+Isótopos têm o mesmo número de prótons, mas nêutrons distintos.\
+Iguais na identidade, diferentes no peso.\
+Pode prosseguir.
+else:
+	Não, viajante.\
+Os isótopos pertencem ao mesmo elemento…\
+pense nos irmãos que partilham o nome, mas não o tamanho.\
+Tente novamente.

@@ -62,6 +62,7 @@ directories/dtl_directory={
 "lapide6": "res://data/dialogues/cemitério/lapide6.dtl",
 "lapide7": "res://data/dialogues/cemitério/lapide7.dtl",
 "lapide9": "res://data/dialogues/cemitério/lapide9.dtl",
+"mendeleev": "res://data/dialogues/ruinas/mendeleev.dtl",
 "npc-inicial": "res://data/dialogues/vila-catalis/npc-inicial.dtl",
 "npc1": "res://data/dialogues/ruinas/npc1.dtl",
 "npc3": "res://data/dialogues/ruinas/npc3.dtl",
@@ -75,11 +76,13 @@ directories/dtl_directory={
 "ruinas/stone3": "res://data/dialogues/ruinas/stone3.dtl",
 "ruinas/stone4": "res://data/dialogues/ruinas/stone4.dtl",
 "ruinas/stone5": "res://data/dialogues/ruinas/stone5.dtl",
+"ruinas/stone8": "res://data/dialogues/ruinas/stone8.dtl",
 "ruinas1": "res://data/dialogues/ruinas/ruinas1.dtl",
 "ruinas2": "res://data/dialogues/ruinas/ruinas2.dtl",
 "ruinas3": "res://data/dialogues/ruinas/ruinas3.dtl",
 "ruinas4": "res://data/dialogues/ruinas/ruinas4.dtl",
 "ruinas5": "res://data/dialogues/ruinas/ruinas5.dtl",
+"ruinas7": "res://data/dialogues/ruinas/ruinas7.dtl",
 "ston7": "res://data/dialogues/cemitério/ston7.dtl",
 "stone1": "res://data/dialogues/stone1.dtl",
 "stone2": "res://data/dialogues/stone2.dtl",
@@ -87,9 +90,14 @@ directories/dtl_directory={
 "stone4": "res://data/dialogues/stone4.dtl",
 "stone5": "res://data/dialogues/stone5.dtl",
 "stone6": "res://data/dialogues/ruinas/stone6.dtl",
+"stone7": "res://data/dialogues/ruinas/stone7.dtl",
 "stone8": "res://data/dialogues/cemitério/stone8.dtl",
 "stone9": "res://data/dialogues/cemitério/stone9.dtl",
-"teste1": "res://data/dialogues/Puzzle/teste1.dtl"
+"teste1": "res://data/dialogues/Puzzle/teste1.dtl",
+"teste2": "res://data/dialogues/Puzzle/teste2.dtl",
+"teste3": "res://data/dialogues/Puzzle/teste3.dtl",
+"teste4": "res://data/dialogues/Puzzle/teste4.dtl",
+"viajante": "res://data/dialogues/viajante.dtl"
 }
 layout/style_list=["res://data/styles/defaultstyle.tres", "res://data/styles/simples.tres", "res://data/styles/novel.tres", "res://data/styles/npc-simples.tres"]
 layout/default_style="res://data/styles/simples.tres"

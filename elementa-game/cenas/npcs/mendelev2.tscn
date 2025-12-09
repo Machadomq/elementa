@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ctu6hu72w5bye" path="res://data/styles/portait/Portraits_v1/hud/Speech_Emotes (16 x 16).png" id="3_rctan"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfq2w"]
-size = Vector2(48, 28)
+size = Vector2(103, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8vt71"]
 atlas = ExtResource("3_bf2xb")
@@ -204,7 +204,7 @@ animations = [{
 script = ExtResource("1_tb4nr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4, -5)
+position = Vector2(-5.5, -16)
 shape = SubResource("RectangleShape2D_rfq2w")
 
 [node name="labelinteracao" type="Label" parent="."]
@@ -219,7 +219,8 @@ texture = ExtResource("3_rctan")
 [node name="animated" type="AnimatedSprite2D" parent="."]
 position = Vector2(-7, -5)
 sprite_frames = SubResource("SpriteFrames_e1g8a")
-animation = &"idle"
+animation = &"arriving"
+flip_h = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

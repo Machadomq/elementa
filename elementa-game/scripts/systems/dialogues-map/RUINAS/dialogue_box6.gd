@@ -32,4 +32,4 @@ func _on_body_exited(body) -> void:
 
 func _process(_delta) -> void:
 	if player_in_area and Input.is_action_just_pressed("INTERACT"):
-		Dialogic.start("lapaide8")
+		Dialogic.start("ruinas7")

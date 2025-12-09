@@ -1,0 +1,16 @@
+Para seguir adiante, prove que compreende o coração da matéria.\
+Responda-me, viajante\: o que compõe o núcleo de um átomo?
+- Somente elétrons
+	set {errou} = false
+- Elétrons e prótons
+	set {acertou} = true
+	[signal arg="teste1"]
+- Prótons e nêutrons
+	[signal arg="teste2"]
+	set {errou} = false
+if {acertou} == true:
+	O núcleo é compacto e denso, formado por prótons — carregados positivamente — e nêutrons, que não possuem carga.\
+Você demonstra clareza… pode prosseguir
+else:
+	Os elétrons orbitam ao redor do núcleo, mas não fazem parte dele.\
+Reflita e tente novamente."

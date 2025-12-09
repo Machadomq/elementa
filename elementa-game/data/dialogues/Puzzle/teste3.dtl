@@ -1,0 +1,19 @@
+Viajante… tantos compreenderam errado o átomo ao longo dos séculos.\
+Responda-me e mostre que honra nossa história\:
+Qual modelo atômico foi o primeiro a admitir que o átomo tinha cargas positivas e negativas distribuídas como um ‘pudim
+- Modelo de Dalton
+	set {errou} = false
+- Modelo de Thomson
+	set {acertou} = true
+	[signal arg="teste1"]
+- Modelo de Rutherford
+	[signal arg="teste2"]
+	set {errou} = false
+if {acertou} == true:
+	Sim… Thomson enxergou o átomo como uma massa positiva com elétrons incrustados.\
+Ingênuo, mas foi um começo brilhante.\
+Siga em frente.
+else:
+	Não. Cada modelo veio de um tempo, uma dúvida, uma hipótese…\
+Mas este não pertence ao nome que escolheste.\
+Reflita e tente novamente.

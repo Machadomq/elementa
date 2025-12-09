@@ -18,7 +18,7 @@ func _ready() -> void:
 
 
 func _on_dialogic_signal(arg: String): 
-	if arg == "teste4":
+	if arg == "teste1":
 		resposta = true
 		print("resposta certa")
 		solve_puzzle()
@@ -44,7 +44,7 @@ func _on_trigger_body_exited(body: Node2D) -> void:
 func _process(_delta: float) -> void:
 	if player_in_area and not is_solved and Input.is_action_just_pressed("INTERACT"):
 		Dialogic.signal_event.connect(_on_dialogic_signal)
-		Dialogic.start("teste1")
+		Dialogic.start("teste2")
 
 # Não é necessário set_input_as_handled() em _process
 
