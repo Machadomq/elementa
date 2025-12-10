@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=4 uid="uid://brwt6uokanpcu"]
+[gd_scene load_steps=81 format=4 uid="uid://brwt6uokanpcu"]
 
 [ext_resource type="Script" path="res://scripts/systems/Fases/vila_catalisa.gd" id="1_v3pqk"]
 [ext_resource type="PackedScene" uid="uid://cke68p3p8y03n" path="res://cenas/Interactions/Puzzles/door.tscn" id="2_rxien"]
@@ -12979,6 +12979,9 @@ sources/8 = SubResource("TileSetAtlasSource_d0em8")
 sources/9 = SubResource("TileSetAtlasSource_gixj0")
 sources/10 = SubResource("TileSetAtlasSource_664pn")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8yrj"]
+size = Vector2(150, 123)
+
 [node name="VilaCatalisa" type="Node2D"]
 position = Vector2(-8, -7)
 script = ExtResource("1_v3pqk")
@@ -13114,3 +13117,15 @@ centered = false
 
 [node name="CanvasLayer" parent="." instance=ExtResource("39_qwlsk")]
 visible = false
+
+[node name="limites" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="limites"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limites/StaticBody2D"]
+position = Vector2(-178, -38)
+shape = SubResource("RectangleShape2D_w8yrj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="limites/StaticBody2D"]
+position = Vector2(2504, -12)
+shape = SubResource("RectangleShape2D_w8yrj")

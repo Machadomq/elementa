@@ -1,4 +1,4 @@
-[gd_scene load_steps=117 format=4 uid="uid://bj3tn6d0p6ylp"]
+[gd_scene load_steps=121 format=4 uid="uid://bj3tn6d0p6ylp"]
 
 [ext_resource type="PackedScene" uid="uid://cke68p3p8y03n" path="res://cenas/Interactions/Puzzles/door.tscn" id="1_uybhq"]
 [ext_resource type="PackedScene" uid="uid://da05vccxbs5gm" path="res://levels/fases/transition.tscn" id="2_v2dj8"]
@@ -51,10 +51,13 @@
 [ext_resource type="Texture2D" uid="uid://b5p3jmypxsbiw" path="res://assetsIncompletos/Assets-Erik/forest-nature-fantasy-tileset-free/Fantasy Swamp Forest/Free/Terrain_and_Props.png" id="42_k3w8h"]
 [ext_resource type="Texture2D" uid="uid://kphlyho5jdq4" path="res://assetsIncompletos/Assets-Erik/Final/Grass_background_2.png" id="44_kpf7e"]
 [ext_resource type="PackedScene" uid="uid://dr54tukxxdm1e" path="res://cenas/Interactions/WorldStuffs/placa-simples.tscn" id="46_nwfhf"]
-[ext_resource type="Texture2D" uid="uid://dmjfm63fnebkv" path="res://assetsIncompletos/Assets-Erik/parallax/awesomeCavePixelArt.png" id="47_s5et7"]
 [ext_resource type="Script" path="res://scripts/systems/WorldStuffs/placa_simples2.gd" id="50_vsdus"]
 [ext_resource type="PackedScene" uid="uid://bw8ckhrbrjsoh" path="res://menus/inGame_pause_menu/pause_game.tscn" id="53_cnpc7"]
+[ext_resource type="Texture2D" uid="uid://du4lijxuexrrw" path="res://assetsIncompletos/Assets-Erik/PixelFantasy_Caves_1.0/background1.png" id="55_6112a"]
 [ext_resource type="PackedScene" uid="uid://btpwmbuuv8mrg" path="res://menus/hud/canvas_layer.tscn" id="55_jne1x"]
+[ext_resource type="Texture2D" uid="uid://b8dbdrjcff0s3" path="res://assetsIncompletos/Assets-Erik/PixelFantasy_Caves_1.0/background2.png" id="56_2qa3u"]
+[ext_resource type="Texture2D" uid="uid://dk15ku6kgr3ac" path="res://assetsIncompletos/Assets-Erik/PixelFantasy_Caves_1.0/background3.png" id="57_qdkca"]
+[ext_resource type="Texture2D" uid="uid://dbnoyd1jcnoda" path="res://assetsIncompletos/Assets-Erik/PixelFantasy_Caves_1.0/background4a.png" id="58_uvq71"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kxp6n"]
 texture = ExtResource("4_7ldng")
@@ -7753,13 +7756,29 @@ texture = ExtResource("42_k3w8h")
 19:9/0 = 0
 0:10/0 = 0
 5:10/0 = 0
+5:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.875, -6.875, -6.75, 2.75, 8, 2.75, 8, -8)
+5:10/0/physics_layer_0/polygon_0/one_way = true
 6:10/0 = 0
+6:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 2.25, -8, 2.375)
+6:10/0/physics_layer_0/polygon_0/one_way = true
 7:10/0 = 0
+7:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 1.875, 8, 2.375, 8, -8)
+7:10/0/physics_layer_0/polygon_0/one_way = true
 8:10/0 = 0
+8:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 3.125, 8, 2.75, 8, -8)
+8:10/0/physics_layer_0/polygon_0/one_way = true
 9:10/0 = 0
+9:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(6.75, -6.5, 5.875, 2.75, -8, 2.75, -8, -8)
+9:10/0/physics_layer_0/polygon_0/one_way = true
 12:10/0 = 0
+12:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:10/0/physics_layer_0/polygon_0/one_way = true
 13:10/0 = 0
+13:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:10/0/physics_layer_0/polygon_0/one_way = true
 14:10/0 = 0
+14:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:10/0/physics_layer_0/polygon_0/one_way = true
 15:10/0 = 0
 18:10/0 = 0
 19:10/0 = 0
@@ -7983,8 +8002,10 @@ texture = ExtResource("42_k3w8h")
 5:33/0 = 0
 8:33/0 = 0
 9:33/0 = 0
+7:9/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_x3w5i"]
+physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_cj1qd")
 sources/2 = SubResource("TileSetAtlasSource_q04yp")
 sources/7 = SubResource("TileSetAtlasSource_7ju3b")
@@ -9325,6 +9346,9 @@ texture = ExtResource("40_2uvlk")
 sources/0 = SubResource("TileSetAtlasSource_y702d")
 sources/1 = SubResource("TileSetAtlasSource_0lh6n")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hlwp3"]
+size = Vector2(97, 134.5)
+
 [node name="ConectaMapas" type="Node2D"]
 position = Vector2(-244, 68)
 
@@ -9345,7 +9369,7 @@ tile_set = SubResource("TileSet_22hki")
 
 [node name="decorations" type="TileMapLayer" parent="Tiles"]
 z_index = 1
-tile_map_data = PackedByteArray("AADD/w8ABwAoAA4AAADD/xAABwAoAA8AAADD/xEABwAoABAAAADD/xIABwAoABEAAADE/w8ABwApAA4AAADE/xAABwApAA8AAADE/xEABwApABAAAADE/xIABwApABEAAADJ/w8ABwAoAA4AAADJ/xAABwAoAA8AAADJ/xEABwAoABAAAADJ/xIABwAoABEAAADK/w8ABwApAA4AAADK/xAABwApAA8AAADK/xEABwApABAAAADK/xIABwApABEAAADP/w8ABwAoAA4AAADP/xAABwAoAA8AAADP/xEABwAoABAAAADP/xIABwAoABEAAADQ/w8ABwApAA4AAADQ/xAABwApAA8AAADQ/xEABwApABAAAADQ/xIABwApABEAAADO/xQAAgAAAAAAAAC9/w8ABwAoAA4AAAC9/xAABwAoAA8AAAC9/xEABwAoABAAAAC9/xIABwAoABEAAAC+/w8ABwApAA4AAAC+/xAABwApAA8AAAC+/xEABwApABAAAAC+/xIABwApABEAAAC3/w8ABwAoAA4AAAC3/xAABwAoAA8AAAC3/xEABwAoABAAAAC3/xIABwAoABEAAAC4/w8ABwApAA4AAAC4/xAABwApAA8AAAC4/xEABwApABAAAAC4/xIABwApABEAAADR/xQACAAAAA0AAADS/xQACAABAA0AAADG/xQACAAAAA0AAADH/xQACAABAA0AAADc/xQACAAAAA0AAADd/xQACAAAAA0AAADe/xQACAABAA0AAADi/xQACAAAAA0AAADj/xQACAAAAA0AAADk/xQACAABAA0AAADl/xQACAAAAA0AAADm/xQACAABAA0AAADl/xYACAAAAA0AAADm/xYACAAAAA0AAADn/xYACAABAA0AAADo/xYACAAAAA0AAADp/xYACAABAA0AAADq/xYACAAAAA0AAADr/xYACAABAA0AAADL/xQACAAAAA0AAADM/xQACAABAA0AAAC7/xQACAAAAA0AAAC8/xQACAABAA0AAAC2/xQACAAAAA0AAAC3/xQACAABAA0AAADB/xQACAAAAA0AAADC/xQACAABAA0AAADW/xQACAAAAA0AAADX/xQACAABAA0AAACx/w8ABwAoAA4AAACx/xAABwAoAA8AAACx/xEABwAoABAAAACx/xIABwAoABEAAACy/w8ABwApAA4AAACy/xAABwApAA8AAACy/xEABwApABAAAACy/xIABwApABEAAAADAP3/BAAOABMAAAADAP7/BAAOABQAAAAEAP3/BAAPABMAAAAEAP7/BAAPABQAAAAFAP3/BAAQABMAAAAFAP7/BAAQABQAAAAGAP3/BAARABMAAAAGAP7/BAARABQAAAAKAP3/BAAOABMAAAAKAP7/BAAOABQAAAALAP3/BAAPABMAAAALAP7/BAAPABQAAAAMAP3/BAAQABMAAAAMAP7/BAAQABQAAAANAP3/BAARABMAAAANAP7/BAARABQAAAASAPv/BAAOABMAAAASAPz/BAAOABQAAAATAPv/BAAPABMAAAATAPz/BAAPABQAAAAWAPv/BAAOABMAAAAWAPz/BAAOABQAAAAXAPv/BAAPABMAAAAXAPz/BAAPABQAAAAHAP3/BAAOABMAAAAHAP7/BAAOABQAAAAIAP3/BAAPABMAAAAIAP7/BAAPABQAAADx//3/BAAOABMAAADx//7/BAAOABQAAADy//3/BAAPABMAAADy//7/BAAPABQAAADq////BAAOABMAAADq/wAABAAOABQAAADr////BAAPABMAAADr/wAABAAPABQAAADk////BAAOABMAAADk/wAABAAOABQAAADl////BAAPABMAAADl/wAABAAPABQAAADb////BAAOABMAAADb/wAABAAOABQAAADc////BAAPABMAAADc/wAABAAPABQAAACr/w8ABwAoAA4AAACr/xAABwAoAA8AAACr/xEABwAoABAAAACr/xIABwAoABEAAACs/w8ABwApAA4AAACs/xAABwApAA8AAACs/xEABwApABAAAACs/xIABwApABEAAAA=")
+tile_map_data = PackedByteArray("AADD/w8ABwAoAA4AAADD/xAABwAoAA8AAADD/xEABwAoABAAAADD/xIABwAoABEAAADE/w8ABwApAA4AAADE/xAABwApAA8AAADE/xEABwApABAAAADE/xIABwApABEAAADJ/w8ABwAoAA4AAADJ/xAABwAoAA8AAADJ/xEABwAoABAAAADJ/xIABwAoABEAAADK/w8ABwApAA4AAADK/xAABwApAA8AAADK/xEABwApABAAAADK/xIABwApABEAAADP/w8ABwAoAA4AAADP/xAABwAoAA8AAADP/xEABwAoABAAAADP/xIABwAoABEAAADQ/w8ABwApAA4AAADQ/xAABwApAA8AAADQ/xEABwApABAAAADQ/xIABwApABEAAADO/xQAAgAAAAAAAAC9/w8ABwAoAA4AAAC9/xAABwAoAA8AAAC9/xEABwAoABAAAAC9/xIABwAoABEAAAC+/w8ABwApAA4AAAC+/xAABwApAA8AAAC+/xEABwApABAAAAC+/xIABwApABEAAAC3/w8ABwAoAA4AAAC3/xAABwAoAA8AAAC3/xEABwAoABAAAAC3/xIABwAoABEAAAC4/w8ABwApAA4AAAC4/xAABwApAA8AAAC4/xEABwApABAAAAC4/xIABwApABEAAADR/xQACAAAAA0AAADS/xQACAABAA0AAADG/xQACAAAAA0AAADH/xQACAABAA0AAADc/xQACAAAAA0AAADd/xQACAAAAA0AAADe/xQACAABAA0AAADi/xQACAAAAA0AAADj/xQACQATAAwAAADk/xQACAABAA0AAADl/xQACAAAAA0AAADm/xQACAABAA0AAADl/xYACAAAAA0AAADm/xYACAAAAA0AAADn/xYACAABAA0AAADo/xYACAAAAA0AAADp/xYACAABAA0AAADq/xYACAAAAA0AAADr/xYACAABAA0AAADL/xQACAAAAA0AAADM/xQACAABAA0AAAC7/xQACAAAAA0AAAC8/xQACAABAA0AAAC2/xQACAAAAA0AAAC3/xQACAABAA0AAADB/xQACAAAAA0AAADC/xQACAABAA0AAADW/xQACAAAAA0AAADX/xQACAABAA0AAACx/w8ABwAoAA4AAACx/xAABwAoAA8AAACx/xEABwAoABAAAACx/xIABwAoABEAAACy/w8ABwApAA4AAACy/xAABwApAA8AAACy/xEABwApABAAAACy/xIABwApABEAAAADAP3/BAAOABMAAAADAP7/BAAOABQAAAAEAP3/BAAPABMAAAAEAP7/BAAPABQAAAAFAP3/BAAQABMAAAAFAP7/BAAQABQAAAAGAP3/BAARABMAAAAGAP7/BAARABQAAAAKAP3/BAAOABMAAAAKAP7/BAAOABQAAAALAP3/BAAPABMAAAALAP7/BAAPABQAAAAMAP3/BAAQABMAAAAMAP7/BAAQABQAAAANAP3/BAARABMAAAANAP7/BAARABQAAAASAPv/BAAOABMAAAASAPz/BAAOABQAAAATAPv/BAAPABMAAAATAPz/BAAPABQAAAAWAPv/BAAOABMAAAAWAPz/BAAOABQAAAAXAPv/BAAPABMAAAAXAPz/BAAPABQAAAAHAP3/BAAOABMAAAAHAP7/BAAOABQAAAAIAP3/BAAPABMAAAAIAP7/BAAPABQAAADx//3/BAAOABMAAADx//7/BAAOABQAAADy//3/BAAPABMAAADy//7/BAAPABQAAADq////BAAOABMAAADq/wAABAAOABQAAADr////BAAPABMAAADr/wAABAAPABQAAADk////BAAOABMAAADk/wAABAAOABQAAADl////BAAPABMAAADl/wAABAAPABQAAADb////BAAOABMAAADb/wAABAAOABQAAADc////BAAPABMAAADc/wAABAAPABQAAACr/w8ABwAoAA4AAACr/xAABwAoAA8AAACr/xEABwAoABAAAACr/xIABwAoABEAAACs/w8ABwApAA4AAACs/xAABwApAA8AAACs/xEABwApABAAAACs/xIABwApABEAAADi/xEACQAMAAkAAADi/xIACQAMAAoAAADj/xEACQANAAkAAADj/xIACQATAAoAAADk/xEACQAOAAkAAADk/xIACQAOAAoAAADe/w8ACQAMAAkAAADe/xAACQAMAAoAAADf/w8ACQANAAkAAADf/xAACQATAAoAAADg/w8ACQAOAAkAAADg/xAACQAOAAoAAADi/wwACQAMAAkAAADi/w0ACQAMAAoAAADj/wwACQANAAkAAADj/w0ACQANAAoAAADk/wwACQAOAAkAAADk/w0ACQAOAAoAAADj/xMACQATAAsAAADf/xEACQATAAsAAADf/xIACQATAAoAAADf/xMACQATAAsAAADf/xQACQATAAwAAAA=")
 tile_set = SubResource("TileSet_x3w5i")
 
 [node name="fundo" type="TileMapLayer" parent="Tiles"]
@@ -9357,16 +9381,6 @@ tile_set = SubResource("TileSet_7u65l")
 z_index = 9
 tile_map_data = PackedByteArray("AABBAAMAAAAAAA8AAABBAAQAAAAAABAAAABBAAUAAAAAABEAAABBAAYAAAAAABIAAABBAAcAAAAAABMAAABCAAMAAAABAA8AAABCAAQAAAABABAAAABCAAUAAAABABEAAABCAAYAAAABABIAAABCAAcAAAABABMAAABDAAMAAAACAA8AAABDAAQAAAACABAAAABDAAUAAAACABEAAABDAAYAAAACABIAAABDAAcAAAACABMAAABEAAMAAAADAA8AAABEAAQAAAADABAAAABEAAUAAAADABEAAABEAAYAAAADABIAAABEAAcAAAADABMAAABBAAgAAAAAABEAAABBAAkAAAAAABIAAABBAAoAAAAAABMAAABCAAgAAAABABEAAABCAAkAAAABABIAAABCAAoAAAABABMAAABDAAgAAAACABEAAABDAAkAAAACABIAAABDAAoAAAACABMAAABEAAgAAAADABEAAABEAAkAAAADABIAAABEAAoAAAADABMAAABLAAYAAQAAAAgAAABLAAcAAQAAAAkAAABLAAgAAQAAAAoAAABLAAkAAQAAAAsAAABMAAUAAQABAAcAAABMAAYAAQABAAgAAABMAAcAAQABAAkAAABMAAgAAQABAAoAAABMAAkAAQABAAsAAABNAAUAAQACAAcAAABNAAYAAQACAAgAAABNAAcAAQACAAkAAABNAAgAAQACAAoAAABNAAkAAQACAAsAAABOAAUAAQADAAcAAABOAAYAAQADAAgAAABOAAcAAQADAAkAAABOAAgAAQADAAoAAABOAAkAAQADAAsAAABPAAUAAQAEAAcAAABPAAYAAQAEAAgAAABPAAcAAQAEAAkAAABPAAgAAQAEAAoAAABPAAkAAQAEAAsAAABQAAQAAQAFAAYAAABQAAUAAQAFAAcAAABQAAYAAQAFAAgAAABQAAcAAQAFAAkAAABQAAgAAQAFAAoAAABQAAkAAQAFAAsAAABRAAQAAQAGAAYAAABRAAUAAQAGAAcAAABRAAYAAQAGAAgAAABRAAcAAQAGAAkAAABRAAgAAQAGAAoAAABRAAkAAQAGAAsAAABSAAQAAQAHAAYAAABSAAUAAQAHAAcAAABSAAYAAQAHAAgAAABSAAcAAQAHAAkAAABSAAgAAQAHAAoAAABSAAkAAQAHAAsAAABTAAQAAQAIAAYAAABTAAUAAQAIAAcAAABTAAYAAQAIAAgAAABTAAcAAQAIAAkAAABTAAgAAQAIAAoAAABTAAkAAQAIAAsAAABUAAQAAQAJAAYAAABUAAUAAQAJAAcAAABUAAYAAQAJAAgAAABUAAcAAQAJAAkAAABUAAgAAQAJAAoAAABUAAkAAQAJAAsAAABVAAUAAQAKAAcAAABVAAYAAQAKAAgAAABVAAcAAQAKAAkAAABVAAgAAQAKAAoAAABVAAkAAQAKAAsAAABWAAUAAQALAAcAAABWAAYAAQALAAgAAABWAAcAAQALAAkAAABWAAgAAQALAAoAAABWAAkAAQALAAsAAABXAAUAAQAMAAcAAABXAAYAAQAMAAgAAABXAAcAAQAMAAkAAABXAAgAAQAMAAoAAABXAAkAAQAMAAsAAABYAAcAAQANAAkAAABYAAgAAQANAAoAAABYAAkAAQANAAsAAAA=")
 tile_set = SubResource("TileSet_nc2j5")
-
-[node name="AwesomeCavePixelArt" type="Sprite2D" parent="Tiles"]
-z_index = -4
-position = Vector2(-102, 177)
-texture = ExtResource("47_s5et7")
-
-[node name="AwesomeCavePixelArt2" type="Sprite2D" parent="Tiles"]
-z_index = -4
-position = Vector2(1179, 177)
-texture = ExtResource("47_s5et7")
 
 [node name="AnimatedDecorations" type="Node" parent="."]
 
@@ -9417,13 +9431,12 @@ next_level = "C:/Users/erik/Desktop/estudos/elementa/elementa-game/levels/fases/
 transition_controller = NodePath("../transition")
 
 [node name="transition" parent="Portas" instance=ExtResource("2_v2dj8")]
-visible = false
 
 [node name="Interactions" type="Node" parent="."]
 
 [node name="PlacaSimples" parent="Interactions" instance=ExtResource("46_nwfhf")]
 y_sort_enabled = true
-position = Vector2(-515, 309)
+position = Vector2(-591, 309)
 
 [node name="PlacaSimples2" parent="Interactions" instance=ExtResource("46_nwfhf")]
 y_sort_enabled = true
@@ -9434,3 +9447,48 @@ script = ExtResource("50_vsdus")
 visible = false
 
 [node name="CanvasLayer" parent="." instance=ExtResource("55_jne1x")]
+
+[node name="Background" type="Node" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Background"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+motion_scale = Vector2(0.2, 0)
+motion_mirroring = Vector2(960, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxBackground/ParallaxLayer"]
+position = Vector2(442, 126)
+texture = ExtResource("55_6112a")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+motion_scale = Vector2(0.3, 0)
+motion_mirroring = Vector2(960, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxBackground/ParallaxLayer2"]
+position = Vector2(442, 126)
+texture = ExtResource("56_2qa3u")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+motion_scale = Vector2(0.5, 0)
+motion_mirroring = Vector2(960, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxBackground/ParallaxLayer3"]
+position = Vector2(442, 126)
+texture = ExtResource("57_qdkca")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+visible = false
+motion_scale = Vector2(0.7, 0)
+motion_mirroring = Vector2(960, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxBackground/ParallaxLayer4"]
+position = Vector2(447, 199)
+texture = ExtResource("58_uvq71")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/StaticBody2D"]
+position = Vector2(562, 302)
+shape = SubResource("RectangleShape2D_hlwp3")

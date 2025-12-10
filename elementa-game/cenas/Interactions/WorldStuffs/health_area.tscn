@@ -1,8 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://t75s5oudsisk"]
+[gd_scene load_steps=4 format=3 uid="uid://t75s5oudsisk"]
 
-[ext_resource type="Script" path="res://health_area.gd" id="1_1aff3"]
+[ext_resource type="Script" path="res://sprites-cenário-teste/Sprite Pack 8/1 - Toggle/health_area.gd" id="1_1aff3"]
+[ext_resource type="Texture2D" uid="uid://8ke1ymh12hlt" path="res://sprites-cenário-teste/Mini FX, Items & UI/Common Pick-ups/Health_Kit (16 x 16).png" id="2_kjs0g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5mj37"]
 
 [node name="health_area" type="Area2D"]
 script = ExtResource("1_1aff3")
+
+[node name="HealthKit(16X16)" type="Sprite2D" parent="."]
+position = Vector2(0, 8)
+texture = ExtResource("2_kjs0g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 8)
+shape = SubResource("CircleShape2D_5mj37")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

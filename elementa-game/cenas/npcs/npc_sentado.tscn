@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://chlppnqoxjaaw"]
+[gd_scene load_steps=10 format=3 uid="uid://chlppnqoxjaaw"]
 
 [ext_resource type="Script" path="res://scripts/systems/NPCS/npc_sentado.gd" id="1_814xn"]
-[ext_resource type="Texture2D" uid="uid://ctu6hu72w5bye" path="res://data/styles/portait/Portraits_v1/hud/Speech_Emotes (16 x 16).png" id="1_i0evw"]
 [ext_resource type="Texture2D" uid="uid://d3gqp70iv8hqj" path="res://assetsIncompletos/Assets-Erik/NPCS/Lively_NPCs_v3.0/sprite sheets/medieval/beggar.png" id="2_vbnlv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7amd4"]
@@ -56,11 +55,6 @@ script = ExtResource("1_814xn")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(23, 21)
 shape = SubResource("RectangleShape2D_7amd4")
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(32, 13)
-scale = Vector2(0.875, 0.75)
-texture = ExtResource("1_i0evw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(25, 30)

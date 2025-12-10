@@ -13,4 +13,4 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "player": 
 		Global.current_health = Global.max_health
-		print("jogador curado")
+		queue_free()

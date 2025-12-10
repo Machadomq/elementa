@@ -1,4 +1,4 @@
-[gd_scene load_steps=224 format=4 uid="uid://b2ichpcqswyjl"]
+[gd_scene load_steps=226 format=4 uid="uid://b2ichpcqswyjl"]
 
 [ext_resource type="PackedScene" uid="uid://dspcerl0hf17k" path="res://actors.tscn" id="1_0br81"]
 [ext_resource type="PackedScene" uid="uid://cke68p3p8y03n" path="res://cenas/Interactions/Puzzles/door.tscn" id="1_aqbvx"]
@@ -106,6 +106,8 @@
 [ext_resource type="PackedScene" uid="uid://btpwmbuuv8mrg" path="res://menus/hud/canvas_layer.tscn" id="97_4y64k"]
 [ext_resource type="PackedScene" uid="uid://c42bcs5mso6lf" path="res://cenas/Interactions/WorldStuffs/area_damage.tscn" id="104_elq1o"]
 [ext_resource type="PackedScene" uid="uid://c2afrfioxjkba" path="res://cenas/Coletáveis/coin.tscn" id="106_n2a15"]
+[ext_resource type="PackedScene" uid="uid://t75s5oudsisk" path="res://cenas/Interactions/WorldStuffs/health_area.tscn" id="107_g36mr"]
+[ext_resource type="PackedScene" uid="uid://cvg4smmcmitkx" path="res://enemy2.tscn" id="108_tbodo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7of6h"]
 texture = ExtResource("4_ktnt0")
@@ -12561,3 +12563,12 @@ scale = Vector2(2, 2)
 [node name="Coin3" parent="coins" instance=ExtResource("106_n2a15")]
 position = Vector2(-2871, -479)
 scale = Vector2(2, 2)
+
+[node name="health_area" parent="." instance=ExtResource("107_g36mr")]
+position = Vector2(-2468, -206)
+
+[node name="enemy2" parent="." instance=ExtResource("108_tbodo")]
+position = Vector2(-2485, -87)
+
+[node name="enemy3" parent="." instance=ExtResource("108_tbodo")]
+position = Vector2(-3049, -206)

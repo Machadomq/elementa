@@ -1,4 +1,4 @@
-[gd_scene load_steps=242 format=3 uid="uid://d27cpf6ieogg3"]
+[gd_scene load_steps=243 format=3 uid="uid://d27cpf6ieogg3"]
 
 [ext_resource type="Script" path="res://levels/fases/cena_1.gd" id="1_8yk2m"]
 [ext_resource type="Texture2D" uid="uid://cqnehlx22o1ox" path="res://assetsIncompletos/Assets-Erik/Medieval_Castle_Asset_Pack/Medieval_Castle_Asset_Pack/Tiles/lion_column_9.png" id="1_ejdk5"]
@@ -7374,7 +7374,10 @@ sources/65 = SubResource("TileSetAtlasSource_aoivo")
 sources/91 = SubResource("TileSetAtlasSource_lwolb")
 sources/106 = SubResource("TileSetAtlasSource_iflna")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfu16"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_pmn1s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sp7l1"]
+size = Vector2(69, 116)
 
 [node name="World-02" type="Node2D"]
 position = Vector2(59, -73)
@@ -7411,7 +7414,7 @@ position = Vector2(1178.75, 405.039)
 
 [node name="Tocha" parent="." instance=ExtResource("100_kdsuo")]
 z_index = 6
-position = Vector2(1100, 1179)
+position = Vector2(1137, 1235)
 
 [node name="Vela" parent="." instance=ExtResource("106_gguto")]
 z_index = 7
@@ -7520,12 +7523,6 @@ position = Vector2(1748, 1283)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("131_ly7ej")]
 
-[node name="health_area" parent="." instance=ExtResource("132_1dt8o")]
-position = Vector2(1465, 1001)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="health_area"]
-shape = SubResource("RectangleShape2D_gfu16")
-
 [node name="Background" type="Node" parent="."]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Background"]
@@ -7572,3 +7569,18 @@ scale = Vector2(2, 2)
 [node name="Coin2" parent="." instance=ExtResource("114_53m81")]
 position = Vector2(2005, 904)
 scale = Vector2(2, 2)
+
+[node name="health_area2" parent="." instance=ExtResource("132_1dt8o")]
+position = Vector2(2138, 919)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="health_area2"]
+position = Vector2(-1, 8)
+shape = SubResource("CircleShape2D_pmn1s")
+
+[node name="limite" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="limite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limite/StaticBody2D"]
+position = Vector2(2015, 1179)
+shape = SubResource("RectangleShape2D_sp7l1")
