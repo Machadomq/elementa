@@ -1,4 +1,4 @@
-[gd_scene load_steps=372 format=4 uid="uid://cosfx1vq8l4xj"]
+[gd_scene load_steps=371 format=4 uid="uid://cosfx1vq8l4xj"]
 
 [ext_resource type="PackedScene" uid="uid://dspcerl0hf17k" path="res://actors.tscn" id="1_rkj3q"]
 [ext_resource type="PackedScene" uid="uid://cke68p3p8y03n" path="res://cenas/Interactions/Puzzles/door.tscn" id="2_c2smf"]
@@ -172,7 +172,6 @@
 [ext_resource type="PackedScene" uid="uid://cqqccyakwjwmv" path="res://cenas/Interactions/stone.tscn" id="170_p144i"]
 [ext_resource type="Script" path="res://scripts/systems/pedras/ruinas/stone6.gd" id="171_yypsn"]
 [ext_resource type="Script" path="res://scripts/systems/pedras/ruinas/stone7.gd" id="172_ese2y"]
-[ext_resource type="PackedScene" uid="uid://cvg4smmcmitkx" path="res://enemy2.tscn" id="173_vh1ln"]
 [ext_resource type="PackedScene" uid="uid://t75s5oudsisk" path="res://cenas/Interactions/WorldStuffs/health_area.tscn" id="174_f8tfj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ly7kw"]
@@ -10589,26 +10588,6 @@ z_index = 1
 position = Vector2(273, -362)
 scale = Vector2(0.3, 0.3)
 script = ExtResource("172_ese2y")
-
-[node name="enemy2" parent="." instance=ExtResource("173_vh1ln")]
-z_index = 1
-position = Vector2(-251, 148)
-
-[node name="enemy3" parent="." instance=ExtResource("173_vh1ln")]
-z_index = 1
-position = Vector2(-208, -229)
-
-[node name="enemy4" parent="." instance=ExtResource("173_vh1ln")]
-z_index = 1
-position = Vector2(-657, -196)
-
-[node name="enemy5" parent="." instance=ExtResource("173_vh1ln")]
-z_index = 1
-position = Vector2(-307, -201)
-
-[node name="enemy6" parent="." instance=ExtResource("173_vh1ln")]
-z_index = 1
-position = Vector2(-502, -241)
 
 [node name="health_area" parent="." instance=ExtResource("174_f8tfj")]
 z_index = 1

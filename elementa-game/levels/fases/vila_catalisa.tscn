@@ -13042,6 +13042,7 @@ script = ExtResource("26_g83rv")
 
 [node name="Fazendeiro" parent="npcs" instance=ExtResource("36_1yjle")]
 position = Vector2(1409, 3)
+script = null
 
 [node name="Alquimista" parent="npcs" instance=ExtResource("23_6o5r1")]
 z_index = 1
@@ -13057,9 +13058,11 @@ position = Vector2(196, 12)
 [node name="npc-sentado" parent="npcs" instance=ExtResource("30_4j7a0")]
 z_index = 2
 position = Vector2(1922, -35)
+script = null
 
 [node name="villager1" parent="npcs" instance=ExtResource("32_80idm")]
 position = Vector2(639, -55)
+script = null
 
 [node name="cachorro" parent="npcs" instance=ExtResource("33_e26ft")]
 z_index = 2

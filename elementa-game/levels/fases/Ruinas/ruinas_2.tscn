@@ -1,4 +1,4 @@
-[gd_scene load_steps=428 format=4 uid="uid://b40sgfmmoejqp"]
+[gd_scene load_steps=427 format=4 uid="uid://b40sgfmmoejqp"]
 
 [ext_resource type="PackedScene" uid="uid://da05vccxbs5gm" path="res://levels/fases/transition.tscn" id="1_ht66a"]
 [ext_resource type="PackedScene" uid="uid://dspcerl0hf17k" path="res://actors.tscn" id="2_6cvs1"]
@@ -197,7 +197,6 @@
 [ext_resource type="PackedScene" uid="uid://btpwmbuuv8mrg" path="res://menus/hud/canvas_layer.tscn" id="193_ll5u4"]
 [ext_resource type="PackedScene" uid="uid://bw8ckhrbrjsoh" path="res://menus/inGame_pause_menu/pause_game.tscn" id="194_yxtpd"]
 [ext_resource type="PackedScene" uid="uid://c2afrfioxjkba" path="res://cenas/Coletáveis/coin.tscn" id="195_7iggj"]
-[ext_resource type="PackedScene" uid="uid://cvg4smmcmitkx" path="res://enemy2.tscn" id="198_1idgn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gcd8i"]
 texture = ExtResource("4_m7kfc")
@@ -9667,28 +9666,6 @@ scale = Vector2(2, 2)
 [node name="Coin7" parent="coins" instance=ExtResource("195_7iggj")]
 position = Vector2(-500, -24)
 scale = Vector2(2, 2)
-
-[node name="enemy2" parent="." instance=ExtResource("198_1idgn")]
-position = Vector2(-270, 605)
-
-[node name="enemy3" parent="." instance=ExtResource("198_1idgn")]
-position = Vector2(52, -44)
-
-[node name="enemy4" parent="." instance=ExtResource("198_1idgn")]
-z_index = 2
-position = Vector2(-397, 910)
-
-[node name="enemy5" parent="." instance=ExtResource("198_1idgn")]
-z_index = 2
-position = Vector2(-602, 908)
-
-[node name="enemy6" parent="." instance=ExtResource("198_1idgn")]
-z_index = 2
-position = Vector2(-1989, 868)
-
-[node name="enemy7" parent="." instance=ExtResource("198_1idgn")]
-z_index = 2
-position = Vector2(-1722, 612)
 
 [connection signal="body_entered" from="interactions/Dialogue_box" to="player" method="_on_dialogue_box_body_entered"]
 [connection signal="body_exited" from="interactions/Dialogue_box" to="player" method="_on_dialogue_box_body_exited"]

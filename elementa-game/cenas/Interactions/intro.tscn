@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dg52mlbxrx025"]
+[gd_scene load_steps=4 format=3 uid="uid://dg52mlbxrx025"]
 
 [ext_resource type="Script" path="res://scripts/systems/dialogues-map/intro.gd" id="1_xc7hl"]
 [ext_resource type="FontFile" uid="uid://ckoflksjamgea" path="res://data/styles/Nova pasta/Jersey_15/Jersey15-Regular.ttf" id="2_pe3me"]
+[ext_resource type="AudioStream" uid="uid://b6c1p14bc20p1" path="res://addons/dialogic/Example Assets/sound-effects/typing1.wav" id="3_f18ky"]
 
 [node name="Intro" type="Node2D"]
 script = ExtResource("1_xc7hl")
@@ -35,3 +36,6 @@ theme_override_font_sizes/font_size = 35
 text = "wdwdwdwdwdwdwd"
 
 [node name="Timer" type="Timer" parent="CanvasLayer/ColorRect"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_f18ky")

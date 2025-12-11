@@ -1,4 +1,4 @@
-[gd_scene load_steps=188 format=4 uid="uid://bq50wvjtiosmu"]
+[gd_scene load_steps=187 format=4 uid="uid://bq50wvjtiosmu"]
 
 [ext_resource type="PackedScene" uid="uid://dspcerl0hf17k" path="res://actors.tscn" id="1_cecov"]
 [ext_resource type="PackedScene" uid="uid://cke68p3p8y03n" path="res://cenas/Interactions/Puzzles/door.tscn" id="1_ik4e5"]
@@ -99,7 +99,6 @@
 [ext_resource type="PackedScene" uid="uid://t75s5oudsisk" path="res://cenas/Interactions/WorldStuffs/health_area.tscn" id="84_jhjt2"]
 [ext_resource type="PackedScene" uid="uid://btpwmbuuv8mrg" path="res://menus/hud/canvas_layer.tscn" id="96_dlgts"]
 [ext_resource type="PackedScene" uid="uid://bw8ckhrbrjsoh" path="res://menus/inGame_pause_menu/pause_game.tscn" id="97_8kux0"]
-[ext_resource type="PackedScene" uid="uid://cvg4smmcmitkx" path="res://enemy2.tscn" id="99_2ncd8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_swwm8"]
 texture = ExtResource("3_hlxj1")
@@ -5997,21 +5996,6 @@ script = ExtResource("83_mqkn6")
 [node name="pause_menu" parent="." instance=ExtResource("97_8kux0")]
 
 [node name="enemys" type="Node" parent="."]
-
-[node name="enemy2" parent="." instance=ExtResource("99_2ncd8")]
-position = Vector2(6505, 1340)
-
-[node name="enemy5" parent="." instance=ExtResource("99_2ncd8")]
-position = Vector2(5681, 1132)
-
-[node name="enemy3" parent="." instance=ExtResource("99_2ncd8")]
-position = Vector2(7729, 700)
-
-[node name="enemy6" parent="." instance=ExtResource("99_2ncd8")]
-position = Vector2(9352, 929)
-
-[node name="enemy4" parent="." instance=ExtResource("99_2ncd8")]
-position = Vector2(7085, 708)
 
 [node name="limite" type="Node" parent="."]
 

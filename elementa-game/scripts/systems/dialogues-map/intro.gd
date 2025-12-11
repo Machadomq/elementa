@@ -6,6 +6,8 @@ extends Node2D
 
 @onready var historia_label: Label = $CanvasLayer/ColorRect/Label
 @onready var fundo: ColorRect = $CanvasLayer/ColorRect
+# 🚨 NOVA REFERÊNCIA: Certifique-se de ter um nó AudioStreamPlayer chamado 'TypingSoundPlayer' na cena
+@onready var typing_sound_player: AudioStreamPlayer =  $AudioStreamPlayer
 
 const CENA_PRINCIPAL: String = "res://levels/world_02.tscn"
 
@@ -28,7 +30,7 @@ const HISTORIA_LINHAS: Array[String] = [
 const FRASE_MARIE_CURIE: String = "Nada na vida deve ser temido, somente compreendido.\nAgora é hora de compreender mais para temer menos.\n\n- Marie Curie (1867-1934)"
 
 # VARIÁVEIS DE TIMING E EFEITO
-const TYPING_SPEED := 0.04 # Velocidade da digitação
+const TYPING_SPEED := 0.06 # Velocidade da digitação
 const DELAY_ENTRE_LINHAS_EXIBICAO: float = 2.0 # Tempo que o texto fica parado
 const DELAY_FADE: float = 0.3 # Tempo de fade-in e fade-out (usado apenas na citação)
 
@@ -41,17 +43,17 @@ var has_shown_final_quote: bool = false # Flag para controlar a citação final
 # ====================================================================
 
 func _ready() -> void:
-	historia_label.text = "" 
+	historia_label.text = ""
 	
 	# 1. Fade in do fundo da tela
 	fundo.modulate.a = 0.0
 	var tween_fundo = create_tween()
 	tween_fundo.tween_property(fundo, "modulate:a", 1.0, 1.0)
 	
-	await tween_fundo.finished 
+	await tween_fundo.finished
 	
 	# Garante que o Label esteja totalmente visível para a digitação
-	historia_label.modulate.a = 1.0 
+	historia_label.modulate.a = 1.0
 	
 	_iniciar_ciclo_historia()
 	
@@ -66,18 +68,16 @@ func _iniciar_ciclo_historia() -> void:
 		
 		var linha_completa = HISTORIA_LINHAS[indice_linha_atual]
 		
-		# 🚨 FIX: NÃO CHAMAR O FADE AQUI! O texto é apenas adicionado abaixo.
-		
 		# 1. Revela a nova linha com a máquina de escrever
 		await _mostrar_linha_atual(linha_completa)
 		
-		# 2. Espera o tempo de exibição 
+		# 2. Espera o tempo de exibição 
 		await get_tree().create_timer(DELAY_ENTRE_LINHAS_EXIBICAO).timeout
 		
 		indice_linha_atual += 1
 		_iniciar_ciclo_historia() # Chama a próxima linha
 		
-	elif not has_shown_final_quote: 
+	elif not has_shown_final_quote:
 		# 🚨 AQUI ONDE O FADE É NECESSÁRIO!
 		await _mostrar_frase_final()
 		
@@ -96,10 +96,10 @@ func _mostrar_frase_final() -> void:
 	await _mostrar_linha_atual_final(FRASE_MARIE_CURIE)
 	
 	# 3. Tempo extra para leitura
-	await get_tree().create_timer(DELAY_ENTRE_LINHAS_EXIBICAO * 2.5).timeout 
+	await get_tree().create_timer(DELAY_ENTRE_LINHAS_EXIBICAO * 2.5).timeout
 	
 	# 4. Continua o fluxo para a transição
-	_iniciar_ciclo_historia() 
+	_iniciar_ciclo_historia()
 
 
 # ====================================================================
@@ -121,6 +121,11 @@ func _mostrar_linha_atual(nova_linha: String) -> void:
 	# Digita a nova linha, caractere por caractere
 	for i in nova_linha.length():
 		historia_label.text += nova_linha[i]
+		
+		# 🚨 NOVO CÓDIGO: Toca o som a cada caractere
+		if typing_sound_player:
+			typing_sound_player.play()
+			
 		await get_tree().create_timer(TYPING_SPEED).timeout
 		
 		
@@ -135,10 +140,15 @@ func _mostrar_linha_atual_final(nova_linha: String) -> void:
 	await tween_fade_in.finished
 	
 	# 2. Digita a nova linha (o texto já está limpo de _fade_out_texto)
-	historia_label.text = "" 
+	historia_label.text = ""
 	
 	for i in nova_linha.length():
 		historia_label.text += nova_linha[i]
+		
+		# 🚨 NOVO CÓDIGO: Toca o som a cada caractere
+		if typing_sound_player:
+			typing_sound_player.play()
+			
 		await get_tree().create_timer(TYPING_SPEED).timeout
 
 
@@ -149,8 +159,8 @@ func _fade_out_texto() -> void:
 	await tween.finished
 	
 	# Limpa o texto e prepara o Label para o próximo fade-in/digitação
-	historia_label.text = "" 
-	historia_label.modulate.a = 1.0 
+	historia_label.text = ""
+	historia_label.modulate.a = 1.0
 
 
 # ... (O restante das funções _transicionar_para_jogo, etc. permanecem as mesmas) ...
