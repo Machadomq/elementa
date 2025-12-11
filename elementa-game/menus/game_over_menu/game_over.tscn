@@ -1,0 +1,158 @@
+[gd_scene load_steps=10 format=3 uid="uid://b756evai4w6rt"]
+
+[ext_resource type="Script" path="res://menus/game_over_menu/game_over.gd" id="1_slhtn"]
+[ext_resource type="Texture2D" uid="uid://cb3p406ph426t" path="res://menus/game_over_menu/assets/Você perdeu 1.png" id="2_0dyek"]
+[ext_resource type="Texture2D" uid="uid://bw0ifwle3ep21" path="res://menus/game_over_menu/assets/reiniciar.png" id="3_r5gra"]
+[ext_resource type="Texture2D" uid="uid://dxyv1andt8yp3" path="res://menus/game_over_menu/assets/reiniciar2.png" id="4_nelw0"]
+[ext_resource type="Texture2D" uid="uid://cbgnvyo6ccqvj" path="res://menus/inGame_pause_menu/assets/sair.png" id="5_1ssrq"]
+[ext_resource type="Texture2D" uid="uid://d4nby61oji4h3" path="res://menus/inGame_pause_menu/assets/sairHover.png" id="6_om2oh"]
+
+[sub_resource type="Animation" id="Animation_15vvc"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bg_overlay:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("restart_btn:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("quit_btn:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_eudjy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bg_overlay:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("restart_btn:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("quit_btn:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fsh7l"]
+_data = {
+"RESET": SubResource("Animation_eudjy"),
+"fade_in": SubResource("Animation_15vvc")
+}
+
+[node name="pause_menu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_slhtn")
+
+[node name="bg_overlay" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.027451, 0.027451, 0.027451, 0.513726)
+
+[node name="Title" type="TextureRect" parent="bg_overlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 638.0
+offset_top = 181.0
+offset_right = -666.0
+offset_bottom = -706.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0dyek")
+expand_mode = 1
+
+[node name="restart_btn" type="TextureButton" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 744.0
+offset_top = 500.0
+offset_right = -815.0
+offset_bottom = -487.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("3_r5gra")
+texture_hover = ExtResource("4_nelw0")
+stretch_mode = 0
+metadata/_edit_group_ = true
+
+[node name="quit_btn" type="TextureButton" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 745.0
+offset_top = 645.0
+offset_right = -817.0
+offset_bottom = -342.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("5_1ssrq")
+texture_hover = ExtResource("6_om2oh")
+stretch_mode = 0
+metadata/_edit_group_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fsh7l")
+}
+
+[connection signal="pressed" from="restart_btn" to="." method="_on_restart_btn_pressed"]
+[connection signal="pressed" from="quit_btn" to="." method="_on_quit_btn_pressed"]

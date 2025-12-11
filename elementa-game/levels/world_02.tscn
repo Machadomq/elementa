@@ -7519,9 +7519,9 @@ position = Vector2(1748, 1283)
 
 [node name="transition" parent="." instance=ExtResource("124_io5fc")]
 
-[node name="pause_menu" parent="." instance=ExtResource("130_xrivt")]
-
 [node name="CanvasLayer" parent="." instance=ExtResource("131_ly7ej")]
+
+[node name="pause_menu" parent="." instance=ExtResource("130_xrivt")]
 
 [node name="Background" type="Node" parent="."]
 
