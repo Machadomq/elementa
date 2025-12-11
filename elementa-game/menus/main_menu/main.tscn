@@ -104,7 +104,6 @@ offset_bottom = 441.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.2, 1.2)
-keep_pressed_outside = true
 texture_normal = ExtResource("8_yw0po")
 texture_hover = ExtResource("9_lxv4t")
 ignore_texture_size = true
@@ -146,4 +145,5 @@ expand_mode = 1
 [connection signal="pressed" from="Control/playButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Control/creditButton" to="." method="_on_credit_button_pressed"]
 [connection signal="pressed" from="Control/configButton" to="." method="_on_config_button_pressed"]
+[connection signal="pressed" from="Control/muteButton" to="." method="_on_mute_button_pressed"]
 [connection signal="pressed" from="Control/exitButton" to="." method="_on_exit_button_pressed"]

@@ -243,8 +243,10 @@ func receive_damage(amount: int, source: Node = null):
 	if Global.current_health <= 0:
 		morrer()
 
-
 func morrer():
+	
+	const GAME_OVER_SCENE = preload("res://menus/game_over_menu/game_over.tscn")
+
 	if morto: return
 	morto = true
 
@@ -258,6 +260,19 @@ func morrer():
 	$areaAtaqueAr.monitoring = false
 
 	velocity.x *= 0.2
+	
+	# pausa de 4 segundos
+	await get_tree().create_timer(4.0).timeout
+	
+	# 2. Carregar a cena de Game Over
+	var game_over_screen = GAME_OVER_SCENE.instantiate()
+	
+	 # 3. Adicionar a tela de Game Over como filha da cena principal
+	 #Isso fará com que ela seja desenhada por cima.
+	get_tree().root.add_child(game_over_screen) 
+	
+	# 4. Opcional: Pausar o jogo
+	get_tree().paused = true
 
 
 func _on_area_ataque_body_entered(body):
